@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap');
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap');
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9420,109 +9420,107 @@ a.text-dark:focus {
   }
 }
 
-.hero-container {
+.cta-main {
+  background: #d4af37;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #000000;
+  font-weight: bold;
+}
+
+.cta-main:hover {
+  color: #000000;
+}
+
+.cta-secondary {
+  border: 3px solid #d4af37;
+  background: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.cta-secondary:hover {
+  color: #d4af37;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.coverWrapper {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
   background-color: black;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('https://res.cloudinary.com/dnkfgmzy1/image/upload/q_auto:good/v1574011164/game/wa7ak54wbtrhnvfihpqc.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://res.cloudinary.com/dnkfgmzy1/image/upload/q_auto:good/v1574011164/game/wa7ak54wbtrhnvfihpqc.jpg');
+}
+
+.coverWrapper__content {
+  width: 90vw;
+  height: 100vh;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.cover-holder {
-  margin: 0 auto;
-  width: 90vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.cover-holder h1 {
+.coverWrapper__content > h1 {
   text-align: center;
-  text-transform: uppercase;
   margin-bottom: 2rem;
+  font-family: 'Lora', serif;
+  font-size: 2.3rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.coverWrapper__content > h2 {
+  text-align: center;
   font-family: 'Lora', serif;
   font-size: 2rem;
   color: white;
   font-weight: bold;
-  line-height: 1;
 }
-
-.cover-holder h1 span {
+.coverWrapper__content > h1 > span {
   display: block;
-  font-weight: 700;
-  font-size: 2.3rem;
   margin-top: 1rem;
-  border-top: solid 2px #eeeeee;
-  border-bottom: solid 2px #eeeeee;
+  border-top: solid 2px #ffffff;
+  border-bottom: solid 2px #ffffff;
   font-family: 'Lora', serif;
-}
-
-.cover-holder h2 {
-  text-align: center;
-  font-family: 'Lora', serif;
-  font-size: 1.8rem;
+  font-size: 3.5rem;
   color: white;
   font-weight: bold;
 }
 
-.cover-holder a {
-  display: block;
-  text-align: center;
-}
-
-.buttons-holder {
+.buttonsWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 2rem;
 }
-
-@media only screen and (min-width: 768px) {
-  .cover-holder {
-    width: 60vw;
-  }
-  .cover-holder h1 {
-    font-size: 2rem;
-  }
-  .cover-holder h1 span {
-    font-size: 4rem;
-    padding: 2rem;
-  }
-  .cover-holder h2 {
-    font-size: 2rem;
-  }
-}
-
-.cta-main {
-  padding: 15px 32px;
-  font-size: 1.5rem;
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: 500;
-  background: #d4af37;
-  color: black !important;
+.buttonsWrapper > a {
   margin-right: 1rem;
-}
-
-.cta-secondary {
-  padding: 15px 32px;
-  font-size: 1.5rem;
-  text-decoration: none;
-  cursor: pointer;
-  border: 3px solid #d4af37;
-  font-weight: 500;
-  color: #d4af37 !important;
-}
-
-.cta-main .cta-secondary:hover {
-  opacity: 0.7;
 }
