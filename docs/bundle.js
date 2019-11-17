@@ -35,53 +35,109 @@
     1: [
       function(require, module, exports) {
         'use strict';
-        var storage_1 = require('./scripts/util/storage');
-        var gameStorage = new storage_1['default']();
-        var player1 = {
+        const storage_1 = require('./scripts/util/storage');
+        const apiService_1 = require('./scripts/util/apiService');
+        const gameStorage = new storage_1.default();
+        let player1 = {
           selectedCharacter: '',
           isWinner: false,
           currentPosition: '',
         };
-        var player2 = {
+        let player2 = {
           selectedCharacter: '',
           isWinner: false,
           currentPosition: '',
         };
         gameStorage.set('player1', player1.selectedCharacter);
         gameStorage.set('player2', player1.selectedCharacter);
+        apiService_1.default({ page: 1, pageSize: 10 });
       },
-      { './scripts/util/storage': 2 },
+      { './scripts/util/apiService': 2, './scripts/util/storage': 3 },
     ],
     2: [
       function(require, module, exports) {
         'use strict';
-        var Storage = (function() {
-          function Storage() {
+        var __awaiter =
+          (this && this.__awaiter) ||
+          function(thisArg, _arguments, P, generator) {
+            return new (P || (P = Promise))(function(resolve, reject) {
+              function fulfilled(value) {
+                try {
+                  step(generator.next(value));
+                } catch (e) {
+                  reject(e);
+                }
+              }
+              function rejected(value) {
+                try {
+                  step(generator.throw(value));
+                } catch (e) {
+                  reject(e);
+                }
+              }
+              function step(result) {
+                result.done
+                  ? resolve(result.value)
+                  : new P(function(resolve) {
+                      resolve(result.value);
+                    }).then(fulfilled, rejected);
+              }
+              step((generator = generator.apply(thisArg, _arguments)).next());
+            });
+          };
+        const PAGE_SIZE = 10;
+        const PAGE = 1;
+        const BASE_URL = 'https://www.anapioficeandfire.com/api/characters?';
+        function ApiService({ page, pageSize }) {
+          return __awaiter(this, void 0, void 0, function*() {
+            const url = `${BASE_URL}page=${page ? page : PAGE}&pageSize=${
+              pageSize ? pageSize : PAGE_SIZE
+            }`;
+            try {
+              const response = yield fetch(url);
+              const data = yield response.json();
+              console.log(111111);
+              console.log(data);
+              return data;
+            } catch (err) {
+              throw err;
+            }
+          });
+        }
+        Object.defineProperty(exports, '__esModule', { value: true });
+        exports.default = ApiService;
+      },
+      {},
+    ],
+    3: [
+      function(require, module, exports) {
+        'use strict';
+        class Storage {
+          constructor() {
             this.storage = window.localStorage;
           }
-          Storage.prototype.set = function(key, value) {
+          set(key, value) {
             this.storage.setItem(key, value);
-          };
-          Storage.prototype.get = function(key) {
+          }
+          get(key) {
             return this.storage.getItem(key);
-          };
-          Storage.prototype.delete = function(key) {
+          }
+          delete(key) {
             this.storage.removeItem(key);
-          };
-          Storage.prototype.setSerialize = function(key, value) {
+          }
+          setSerialize(key, value) {
             this.set(key, JSON.stringify(value));
-          };
-          Storage.prototype.getUnserialize = function(key) {
-            var data = this.get(key);
+          }
+          getUnserialize(key) {
+            const data = this.get(key);
             if (!data) {
               return null;
             }
             return JSON.parse(data);
-          };
-          return Storage;
-        })();
-        exports.__esModule = true;
-        exports['default'] = Storage;
+          }
+        }
+        Object.defineProperty(exports, '__esModule', { value: true });
+        exports.default = Storage;
       },
       {},
     ],

@@ -1,5 +1,6 @@
 import Storage from './scripts/util/storage';
 import { PlayerTypes } from './scripts/util/types';
+import ApiService from './scripts/util/apiService';
 
 const gameStorage = new Storage();
 let player1: PlayerTypes = {
@@ -16,3 +17,5 @@ let player2: PlayerTypes = {
 
 gameStorage.set('player1', player1.selectedCharacter);
 gameStorage.set('player2', player1.selectedCharacter);
+
+ApiService({ page: 1, pageSize: 10 });
