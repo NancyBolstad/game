@@ -1,1 +1,10 @@
-# To create a board game and show the skills you have learned from CSS Frameworks, JavaScript 2 and Design 2.
+# : Game
+
+## Building
+
+Check out the scripts in `package.json` for examples on how to run a build with either the CLI or the API.
+
+```sh
+npm run build-cli
+npm run build-script
+```
