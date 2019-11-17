@@ -35,34 +35,53 @@
     1: [
       function(require, module, exports) {
         'use strict';
-        var Greeter_1 = require('./scripts/Greeter');
-        var greeter = new Greeter_1['default']('Hello');
-        document.body.innerHTML = greeter.greet();
+        var storage_1 = require('./scripts/util/storage');
+        var gameStorage = new storage_1['default']();
+        var player1 = {
+          selectedCharacter: '',
+          isWinner: false,
+          currentPosition: '',
+        };
+        var player2 = {
+          selectedCharacter: '',
+          isWinner: false,
+          currentPosition: '',
+        };
+        gameStorage.set('player1', player1.selectedCharacter);
+        gameStorage.set('player2', player1.selectedCharacter);
       },
-      { './scripts/Greeter': 2 },
+      { './scripts/util/storage': 2 },
     ],
     2: [
       function(require, module, exports) {
         'use strict';
-        var Name_1 = require('./Name');
-        var Greeter = (function() {
-          function Greeter(greeting) {
-            this.greeting = greeting;
+        var Storage = (function() {
+          function Storage() {
+            this.storage = window.localStorage;
           }
-          Greeter.prototype.greet = function() {
-            return '<h1>' + this.greeting + Name_1.name + '</h1>';
+          Storage.prototype.set = function(key, value) {
+            this.storage.setItem(key, value);
           };
-          return Greeter;
+          Storage.prototype.get = function(key) {
+            return this.storage.getItem(key);
+          };
+          Storage.prototype.delete = function(key) {
+            this.storage.removeItem(key);
+          };
+          Storage.prototype.setSerialize = function(key, value) {
+            this.set(key, JSON.stringify(value));
+          };
+          Storage.prototype.getUnserialize = function(key) {
+            var data = this.get(key);
+            if (!data) {
+              return null;
+            }
+            return JSON.parse(data);
+          };
+          return Storage;
         })();
         exports.__esModule = true;
-        exports['default'] = Greeter;
-      },
-      { './Name': 3 },
-    ],
-    3: [
-      function(require, module, exports) {
-        'use strict';
-        exports.name = 'Knut';
+        exports['default'] = Storage;
       },
       {},
     ],

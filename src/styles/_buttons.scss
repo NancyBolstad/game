@@ -1,0 +1,23 @@
+@import 'mixins';
+@import 'colors';
+
+.cta {
+  &-main {
+    background: $gold;
+    @include create-text-block($size: 1.5rem, $colour: $black, $weight: bold);
+  }
+
+  &-main:hover {
+    color: $black;
+  }
+
+  &-secondary {
+    border: 3px solid $gold;
+    background: transparent;
+    @include create-text-block($size: 1.5rem, $colour: $gold, $weight: bold);
+  }
+
+  &-secondary:hover {
+    color: $gold;
+  }
+}
