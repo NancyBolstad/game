@@ -6,8 +6,12 @@
   "author": "Nancy Bolstad <litchacha@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "browserify -p tsify src/index.ts > public/bundle.js",
-    "watch": "watchify -p tsify src/index.ts -o public/bundle.js -d"
+    "build": "browserify -p tsify src/index.ts > public/bundle.js && node-sass src/styles/index.scss -o public/css/",
+    "build:scripts": "browserify -p tsify src/index.ts > public/bundle.js",
+    "build:styles": "node-sass src/styles/index.scss -o public/css/",
+    "watch": "watchify -p tsify src/index.ts -o public/bundle.js -d && node-sass --watch src/styles/index.scss -o public/css/",
+    "watch:ts": "watchify -p tsify src/index.ts -o public/bundle.js -d",
+    "watch:scss": "node-sass --watch src/styles/index.scss -o public/css/"
   },
   "dependencies": {
     "browserify": "^12.0.1",
@@ -17,8 +21,11 @@
   },
   "devDependencies": {
     "husky": "^3.0.8",
+    "node-sass": "^4.13.0",
     "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1"
+    "pretty-quick": "^1.11.1",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.2"
   },
   "husky": {
     "hooks": {
