@@ -1,0 +1,47 @@
+{
+  "name": "noroff-game",
+  "version": "0.0.1",
+  "private": true,
+  "repository": "git@github.com/NancyBolstad/game.git",
+  "author": "Nancy Bolstad <litchacha@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "3.6.3",
+    "browserify": "^16.2.2",
+    "reading-time": "^1.1.3",
+    "watchify": "^3.11.0"
+  },
+  "devDependencies": {
+    "husky": "^3.0.8",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0"
+  },
+  "scripts": {
+    "build": "browserify index.js -o dist/bundle.js",
+    "watch": "watchify index.js -o dist/bundle.js -v"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/NancyBolstad/game/issues"
+  },
+  "homepage": "https://github.com/NancyBolstad/game#readme"
+}
