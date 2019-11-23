@@ -1,6 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "lib": ["es5", "es2015.promise", "dom"]
-  }
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
