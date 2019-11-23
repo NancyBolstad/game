@@ -35,15 +35,16 @@
     1: [
       function(require, module, exports) {
         'use strict';
-        const storage_1 = require('./scripts/util/storage');
-        const apiService_1 = require('./scripts/util/apiService');
-        const gameStorage = new storage_1.default();
-        let player1 = {
+        Object.defineProperty(exports, '__esModule', { value: true });
+        var storage_1 = require('./scripts/util/storage');
+        var apiService_1 = require('./scripts/util/apiService');
+        var gameStorage = new storage_1.default();
+        var player1 = {
           selectedCharacter: 'one',
           isWinner: false,
           currentPosition: '',
         };
-        let player2 = {
+        var player2 = {
           selectedCharacter: 'two',
           isWinner: false,
           currentPosition: '',
@@ -70,7 +71,7 @@
               }
               function rejected(value) {
                 try {
-                  step(generator.throw(value));
+                  step(generator['throw'](value));
                 } catch (e) {
                   reject(e);
                 }
@@ -82,29 +83,148 @@
                       resolve(result.value);
                     }).then(fulfilled, rejected);
               }
-              step((generator = generator.apply(thisArg, _arguments)).next());
+              step((generator = generator.apply(thisArg, _arguments || [])).next());
             });
           };
-        const PAGE_SIZE = 10;
-        const PAGE = 1;
-        const BASE_URL = 'https://www.anapioficeandfire.com/api/characters?';
-        function ApiService({ page, pageSize }) {
-          return __awaiter(this, void 0, void 0, function*() {
-            const url = `${BASE_URL}page=${page ? page : PAGE}&pageSize=${
-              pageSize ? pageSize : PAGE_SIZE
-            }`;
-            try {
-              const response = yield fetch(url);
-              const data = yield response.json();
-              console.log(111111);
-              console.log(data);
-              return data;
-            } catch (err) {
-              throw err;
+        var __generator =
+          (this && this.__generator) ||
+          function(thisArg, body) {
+            var _ = {
+                label: 0,
+                sent: function() {
+                  if (t[0] & 1) throw t[1];
+                  return t[1];
+                },
+                trys: [],
+                ops: [],
+              },
+              f,
+              y,
+              t,
+              g;
+            return (
+              (g = { next: verb(0), throw: verb(1), return: verb(2) }),
+              typeof Symbol === 'function' &&
+                (g[Symbol.iterator] = function() {
+                  return this;
+                }),
+              g
+            );
+            function verb(n) {
+              return function(v) {
+                return step([n, v]);
+              };
             }
+            function step(op) {
+              if (f) throw new TypeError('Generator is already executing.');
+              while (_)
+                try {
+                  if (
+                    ((f = 1),
+                    y &&
+                      (t =
+                        op[0] & 2
+                          ? y['return']
+                          : op[0]
+                          ? y['throw'] || ((t = y['return']) && t.call(y), 0)
+                          : y.next) &&
+                      !(t = t.call(y, op[1])).done)
+                  )
+                    return t;
+                  if (((y = 0), t)) op = [op[0] & 2, t.value];
+                  switch (op[0]) {
+                    case 0:
+                    case 1:
+                      t = op;
+                      break;
+                    case 4:
+                      _.label++;
+                      return { value: op[1], done: false };
+                    case 5:
+                      _.label++;
+                      y = op[1];
+                      op = [0];
+                      continue;
+                    case 7:
+                      op = _.ops.pop();
+                      _.trys.pop();
+                      continue;
+                    default:
+                      if (
+                        !((t = _.trys), (t = t.length > 0 && t[t.length - 1])) &&
+                        (op[0] === 6 || op[0] === 2)
+                      ) {
+                        _ = 0;
+                        continue;
+                      }
+                      if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
+                        _.label = op[1];
+                        break;
+                      }
+                      if (op[0] === 6 && _.label < t[1]) {
+                        _.label = t[1];
+                        t = op;
+                        break;
+                      }
+                      if (t && _.label < t[2]) {
+                        _.label = t[2];
+                        _.ops.push(op);
+                        break;
+                      }
+                      if (t[2]) _.ops.pop();
+                      _.trys.pop();
+                      continue;
+                  }
+                  op = body.call(thisArg, _);
+                } catch (e) {
+                  op = [6, e];
+                  y = 0;
+                } finally {
+                  f = t = 0;
+                }
+              if (op[0] & 5) throw op[1];
+              return { value: op[0] ? op[1] : void 0, done: true };
+            }
+          };
+        Object.defineProperty(exports, '__esModule', { value: true });
+        var PAGE_SIZE = 10;
+        var PAGE = 1;
+        var BASE_URL = 'https://www.anapioficeandfire.com/api/characters?';
+        function ApiService(_a) {
+          var page = _a.page,
+            pageSize = _a.pageSize;
+          return __awaiter(this, void 0, void 0, function() {
+            var url, response, data, err_1;
+            return __generator(this, function(_b) {
+              switch (_b.label) {
+                case 0:
+                  url =
+                    BASE_URL +
+                    'page=' +
+                    (page ? page : PAGE) +
+                    '&pageSize=' +
+                    (pageSize ? pageSize : PAGE_SIZE);
+                  _b.label = 1;
+                case 1:
+                  _b.trys.push([1, 4, , 5]);
+                  return [4, fetch(url)];
+                case 2:
+                  response = _b.sent();
+                  return [4, response.json()];
+                case 3:
+                  data = _b.sent();
+                  console.log(111111);
+                  console.log(data);
+                  return [2, data];
+                case 4:
+                  err_1 = _b.sent();
+                  throw err_1;
+                case 5:
+                  return [2];
+              }
+            });
           });
         }
-        Object.defineProperty(exports, '__esModule', { value: true });
         exports.default = ApiService;
       },
       {},
@@ -112,31 +232,32 @@
     3: [
       function(require, module, exports) {
         'use strict';
-        class Storage {
-          constructor() {
+        Object.defineProperty(exports, '__esModule', { value: true });
+        var Storage = (function() {
+          function Storage() {
             this.storage = window.localStorage;
           }
-          set(key, value) {
+          Storage.prototype.set = function(key, value) {
             this.storage.setItem(key, value);
-          }
-          get(key) {
+          };
+          Storage.prototype.get = function(key) {
             return this.storage.getItem(key);
-          }
-          delete(key) {
+          };
+          Storage.prototype.delete = function(key) {
             this.storage.removeItem(key);
-          }
-          setSerialize(key, value) {
+          };
+          Storage.prototype.setSerialize = function(key, value) {
             this.set(key, JSON.stringify(value));
-          }
-          getUnserialize(key) {
-            const data = this.get(key);
+          };
+          Storage.prototype.getUnserialize = function(key) {
+            var data = this.get(key);
             if (!data) {
               return null;
             }
             return JSON.parse(data);
-          }
-        }
-        Object.defineProperty(exports, '__esModule', { value: true });
+          };
+          return Storage;
+        })();
         exports.default = Storage;
       },
       {},
