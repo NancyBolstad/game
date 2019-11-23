@@ -6,12 +6,12 @@
   "author": "Nancy Bolstad <litchacha@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "browserify -p tsify src/index.ts > docs/bundle.js && node-sass src/styles/index.scss -o docs/css/",
+    "build": "browserify -p tsify src/index.ts > docs/bundle.js && node-sass src/styles/main.scss -o docs/css/",
     "build:scripts": "browserify -p tsify src/index.ts > docs/bundle.js",
-    "build:styles": "node-sass src/styles/index.scss -o docs/css/",
-    "watch": "watchify -p tsify src/index.ts -o docs/bundle.js -d && node-sass --watch src/styles/index.scss -o docs/css/",
+    "build:styles": "node-sass src/styles/main.scss -o docs/css/",
+    "watch": "watchify -p tsify src/index.ts -o docs/bundle.js -d && node-sass --watch src/styles/main.scss -o docs/css/",
     "watch:ts": "watchify -p tsify src/index.ts -o docs/bundle.js -d",
-    "watch:scss": "node-sass --watch src/styles/index.scss -o docs/css/"
+    "watch:scss": "node-sass --watch src/styles/main.scss -o docs/css/"
   },
   "dependencies": {
     "browserify": "^12.0.1",
