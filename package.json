@@ -8,7 +8,7 @@
   "scripts": {
     "build": "browserify -p tsify src/index.ts > docs/bundle.js && node-sass --output-style=expanded src/styles/main.scss -o docs/css/",
     "dev-ts": "watchify -p tsify src/index.ts -o docs/bundle.js -d",
-    "dev-sass": "node-sass -w src/styles/main.scss dist/public/css/main.css",
+    "dev-sass": "node-sass -w --output-style=expanded src/styles/main.scss -o docs/css/",
     "prefix": "postcss docs/css/main.css --use=autoprefixer --map=false --output=docs/css/main.css",
     "minify": "cleancss --output docs/css/main.css docs/css/main.css"
   },
