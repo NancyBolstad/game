@@ -15,23 +15,32 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
-    <title>Ice and Fire Board Game</title>
+    <title>Game</title>
   </head>
   <body>
     <header>
-      <div class="block block--welcome">
-        <div class="block__content block__content--welcome">
+      <div class="block block--createUser">
+        <div class="block__content block__content--createUser">
           <h1 class="block__content__title--small">
-            Board Game <span class="block__content__title--large">A Song Of Ice and Fire</span>
+            Type in your game user name:
           </h1>
-          <h2 class="block__content__subTitle">
-            When you play the game of thrones, you win or you die.
-          </h2>
-          <a href="create-user.html" title="Start game" aria-label="Start game" class="cta cta--big"
+          <input
+            class="block__content__input"
+            type="text"
+            id="userInputName"
+            placeholder="Mickey"
+          />
+          <a
+            href="select.html"
+            title="Go to character selection page"
+            aria-label="Go to character selection page"
+            class="cta cta--big"
             >Get Started</a
           >
         </div>
       </div>
     </header>
+    <script src="./bundle.js"></script>
+    <script src="./server.bundle.js"></script>
   </body>
 </html>
