@@ -1,9 +1,6 @@
 import Storage from './scripts/util/storage';
 import { PlayerTypes } from './scripts/util/types';
 import ApiService from './scripts/util/apiService';
-const io = require('socket.io-client');
-const socket = io('http://localhost:3000');
-console.log(socket.id);
 
 const gameStorage = new Storage();
 let player1: PlayerTypes = {

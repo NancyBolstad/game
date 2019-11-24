@@ -10,6 +10,7 @@
 .cta:hover,
 .cta:active,
 .cta:focus {
+  text-decoration: none;
   opacity: 0.7;
 }
 
