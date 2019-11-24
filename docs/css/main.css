@@ -111,6 +111,10 @@ h2 {
   margin-bottom: 2.1rem;
 }
 
+.game-wrapper {
+  display: flex;
+}
+
 .gameBoard {
   display: flex;
   flex-wrap: wrap;
@@ -123,4 +127,10 @@ h2 {
 .tile {
   flex-basis: 20%;
   height: 134px;
+}
+
+.dice {
+  width: 120px;
+  margin-left: 50px;
+  margin-top: 500px;
 }
