@@ -1,14 +1,10 @@
-const path = require('path');
 const express = require('express');
+const path = require('path');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-app.use(express.static(__dirname));
-
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/docs/index.html');
-});
+app.use(express.static(path.join(__dirname, 'docs')));
 
 io.on('connection', function(socket) {
   console.log(`${socket.id} connected`);
@@ -19,5 +15,5 @@ io.on('connection', function(socket) {
 });
 
 server.listen(3000, () => {
-  console.log('Listening on *: 3000');
+  console.log('Game server running at http://localhost:3000/');
 });

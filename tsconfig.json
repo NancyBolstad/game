@@ -14,6 +14,6 @@
     "experimentalDecorators": true,
     "removeComments": true
   },
-  "include": ["src/**/*", "bin", "server.js"],
+  "include": ["src/**/*", "bin", "server.ts"],
   "exclude": ["node_modules"]
 }

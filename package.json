@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build-client": "browserify -p tsify src/index.ts > docs/bundle.js && node-sass --output-style=expanded src/styles/main.scss -o docs/css/",
-    "build-server": "browserify -x server.js > docs/server.bundle.js",
+    "build-server": "browserify -x server.ts > docs/server.bundle.js",
     "browserify": "browserify -p tsify src/index.ts > docs/bundle.js",
     "node-sass": "node-sass src/styles/main.scss -o docs/css/",
     "watch": "watchify -p tsify src/index.ts -o docs/bundle.js -d && node-sass --watch src/styles/main.scss -o docs/css/",
@@ -15,7 +15,7 @@
     "watch:scss": "node-sass --watch src/styles/main.scss -o docs/css/",
     "prefix": "postcss docs/css/main.css --use=autoprefixer --map=false --output=docs/css/main.css",
     "minify": "cleancss --output docs/css/main.css docs/css/main.css",
-    "start": "node server.js"
+    "start": "node server.ts"
   },
   "dependencies": {
     "autoprefixer": "^9.7.2",
