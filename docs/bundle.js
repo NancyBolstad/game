@@ -39,18 +39,7 @@
         var storage_1 = require('./scripts/util/storage');
         var apiService_1 = require('./scripts/util/apiService');
         var gameStorage = new storage_1.default();
-        var player1 = {
-          selectedCharacter: 'one',
-          isWinner: false,
-          currentPosition: '',
-        };
-        var player2 = {
-          selectedCharacter: 'two',
-          isWinner: false,
-          currentPosition: '',
-        };
-        gameStorage.set('player1', player1.selectedCharacter);
-        gameStorage.set('player2', player2.selectedCharacter);
+        gameStorage.set('player1', 'test');
         apiService_1.default({ page: 1, pageSize: 10 });
       },
       { './scripts/util/apiService': 2, './scripts/util/storage': 3 },

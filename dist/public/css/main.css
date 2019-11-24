@@ -6,19 +6,16 @@
   cursor: pointer;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
-
 .cta:hover,
 .cta:active,
 .cta:focus {
   text-decoration: none;
   opacity: 0.7;
 }
-
 .cta:disabled {
   pointer-events: none;
   opacity: 0.5;
 }
-
 .cta--big {
   height: 52px;
   min-width: 200px;
@@ -28,7 +25,6 @@
   color: #000000;
   font-weight: bold;
 }
-
 .cta--big:hover {
   color: #000000;
 }
@@ -69,7 +65,6 @@ h2 {
   width: 100%;
   height: 100%;
 }
-
 .block--welcome {
   background-color: black;
   background-repeat: no-repeat;
@@ -78,7 +73,6 @@ h2 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('https://res.cloudinary.com/dnkfgmzy1/image/upload/q_auto:good/v1574011164/game/wa7ak54wbtrhnvfihpqc.jpg');
 }
-
 .block__content {
   width: 90vw;
   height: 100vh;
@@ -89,12 +83,10 @@ h2 {
   margin-left: auto;
   margin-right: auto;
 }
-
 .block__content__title--small {
   text-align: center;
   margin-bottom: 2rem;
 }
-
 .block__content__title--large {
   display: block;
   margin-top: 1rem;
@@ -105,7 +97,6 @@ h2 {
   color: white;
   font-weight: bold;
 }
-
 .block__content__subTitle {
   text-align: center;
   margin-bottom: 2rem;
