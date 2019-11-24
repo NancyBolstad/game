@@ -41,6 +41,37 @@
         var gameStorage = new storage_1.default();
         gameStorage.set('player1', 'test');
         apiService_1.default({ page: 1, pageSize: 10 });
+        var BOARD_SIZE = 30;
+        var boardContainer = document.querySelector('.gameBoard');
+        for (var i = 1; i <= BOARD_SIZE; i++) {
+          var tile = document.createElement('div');
+          tile.classList.add('tile');
+          tile.setAttribute('tile-index', '' + i);
+          if (i % 2 !== 0) {
+            tile.style.backgroundColor = 'brown';
+          } else {
+            tile.style.backgroundColor = 'white';
+          }
+          if (i == 4) {
+            tile.style.backgroundColor = 'orange';
+          }
+          if (i == 7) {
+            tile.style.backgroundColor = 'orange';
+          }
+          if (i == 13) {
+            tile.style.backgroundColor = 'orange';
+          }
+          if (i == 16) {
+            tile.style.backgroundColor = 'orange';
+          }
+          if (i == 23) {
+            tile.style.backgroundColor = 'orange';
+          }
+          if (i == 29) {
+            tile.style.backgroundColor = 'orange';
+          }
+          boardContainer.appendChild(tile);
+        }
       },
       { './scripts/util/apiService': 2, './scripts/util/storage': 3 },
     ],

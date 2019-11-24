@@ -65,3 +65,16 @@ h2 {
     }
   }
 }
+
+.gameBoard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  margin-top: 45px;
+  @include margin-center;
+}
+
+.tile {
+  flex-basis: 20%;
+  height: 134px;
+}
