@@ -3,7 +3,7 @@ const tsify = require('tsify');
 
 browserify()
   .add('src/index.ts')
-  .plugin(tsify, { target: 'es6' })
+  .plugin(tsify, { target: 'es5' })
   .bundle()
   .on('error', function(error) {
     console.error(error.toString());

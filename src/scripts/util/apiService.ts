@@ -1,5 +1,4 @@
 import { ResponseObjTypes } from './types';
-declare var fetch;
 
 const PAGE_SIZE: number = 10;
 const PAGE: number = 1;

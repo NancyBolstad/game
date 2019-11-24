@@ -1,6 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "lib": ["es5", "es2015.promise", "dom"]
-  }
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "removeComments": true
+  },
+  "include": ["src/**/*", "bin", "server.ts"],
+  "exclude": ["node_modules"]
 }

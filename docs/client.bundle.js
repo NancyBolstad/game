@@ -9443,6 +9443,9 @@
         var io = require('socket.io-client');
         var socket = io('http://localhost:3000');
         console.log(socket.id);
+        io.on('connection', function(socket) {
+          alert('Welcome ' + socket.id);
+        });
         var gameStorage = new storage_1.default();
         var player1 = {
           selectedCharacter: 'one',
