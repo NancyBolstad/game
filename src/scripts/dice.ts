@@ -1,4 +1,4 @@
-import { dice } from './util/dice';
+import { diceArray } from './util/dice';
 
 export const diceNumber = () => {
   return Math.floor(Math.random() * 6);
@@ -9,5 +9,5 @@ export function rollDice(): number {
 }
 
 export function createDiceIcon(dicePoint: number) {
-  return dice[dicePoint + 1];
+  return diceArray[dicePoint + 1];
 }

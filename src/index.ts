@@ -1,4 +1,4 @@
-import { board, dice } from './scripts/util/containers';
+import { board, diceContainer } from './scripts/util/containers';
 import Storage from './scripts/util/storage';
 import showCharacter from './scripts/showCharacter';
 import { diceArray } from './scripts/util/dice';
@@ -14,6 +14,6 @@ showCharacter(Sansa);
 
 const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
 
-dice.innerHTML = diceArray[defaultIndex - 1];
+if (diceContainer != null) diceContainer.innerHTML = diceArray[defaultIndex - 1];
 
-createBoard(board);
+if (board != null) createBoard(board);

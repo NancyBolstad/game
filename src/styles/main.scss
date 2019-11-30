@@ -40,6 +40,19 @@ h2 {
     );
   }
 
+  &--select {
+    display: flex;
+    justify-content: center;
+
+    div {
+      width: 31.333%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+
   &__content {
     width: 90vw;
     height: 100vh;
