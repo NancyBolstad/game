@@ -1,21 +1,19 @@
+import { board, dice } from './scripts/util/containers';
 import Storage from './scripts/util/storage';
-import ApiService from './scripts/util/apiService';
-import { dice } from './scripts/util/dice';
+import showCharacter from './scripts/showCharacter';
+import { diceArray } from './scripts/util/dice';
 import { createBoard } from './scripts/board';
+import { Jon, Samwell, Sansa } from './scripts/util/characters';
 
 const gameStorage = new Storage();
 
-gameStorage.set('player1', 'test');
+gameStorage.get('test');
+showCharacter(Samwell);
+showCharacter(Jon);
+showCharacter(Sansa);
 
-ApiService({ page: 1, pageSize: 10 });
+const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
 
-const boardContainer: HTMLDivElement = document.querySelector('.gameBoard');
+dice.innerHTML = diceArray[defaultIndex - 1];
 
-const diceContainer = document.getElementById('diceImage');
-
-const index: number = Math.floor(Math.random() * 6) + 1;
-
-console.log(index);
-if (diceContainer) diceContainer.innerHTML = dice[index - 1];
-
-if (boardContainer) createBoard(boardContainer);
+createBoard(board);
