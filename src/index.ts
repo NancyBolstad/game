@@ -1,18 +1,15 @@
 import { createBoard } from './scripts/board';
-import showCharacter from './scripts/showCharacter';
-import { Jon, Samwell, Sansa } from './scripts/util/characters';
+import getCharacterCards from './scripts/showCharacter';
+import characters from './scripts/util/characters';
 import { board, characterList, diceContainer, startTile } from './scripts/util/containers';
 import { diceArray } from './scripts/util/dice';
 import Storage from './scripts/util/storage';
 import handleDrag from './scripts/handleDrag';
 
 export const gameStorage = new Storage();
-gameStorage.get('test');
 
 if (characterList != null) {
-  showCharacter(Samwell);
-  showCharacter(Jon);
-  showCharacter(Sansa);
+  getCharacterCards(characters);
   handleDrag();
 }
 
