@@ -1,21 +1,25 @@
-import Storage from './scripts/util/storage';
-import ApiService from './scripts/util/apiService';
-import { dice } from './scripts/util/dice';
 import { createBoard } from './scripts/board';
+import showCharacter from './scripts/showCharacter';
+import { Jon, Samwell, Sansa } from './scripts/util/characters';
+import { board, characterList, diceContainer, startTile } from './scripts/util/containers';
+import { diceArray } from './scripts/util/dice';
+import Storage from './scripts/util/storage';
+import handleDrag from './scripts/handleDrag';
 
-const gameStorage = new Storage();
+export const gameStorage = new Storage();
+gameStorage.get('test');
 
-gameStorage.set('player1', 'test');
+if (characterList != null) {
+  showCharacter(Samwell);
+  showCharacter(Jon);
+  showCharacter(Sansa);
+  handleDrag();
+}
 
-ApiService({ page: 1, pageSize: 10 });
+const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
 
-const boardContainer: HTMLDivElement = document.querySelector('.gameBoard');
+if (diceContainer != null) diceContainer.innerHTML = diceArray[defaultIndex - 1];
 
-const diceContainer = document.getElementById('diceImage');
+if (board != null) createBoard(board);
 
-const index: number = Math.floor(Math.random() * 6) + 1;
-
-console.log(index);
-if (diceContainer) diceContainer.innerHTML = dice[index - 1];
-
-if (boardContainer) createBoard(boardContainer);
+if (startTile != null) startTile.innerHTML = diceArray[defaultIndex - 1];

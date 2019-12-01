@@ -36,25 +36,36 @@
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
-        var storage_1 = require('./scripts/util/storage');
-        var apiService_1 = require('./scripts/util/apiService');
-        var dice_1 = require('./scripts/util/dice');
         var board_1 = require('./scripts/board');
-        var gameStorage = new storage_1.default();
-        gameStorage.set('player1', 'test');
-        apiService_1.default({ page: 1, pageSize: 10 });
-        var boardContainer = document.querySelector('.gameBoard');
-        var diceContainer = document.getElementById('diceImage');
-        var index = Math.floor(Math.random() * 6) + 1;
-        console.log(index);
-        if (diceContainer) diceContainer.innerHTML = dice_1.dice[index - 1];
-        if (boardContainer) board_1.createBoard(boardContainer);
+        var showCharacter_1 = require('./scripts/showCharacter');
+        var characters_1 = require('./scripts/util/characters');
+        var containers_1 = require('./scripts/util/containers');
+        var dice_1 = require('./scripts/util/dice');
+        var storage_1 = require('./scripts/util/storage');
+        var handleDrag_1 = require('./scripts/handleDrag');
+        exports.gameStorage = new storage_1.default();
+        exports.gameStorage.get('test');
+        if (containers_1.characterList != null) {
+          showCharacter_1.default(characters_1.Samwell);
+          showCharacter_1.default(characters_1.Jon);
+          showCharacter_1.default(characters_1.Sansa);
+          handleDrag_1.default();
+        }
+        var defaultIndex = Math.floor(Math.random() * 6) + 1;
+        if (containers_1.diceContainer != null)
+          containers_1.diceContainer.innerHTML = dice_1.diceArray[defaultIndex - 1];
+        if (containers_1.board != null) board_1.createBoard(containers_1.board);
+        if (containers_1.startTile != null)
+          containers_1.startTile.innerHTML = dice_1.diceArray[defaultIndex - 1];
       },
       {
         './scripts/board': 2,
-        './scripts/util/apiService': 3,
-        './scripts/util/dice': 4,
-        './scripts/util/storage': 5,
+        './scripts/handleDrag': 3,
+        './scripts/showCharacter': 4,
+        './scripts/util/characters': 5,
+        './scripts/util/containers': 6,
+        './scripts/util/dice': 7,
+        './scripts/util/storage': 8,
       },
     ],
     2: [
@@ -64,7 +75,7 @@
         function createBoard(container) {
           for (var i = 1; i <= 30; i++) {
             var tile = document.createElement('div');
-            tile.classList.add('tile');
+            tile.className = 'tile tile-index-' + i;
             tile.setAttribute('tile-index', '' + i);
             if (i % 2 !== 0) {
               tile.style.backgroundColor = 'brown';
@@ -97,6 +108,87 @@
       {},
     ],
     3: [
+      function(require, module, exports) {
+        'use strict';
+        Object.defineProperty(exports, '__esModule', { value: true });
+        var index_1 = require('../index');
+        var dragged;
+        function handleDragStart(event) {
+          dragged = event.target;
+          event.target.style.opacity = '0.5';
+        }
+        function handleDragEnd(event) {
+          event.target.style.opacity = '';
+        }
+        function handleDragOver(event) {
+          event.preventDefault();
+        }
+        function handleDragEnter(event) {
+          if (event.target.className === 'startZone') {
+            event.target.style.background = 'purple';
+          }
+          if (event.target.className === 'endZone1') {
+            event.target.style.background = 'purple';
+          }
+          if (event.target.className === 'endZone2') {
+            event.target.style.background = 'purple';
+          }
+        }
+        function handleDragLeave(event) {
+          if (event.target.className === 'startZone') {
+            event.target.style.background = '';
+          }
+          if (event.target.className === 'endZone1') {
+            event.target.style.background = '';
+          }
+          if (event.target.className === 'endZone2') {
+            event.target.style.background = '';
+          }
+        }
+        function handleDrop(event) {
+          event.preventDefault();
+          if (event.target.className == 'endZone1') {
+            if (event.target.hasChildNodes()) {
+              alert('Only one character is allowed.');
+              event.target.style.background = '';
+              return null;
+            }
+            event.target.style.background = '';
+            dragged.parentNode.removeChild(dragged);
+            event.target.appendChild(dragged);
+            index_1.gameStorage.set('player1Name', '' + dragged.getAttribute('key'));
+          }
+          if (event.target.className == 'endZone2') {
+            if (event.target.hasChildNodes()) {
+              alert('Only one character is allowed.');
+              event.target.style.background = '';
+              return null;
+            }
+            event.target.style.background = '';
+            dragged.parentNode.removeChild(dragged);
+            event.target.appendChild(dragged);
+            index_1.gameStorage.set('player2Name', '' + dragged.getAttribute('key'));
+          }
+          if (event.target.className == 'startZone') {
+            event.target.style.background = '';
+            dragged.parentNode.removeChild(dragged);
+            event.target.appendChild(dragged);
+            console.log(dragged);
+          }
+        }
+        function handleDrag() {
+          document.addEventListener('dragstart', handleDragStart);
+          document.addEventListener('dragend', handleDragEnd);
+          document.addEventListener('dragover', handleDragOver);
+          document.addEventListener('dragenter', handleDragEnter);
+          document.addEventListener('dragleave', handleDragLeave);
+          document.addEventListener('drop', handleDrop);
+        }
+        exports.default = handleDrag;
+      },
+      { '../index': 1 },
+    ],
+    4: [
       function(require, module, exports) {
         'use strict';
         var __awaiter =
@@ -228,37 +320,33 @@
             }
           };
         Object.defineProperty(exports, '__esModule', { value: true });
-        var PAGE_SIZE = 10;
-        var PAGE = 1;
-        var BASE_URL = 'https://www.anapioficeandfire.com/api/characters?';
-        function ApiService(_a) {
-          var page = _a.page,
-            pageSize = _a.pageSize;
+        var containers_1 = require('./util/containers');
+        var BASE_URL = 'https://www.anapioficeandfire.com/api/characters/';
+        function showCharacter(characterName) {
           return __awaiter(this, void 0, void 0, function() {
-            var url, response, data, err_1;
-            return __generator(this, function(_b) {
-              switch (_b.label) {
+            var url, response, data, component, err_1;
+            return __generator(this, function(_a) {
+              switch (_a.label) {
                 case 0:
-                  url =
-                    BASE_URL +
-                    'page=' +
-                    (page ? page : PAGE) +
-                    '&pageSize=' +
-                    (pageSize ? pageSize : PAGE_SIZE);
-                  _b.label = 1;
+                  url = '' + BASE_URL + characterName;
+                  _a.label = 1;
                 case 1:
-                  _b.trys.push([1, 4, , 5]);
+                  _a.trys.push([1, 4, , 5]);
                   return [4, fetch(url)];
                 case 2:
-                  response = _b.sent();
+                  response = _a.sent();
                   return [4, response.json()];
                 case 3:
-                  data = _b.sent();
-                  console.log(111111);
+                  data = _a.sent();
+                  component = document.createElement('div');
+                  component.setAttribute('draggable', 'true');
+                  component.setAttribute('key', '' + data.name);
+                  component.innerHTML = ' <h4>' + data.name + '</h4><p>' + data.born + '</p>';
+                  containers_1.characterList.append(component);
                   console.log(data);
                   return [2, data];
                 case 4:
-                  err_1 = _b.sent();
+                  err_1 = _a.sent();
                   throw err_1;
                 case 5:
                   return [2];
@@ -266,15 +354,38 @@
             });
           });
         }
-        exports.default = ApiService;
+        exports.default = showCharacter;
       },
-      {},
+      { './util/containers': 6 },
     ],
-    4: [
+    5: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
-        var diceIconCollection = {
+        exports.Samwell = 954;
+        exports.Jon = 583;
+        exports.Cersei = 238;
+        exports.Tyrion = 1052;
+        exports.Sansa = 957;
+      },
+      {},
+    ],
+    6: [
+      function(require, module, exports) {
+        'use strict';
+        Object.defineProperty(exports, '__esModule', { value: true });
+        exports.characterList = document.querySelector('.startZone');
+        exports.board = document.querySelector('.gameBoard');
+        exports.diceContainer = document.getElementById('diceImage');
+        exports.startTile = document.querySelector('tile-index-1');
+      },
+      {},
+    ],
+    7: [
+      function(require, module, exports) {
+        'use strict';
+        Object.defineProperty(exports, '__esModule', { value: true });
+        var diceIcons = {
           point1:
             '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 80x; width: 80px;"><rect fill="#000" fill-opacity="1" height="512" width="512" rx="32" ry="32"></rect><g class="" transform="translate(0,0)" style="touch-action: none;"><path d="M74.5 36A38.5 38.5 0 0 0 36 74.5v363A38.5 38.5 0 0 0 74.5 476h363a38.5 38.5 0 0 0 38.5-38.5v-363A38.5 38.5 0 0 0 437.5 36h-363zM256 206a50 50 0 0 1 0 100 50 50 0 0 1 0-100z" fill="#fff" fill-opacity="1"></path></g></svg>',
           point2:
@@ -288,18 +399,18 @@
           point6:
             '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 80px; width: 80px;"><rect fill="#000" fill-opacity="1" height="512" width="512" rx="32" ry="32"></rect><g class="" transform="translate(0,0)" style="touch-action: none;"><path d="M74.5 36A38.5 38.5 0 0 0 36 74.5v363A38.5 38.5 0 0 0 74.5 476h363a38.5 38.5 0 0 0 38.5-38.5v-363A38.5 38.5 0 0 0 437.5 36h-363zm48.97 36.03A50 50 0 0 1 172 122a50 50 0 0 1-100 0 50 50 0 0 1 51.47-49.97zm268 0A50 50 0 0 1 440 122a50 50 0 0 1-100 0 50 50 0 0 1 51.47-49.97zM122 206a50 50 0 0 1 0 100 50 50 0 0 1 0-100zm268 0a50 50 0 0 1 0 100 50 50 0 0 1 0-100zM123.47 340.03A50 50 0 0 1 172 390a50 50 0 0 1-100 0 50 50 0 0 1 51.47-49.97zm268 0A50 50 0 0 1 440 390a50 50 0 0 1-100 0 50 50 0 0 1 51.47-49.97z" fill="#fff" fill-opacity="1"></path></g></svg>',
         };
-        exports.dice = [
-          diceIconCollection.point1,
-          diceIconCollection.point2,
-          diceIconCollection.point3,
-          diceIconCollection.point4,
-          diceIconCollection.point5,
-          diceIconCollection.point6,
+        exports.diceArray = [
+          diceIcons.point1,
+          diceIcons.point2,
+          diceIcons.point3,
+          diceIcons.point4,
+          diceIcons.point5,
+          diceIcons.point6,
         ];
       },
       {},
     ],
-    5: [
+    8: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });

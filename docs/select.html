@@ -25,17 +25,31 @@
   </head>
   <body>
     <div class="container py-4">
-      <div class="row justify-content-center">
-        <h1 class="justify-content-center">Player 1 Choose Character</h1>
-      </div>
+      <h1 class="row justify-content-center">Choose characters</h1>
+      <h3 class="row justify-content-center">Drag and drop the card to the selected area</h3>
     </div>
     <div class="container py-4">
       <div class="row justify-content-center">
         <div class="block block--draggable">
           <div class="startZone"></div>
-          <div class="endZone1">Drag and Drop1</div>
-          <div class="endZone2">Drag and Drop 2</div>
+          <div class="selectedArea">
+            <div>
+              Player 1 selected
+              <div class="endZone1"></div>
+            </div>
+            <div>
+              Player 2 selected
+              <div class="endZone1"></div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <a href="game.html" title="Start the game" aria-label="Start the game" class="cta cta--big"
+          >Next</a
+        >
       </div>
     </div>
     <script src="bundle.js"></script>
