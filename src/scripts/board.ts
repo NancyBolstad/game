@@ -1,7 +1,7 @@
 export function createBoard(container: HTMLDivElement): void {
   for (let i = 1; i <= 30; i++) {
     const tile = document.createElement('div');
-    tile.classList.add('tile');
+    tile.className = `tile tile-index-${i}`;
 
     tile.setAttribute('tile-index', `${i}`);
 

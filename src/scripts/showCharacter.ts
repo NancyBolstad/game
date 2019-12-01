@@ -12,6 +12,7 @@ async function showCharacter(characterName: number) {
 
     const component = document.createElement('div');
     component.className = 'col-lg-4 p-3 col-md-6';
+    component.setAttribute('draggable', 'true');
     component.innerHTML = ` <div class="p-4"><h4>${data.name}</h4><p lass="package__description">${data.born}</p></div>`;
 
     if (characterList != null) characterList.append(component);

@@ -79,19 +79,6 @@ h2 {
     url('https://res.cloudinary.com/dnkfgmzy1/image/upload/q_auto:good/v1574011164/game/wa7ak54wbtrhnvfihpqc.jpg');
 }
 
-.block--select {
-  display: flex;
-  justify-content: center;
-}
-
-.block--select div {
-  width: 31.333%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
 .block__content {
   width: 90vw;
   height: 100vh;
@@ -131,15 +118,16 @@ h2 {
 .gameBoard {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
-  margin-top: 45px;
+  width: 480px;
+  height: 480px;
+  margin-top: 68px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .tile {
-  flex-basis: 20%;
-  height: 134px;
+  width: 96px;
+  height: 80px;
 }
 
 .dice {
