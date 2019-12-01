@@ -10,40 +10,16 @@
       content="Play game of thrones themed multiplayer board game for free."
     />
     <meta name="keywords" content="game of thrones, board game, online, free" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <title>Game Creation</title>
   </head>
   <body>
-    <div class="container py-4 mt-5">
-      <div class="row justify-content-center">
-        <h1 class="justify-content-center">Player 1 Choose Character</h1>
-        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="dropzone1">
+      <div draggable="true">
+        This div is draggable
       </div>
     </div>
-    <div class="container">
-      <div class="row justify-content-center block--select"></div>
-      <div class="container py-4">
-        <div class="row justify-content-center">
-          <a
-            href="game.html"
-            title="Go to the intro section"
-            aria-label="Go to the intro section"
-            class="cta cta--big"
-            >Next</a
-          >
-        </div>
-      </div>
-    </div>
+    <div class="dropzone2" id="selected"></div>
     <script src="bundle.js"></script>
   </body>
 </html>
