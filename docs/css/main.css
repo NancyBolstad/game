@@ -151,13 +151,20 @@ h2 {
 }
 
 .endZone1 {
-  width: 30%;
   height: 80px;
   background: blueviolet;
 }
 
 .endZone2 {
-  width: 30%;
   height: 80px;
   background: blueviolet;
+}
+
+.selectedArea {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectedArea div {
+  width: 45%;
 }
