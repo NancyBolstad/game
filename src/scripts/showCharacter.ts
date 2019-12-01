@@ -11,7 +11,7 @@ async function showCharacter(characterName: number) {
     const data: ResponseObjTypes = await response.json();
 
     const component = document.createElement('div');
-    component.setAttribute('draggable', 'true');
+    component.classList.add('card');
     component.setAttribute('key', `${data.name}`);
     component.innerHTML = ` <h4>${data.name}</h4><p>${data.born}</p>`;
 

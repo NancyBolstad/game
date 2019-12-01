@@ -1,40 +1,8 @@
-import { board, diceContainer, startTile, characterList } from './scripts/util/containers';
-import Storage from './scripts/util/storage';
-import showCharacter from './scripts/showCharacter';
-import { diceArray } from './scripts/util/dice';
-import { createBoard } from './scripts/board';
-import { Jon, Samwell, Sansa } from './scripts/util/characters';
-
-export const gameStorage = new Storage();
-gameStorage.get('test');
-
-if (characterList != null) {
-  showCharacter(Samwell);
-  showCharacter(Jon);
-  showCharacter(Sansa);
+export function handleDragStart(event: DragEvent, refElement: HTMLElement) {
+  refElement = event.target as HTMLElement;
+  (event.target as HTMLElement).style.background = 'yellow';
 }
 
-const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
-
-if (diceContainer != null) diceContainer.innerHTML = diceArray[defaultIndex - 1];
-
-if (board != null) createBoard(board);
-
-if (startTile != null) startTile.innerHTML = diceArray[defaultIndex - 1];
-
-var dragged: HTMLElement;
-var hasSelected: boolean;
-
-document.addEventListener(
-  'dragstart',
-  function(event: DragEvent) {
-    // store a ref. on the dragged elem
-    dragged = event.target as HTMLElement;
-    // make it half transparent
-    (event.target as HTMLElement).style.background = 'yellow';
-  },
-  false,
-);
 document.addEventListener(
   'dragend',
   function(event: DragEvent) {
