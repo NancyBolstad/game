@@ -113,8 +113,6 @@
         Object.defineProperty(exports, '__esModule', { value: true });
         var index_1 = require('../index');
         var dragged;
-        var hasPlayer1Selected = false;
-        var hasPlayer2Selected = false;
         function handleDragStart(event) {
           dragged = event.target;
           event.target.style.opacity = '0.5';
@@ -149,34 +147,32 @@
         }
         function handleDrop(event) {
           event.preventDefault();
-          if (hasPlayer1Selected && event.target.className == 'endZone1') {
-            alert('Only one character is allowed.');
-            event.target.style.background = '';
-          }
-          if (hasPlayer2Selected && event.target.className == 'endZone2') {
-            alert('Only one character is allowed.');
-            event.target.style.background = '';
-          }
-          if (!hasPlayer1Selected && event.target.className == 'endZone1') {
+          if (event.target.className == 'endZone1') {
+            if (event.target.hasChildNodes()) {
+              alert('Only one character is allowed.');
+              event.target.style.background = '';
+              return null;
+            }
             event.target.style.background = '';
             dragged.parentNode.removeChild(dragged);
             event.target.appendChild(dragged);
             index_1.gameStorage.set('player1Name', '' + dragged.getAttribute('key'));
-            hasPlayer1Selected = true;
           }
-          if (!hasPlayer2Selected && event.target.className == 'endZone2') {
+          if (event.target.className == 'endZone2') {
+            if (event.target.hasChildNodes()) {
+              alert('Only one character is allowed.');
+              event.target.style.background = '';
+              return null;
+            }
             event.target.style.background = '';
             dragged.parentNode.removeChild(dragged);
             event.target.appendChild(dragged);
             index_1.gameStorage.set('player2Name', '' + dragged.getAttribute('key'));
-            hasPlayer2Selected = true;
           }
           if (event.target.className == 'startZone') {
             event.target.style.background = '';
             dragged.parentNode.removeChild(dragged);
             event.target.appendChild(dragged);
-            if ((hasPlayer1Selected = true)) hasPlayer1Selected = false;
-            if ((hasPlayer2Selected = true)) hasPlayer2Selected = false;
             console.log(dragged);
           }
         }
