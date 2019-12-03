@@ -18,32 +18,28 @@
     <title>Game Creation</title>
   </head>
   <body>
-    <div class="block">
-      <h1>Choose characters</h1>
-      <h3>Drag and drop the card to the selected area</h3>
+    <div class="block block--intro">
+      <h1>Drag and drop the selected character card to the selected area</h1>
     </div>
     <div class="block">
       <div class="block block--draggable">
         <div id="startZone" class="cards"></div>
         <div id="selectedArea">
           <div>
-            Player 1 selected
+            <h3>Player 1's selected character</h3>
             <div id="endZone1"></div>
           </div>
           <div>
-            Player 2 selected
+            <h3>Player 2 selected character</h3>
             <div id="endZone2"></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container py-4">
-      <div class="row justify-content-center">
-        <a href="game.html" title="Start the game" aria-label="Start the game" class="cta cta--big"
-          >Next</a
-        >
-      </div>
-    </div>
+    <a href="game.html" title="Start the game" aria-label="Start the game" class="cta cta--big"
+      >Next</a
+    >
+
     <script src="bundle.js"></script>
   </body>
 </html>

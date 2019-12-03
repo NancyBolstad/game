@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   width: 95vw;
-  height: 280px;
+  height: 230px;
   border: 2px dotted blueviolet;
   border-radius: 2rem;
 }
 
 .card {
-  width: 15%;
+  width: 10%;
   background: white;
   border-radius: 1rem;
   padding: 2rem;
@@ -20,9 +20,14 @@
   flex-direction: center;
   justify-content: center;
 
-  h2,
-  h3 {
+  h4,
+  h5 {
     color: black;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
   }
 }
 

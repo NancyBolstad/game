@@ -20,8 +20,8 @@ async function showCharacter(characterName: number) {
     component.className = 'card';
     component.setAttribute('draggable', 'true');
     component.setAttribute('key', `${data.name}`);
-    const cardTitle = ` <h2>${data.name}</h2>`;
-    const cardSubTitle = `<h3>${data.titles[0]}</h3>`;
+    const cardTitle = ` <h4>${data.name}</h4>`;
+    const cardSubTitle = `<h5>${data.titles[0]}</h5>`;
     const cardContent = `<ul><li>Born:${data.born}</li><li>${data.culture}</li></ul>`;
     component.innerHTML = cardTitle + cardSubTitle + cardContent;
 

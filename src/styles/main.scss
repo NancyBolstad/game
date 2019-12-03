@@ -6,7 +6,7 @@
 @import 'select';
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -51,6 +51,10 @@ h2 {
       $source:
         'https://res.cloudinary.com/dnkfgmzy1/image/upload/q_auto:good/v1574011164/game/wa7ak54wbtrhnvfihpqc.jpg'
     );
+  }
+
+  &--intro {
+    @include verticalSpacer($top: 1.5rem, $bottom: 1.2rem);
   }
 
   &--draggable {
@@ -121,15 +125,19 @@ h2 {
 
 #selectedArea {
   display: flex;
-  justify-content: space-between;
-  width: 80vw;
+  justify-content: center;
+  width: 90vw;
+  margin-bottom: 2rem;
+  text-align: center;
+
   div {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
+    border-radius: 2rem;
+    margin: 1rem;
     div {
-      margin-left: auto;
-      margin-right: auto;
+      div {
+        width: 9.5rem;
+        height: 9rem;
+      }
     }
   }
 }
