@@ -53,7 +53,10 @@
         var defaultIndex = Math.floor(Math.random() * 6) + 1;
         if (containers_1.diceContainer != null)
           containers_1.diceContainer.innerHTML = dice_1.diceArray[defaultIndex - 1];
-        if (containers_1.board != null) board_1.createBoard(containers_1.board);
+        if (containers_1.board != null) {
+          board_1.createBoard(containers_1.board);
+          playGame();
+        }
         if (containers_1.startTile != null)
           containers_1.startTile.innerHTML = dice_1.diceArray[defaultIndex - 1];
         if (containers_1.validateSelectionBtn != null)
@@ -62,80 +65,115 @@
             handleSelection_1.handleSelection,
             false,
           );
-        var isPlaying = true;
-        var player1Status = 1;
-        var player2Status = 1;
-        var finalScore = 30;
-        while (isPlaying) {
-          runPlayer1Turn();
-          runPlayer2Turn();
-        }
-        function runPlayer1Turn() {
-          var playerCurrentRoll = rollDice_1.rollDice();
-          console.log('Player 1 rolled: ' + playerCurrentRoll);
-          if (playerCurrentRoll === 6) {
-            player1Status += playerCurrentRoll;
-            updateStatus(player1Status);
-            alert('Since you rolled 6, you got a Bonus movement');
+        function playGame() {
+          var isPlaying = true;
+          var player1Status = 1;
+          var player2Status = 1;
+          while (isPlaying) {
             runPlayer1Turn();
-          } else {
-            player1Status += playerCurrentRoll;
-            updateStatus(player1Status);
-          }
-          checkWinner(player1Status);
-        }
-        function runPlayer2Turn() {
-          var playerCurrentRoll = rollDice_1.rollDice();
-          console.log('Player 1 rolled: ' + playerCurrentRoll);
-          if (playerCurrentRoll === 6) {
-            player2Status += playerCurrentRoll;
-            updateStatus(player2Status);
-            alert('Since you rolled 6, you got a Bonus movement');
-            alert('Bonus movement');
             runPlayer2Turn();
-          } else {
-            player2Status += playerCurrentRoll;
-            updateStatus(player2Status);
           }
-          checkWinner(player2Status);
-        }
-        function updateStatus(status) {
-          switch (status) {
-            case board_1.trap1:
-              status -= 1;
-              alert('Trap 1 move back 1 steps');
-              break;
-            case board_1.trap2:
-              status -= 2;
-              alert('Trap 1 move back 2 steps');
-              break;
-            case board_1.trap3:
-              status += 3;
-              alert('Trap 3 move back 3 steps');
-              break;
-            case board_1.trap4:
-              status += 4;
-              alert('Trap 4 move back 4 steps');
-              break;
-            case board_1.trap5:
-              status += 5;
-              alert('Trap 5 move back 5 steps');
-              break;
-            case board_1.trap6:
-              status += 6;
-              alert('Trap 6 move back 6 steps');
-              break;
-            default:
-              alert('Move ' + status + ' steps forward');
-              console.log('player1Status:' + player1Status);
-              break;
+          function runPlayer1Turn() {
+            var currentDicePoint = rollDice_1.rollDice();
+            console.log('Player 1 rolled: ' + currentDicePoint);
+            if (currentDicePoint === 6) {
+              player1Status += currentDicePoint;
+              updatePlayer1Status();
+              console.log('Since you rolled 6, you got a Bonus movement');
+              runPlayer1Turn();
+            } else {
+              player1Status += currentDicePoint;
+              updatePlayer1Status();
+            }
+            console.log('player1Status:' + player1Status);
+            console.log('player2Status:' + player2Status);
+            if (player1Status >= 30) {
+              console.log('Player 1 winner');
+              isPlaying = false;
+              return null;
+            }
           }
-        }
-        function checkWinner(status) {
-          if (status >= finalScore) {
-            isPlaying = false;
-            var winner = player1Status > player2Status ? 'Player1' : 'Player2';
-            alert('We got winnter ' + winner);
+          function runPlayer2Turn() {
+            var currentDicePoint = rollDice_1.rollDice();
+            console.log('Player 2 rolled: ' + currentDicePoint);
+            if (currentDicePoint === 6) {
+              player2Status += currentDicePoint;
+              updatePlayer2Status();
+              console.log('Since you rolled 6, you got a Bonus movement');
+              runPlayer2Turn();
+            } else {
+              player2Status += currentDicePoint;
+              updatePlayer2Status();
+            }
+            console.log('player1Status:' + player1Status);
+            console.log('player2Status:' + player2Status);
+            if (player2Status >= 30) {
+              console.log('Player 2 winner');
+              isPlaying = false;
+              return null;
+            }
+          }
+          function updatePlayer2Status() {
+            switch (player2Status) {
+              case board_1.trap1:
+                player2Status -= 1;
+                console.log('Trap 1: move back 1 steps >>>Current player 2: ' + player2Status);
+                break;
+              case board_1.trap2:
+                player2Status -= 2;
+                console.log('Trap 2: move back 2 steps >>>Current player 2: ' + player2Status);
+                break;
+              case board_1.trap3:
+                player2Status -= 3;
+                console.log('Trap 3: move back 3 steps >>>Current player 2: ' + player2Status);
+                break;
+              case board_1.trap4:
+                player2Status -= 4;
+                console.log('Trap 4: move back 4 steps >>>Current player 2: ' + player2Status);
+                break;
+              case board_1.trap5:
+                player2Status -= 5;
+                console.log('Trap 5: move back 5 steps >>>Current player 2: ' + player2Status);
+                break;
+              case board_1.trap6:
+                player2Status -= 6;
+                console.log('Trap 6: move back 6 steps >>>Current player 2: ' + player2Status);
+                break;
+              default:
+                console.log('Normal: >>>Current player 2: ' + player2Status);
+                break;
+            }
+          }
+          function updatePlayer1Status() {
+            switch (player1Status) {
+              case board_1.trap1:
+                player1Status -= 1;
+                console.log('Trap 1: move back 1 steps >>>Current player 1: ' + player1Status);
+                break;
+              case board_1.trap2:
+                player1Status -= 2;
+                console.log('Trap 2: move back 2 steps >>>Current player 1: ' + player1Status);
+                break;
+              case board_1.trap3:
+                player1Status -= 3;
+                console.log('Trap 3: move back 3 steps >>>Current player 1: ' + player1Status);
+                break;
+              case board_1.trap4:
+                player1Status -= 4;
+                console.log('Trap 4: move back 4 steps >>>Current player 1: ' + player1Status);
+                break;
+              case board_1.trap5:
+                player1Status -= 5;
+                console.log('Trap 5: move back 5 steps >>>Current player 1: ' + player1Status);
+                break;
+              case board_1.trap6:
+                player1Status -= 6;
+                console.log('Trap 6: move back 6 steps >>>Current player 1: ' + player1Status);
+                break;
+              default:
+                console.log('Normal: >>>Current player 1: ' + player1Status);
+                break;
+            }
           }
         }
       },
@@ -305,7 +343,7 @@
           return Math.floor(Math.random() * 6);
         };
         function rollDice() {
-          return Math.floor(Math.random() * 6);
+          return Math.floor(Math.random() * 6) + 1;
         }
         exports.rollDice = rollDice;
         function createDiceIcon(dicePoint) {

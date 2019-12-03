@@ -1,5 +1,4 @@
 class Game {
-  private FINAL_SCORE: number = 30;
   private isPlaying: boolean;
   private player1Score: number;
   private player2Score: number;
