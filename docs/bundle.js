@@ -46,9 +46,7 @@
         exports.gameStorage = new storage_1.default();
         exports.gameStorage.get('test');
         if (containers_1.characterList != null) {
-          showCharacter_1.default(characters_1.Samwell);
-          showCharacter_1.default(characters_1.Jon);
-          showCharacter_1.default(characters_1.Sansa);
+          showCharacter_1.default(characters_1.default);
           handleDrag_1.default();
         }
         var defaultIndex = Math.floor(Math.random() * 6) + 1;
@@ -322,6 +320,11 @@
         Object.defineProperty(exports, '__esModule', { value: true });
         var containers_1 = require('./util/containers');
         var BASE_URL = 'https://www.anapioficeandfire.com/api/characters/';
+        function getCharacterCards(characters) {
+          characters.map(function(element) {
+            showCharacter(element);
+          });
+        }
         function showCharacter(characterName) {
           return __awaiter(this, void 0, void 0, function() {
             var url, response, data, component, err_1;
@@ -354,7 +357,7 @@
             });
           });
         }
-        exports.default = showCharacter;
+        exports.default = getCharacterCards;
       },
       { './util/containers': 6 },
     ],
@@ -362,11 +365,13 @@
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
-        exports.Samwell = 954;
-        exports.Jon = 583;
-        exports.Cersei = 238;
-        exports.Tyrion = 1052;
-        exports.Sansa = 957;
+        var Samwell = 954;
+        var Jon = 583;
+        var Cersei = 238;
+        var Tyrion = 1052;
+        var Sansa = 957;
+        var characters = [Samwell, Jon, Cersei, Tyrion, Sansa];
+        exports.default = characters;
       },
       {},
     ],

@@ -3,6 +3,12 @@ import { ResponseObjTypes } from './util/types';
 
 const BASE_URL: string = 'https://www.anapioficeandfire.com/api/characters/';
 
+function getCharacterCards(characters: number[]) {
+  characters.map(element => {
+    showCharacter(element);
+  });
+}
+
 async function showCharacter(characterName: number) {
   const url = `${BASE_URL}${characterName}`;
 
@@ -25,4 +31,4 @@ async function showCharacter(characterName: number) {
   }
 }
 
-export default showCharacter;
+export default getCharacterCards;
