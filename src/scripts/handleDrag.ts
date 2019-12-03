@@ -17,24 +17,24 @@ function handleDragOver(event: DragEvent): void {
 }
 
 function handleDragEnter(event: DragEvent): void {
-  if ((event.target as HTMLElement).className === 'startZone') {
+  if ((event.target as HTMLElement).id === 'startZone') {
     (event.target as HTMLElement).style.background = 'purple';
   }
-  if ((event.target as HTMLElement).className === 'endZone1') {
+  if ((event.target as HTMLElement).id === 'endZone1') {
     (event.target as HTMLElement).style.background = 'purple';
   }
-  if ((event.target as HTMLElement).className === 'endZone2') {
+  if ((event.target as HTMLElement).id === 'endZone2') {
     (event.target as HTMLElement).style.background = 'purple';
   }
 }
 function handleDragLeave(event: DragEvent): void {
-  if ((event.target as HTMLElement).className === 'startZone') {
+  if ((event.target as HTMLElement).id === 'startZone') {
     (event.target as HTMLElement).style.background = '';
   }
-  if ((event.target as HTMLElement).className === 'endZone1') {
+  if ((event.target as HTMLElement).id === 'endZone1') {
     (event.target as HTMLElement).style.background = '';
   }
-  if ((event.target as HTMLElement).className === 'endZone2') {
+  if ((event.target as HTMLElement).id === 'endZone2') {
     (event.target as HTMLElement).style.background = '';
   }
 }
@@ -44,7 +44,7 @@ function handleDrop(event: DragEvent): void {
   event.preventDefault();
 
   // move dragged elem to the selected drop target
-  if ((event.target as HTMLElement).className == 'endZone1') {
+  if ((event.target as HTMLElement).id == 'endZone1') {
     if ((event.target as HTMLElement).hasChildNodes()) {
       alert('Only one character is allowed.');
       (event.target as HTMLElement).style.background = '';
@@ -56,7 +56,7 @@ function handleDrop(event: DragEvent): void {
     gameStorage.set('player1Name', `${dragged.getAttribute('key')}`);
   }
 
-  if ((event.target as HTMLElement).className == 'endZone2') {
+  if ((event.target as HTMLElement).id == 'endZone2') {
     if ((event.target as HTMLElement).hasChildNodes()) {
       alert('Only one character is allowed.');
       (event.target as HTMLElement).style.background = '';
@@ -68,7 +68,7 @@ function handleDrop(event: DragEvent): void {
     gameStorage.set('player2Name', `${dragged.getAttribute('key')}`);
   }
 
-  if ((event.target as HTMLElement).className == 'startZone') {
+  if ((event.target as HTMLElement).id == 'startZone') {
     (event.target as HTMLElement).style.background = '';
     dragged.parentNode.removeChild(dragged);
     (event.target as HTMLElement).appendChild(dragged);

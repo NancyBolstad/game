@@ -1,5 +1,5 @@
 //page:select-player
-export const characterList: HTMLDivElement = document.querySelector('.startZone');
+export const characterList: HTMLDivElement = document.querySelector('.cards');
 
 //page:game
 export const board: HTMLDivElement = document.querySelector('.gameBoard');
