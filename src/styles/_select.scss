@@ -1,0 +1,37 @@
+.cards {
+  display: flex;
+  justify-content: center;
+  width: 95vw;
+  height: 280px;
+  border: 2px dotted blueviolet;
+  border-radius: 2rem;
+}
+
+.card {
+  width: 15%;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 4px 4px 12px 2px rgba(black, 0.6);
+  transition: 0.2s;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex-direction: center;
+  justify-content: center;
+
+  h2,
+  h3 {
+    color: black;
+  }
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translatey(-4rem);
+}
+
+.card:hover ~ .card,
+.card:focus-within ~ .card {
+  transform: 3rem;
+}
