@@ -19,27 +19,29 @@
   </head>
   <body>
     <div class="block block--intro">
-      <h1>Drag and drop the selected character card to the selected area</h1>
+      <h1>Choose your character</h1>
+      <h2>Drag and drop the character card to the selected area</h2>
     </div>
-    <div class="block">
-      <div class="block block--draggable">
-        <div id="startZone" class="cards"></div>
-        <div id="selectedArea">
-          <div>
-            <h3>Player 1's selected character</h3>
-            <div id="endZone1"></div>
-          </div>
-          <div>
-            <h3>Player 2 selected character</h3>
-            <div id="endZone2"></div>
-          </div>
+    <div class="block block--selection">
+      <div id="startZone" class="cards"></div>
+      <div id="selectedArea">
+        <div>
+          <h3>Player 1's selected character</h3>
+          <div id="endZone1"></div>
+        </div>
+        <div>
+          <h3>Player 2 selected character</h3>
+          <div id="endZone2"></div>
         </div>
       </div>
     </div>
-    <a href="game.html" title="Start the game" aria-label="Start the game" class="cta cta--big"
+    <a
+      href="#"
+      title="Start the game"
+      aria-label="Start the game"
+      class="cta cta--big cta--validation"
       >Next</a
     >
-
     <script src="bundle.js"></script>
   </body>
 </html>

@@ -27,8 +27,6 @@ async function showCharacter(characterName: number) {
 
     characterList.append(component);
 
-    console.log(data);
-
     return data;
   } catch (err) {
     throw err;

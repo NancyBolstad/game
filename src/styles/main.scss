@@ -57,9 +57,10 @@ h2 {
     @include verticalSpacer($top: 1.5rem, $bottom: 1.2rem);
   }
 
-  &--draggable {
+  &--selection {
     display: flex;
     flex-direction: column;
+    max-width: 1330px;
   }
 
   &__content {
@@ -115,29 +116,39 @@ h2 {
 }
 
 #endZone1 {
-  height: 180px;
   background: blueviolet;
+  border-radius: 2rem;
+  height: 13.785rem;
+  margin: 1rem;
+  width: 20vw;
+  padding: 0.2rem;
+
+  div {
+    width: 9.5rem;
+    height: 9rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 #endZone2 {
-  height: 180px;
   background: blueviolet;
+  border-radius: 2rem;
+  height: 13.785rem;
+  margin: 1rem;
+  width: 20vw;
+  padding: 0.2rem;
+
+  div {
+    width: 9.5rem;
+    height: 9rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 #selectedArea {
   display: flex;
   justify-content: center;
-  width: 90vw;
-  margin-bottom: 2rem;
+  width: 100vw;
   text-align: center;
-
-  div {
-    border-radius: 2rem;
-    margin: 1rem;
-    div {
-      div {
-        width: 9.5rem;
-        height: 9rem;
-      }
-    }
-  }
 }

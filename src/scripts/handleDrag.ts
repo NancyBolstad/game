@@ -2,9 +2,7 @@ import { gameStorage } from '../index';
 let dragged: HTMLElement;
 
 function handleDragStart(event: DragEvent): void {
-  // store a ref. on the dragged elem
   dragged = event.target as HTMLElement;
-  // make it half transparent
   (event.target as HTMLElement).style.opacity = '0.5';
 }
 

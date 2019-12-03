@@ -1,16 +1,16 @@
 .cards {
   display: flex;
   justify-content: center;
-  width: 95vw;
-  height: 230px;
+  width: 80vw;
+  height: 240px;
   border: 2px dotted blueviolet;
   border-radius: 2rem;
+  padding: 0.875rem;
 }
 
 .card {
-  width: 10%;
+  width: 13%;
   background: white;
-  border-radius: 1rem;
   padding: 2rem;
   box-shadow: 4px 4px 12px 2px rgba(black, 0.6);
   transition: 0.2s;
