@@ -215,6 +215,9 @@ h2 {
   height: 9rem;
   margin-left: auto;
   margin-right: auto;
+  flex-direction: column;
+  flex-direction: center;
+  justify-content: center;
 }
 
 #endZone2 {
@@ -231,6 +234,9 @@ h2 {
   height: 9rem;
   margin-left: auto;
   margin-right: auto;
+  flex-direction: column;
+  flex-direction: center;
+  justify-content: center;
 }
 
 #selectedArea {

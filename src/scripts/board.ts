@@ -1,3 +1,10 @@
+export const trap1: number = 4;
+export const trap2: number = 7;
+export const trap3: number = 13;
+export const trap4: number = 16;
+export const trap5: number = 23;
+export const trap6: number = 29;
+
 export function createBoard(container: HTMLDivElement): void {
   for (let i = 1; i <= 30; i++) {
     const tile = document.createElement('div');

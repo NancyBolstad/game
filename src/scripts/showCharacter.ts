@@ -1,5 +1,6 @@
 import { characterList } from './util/containers';
 import { ResponseObjTypes } from './util/types';
+import { diceIcons } from './util/dice';
 
 const BASE_URL: string = 'https://www.anapioficeandfire.com/api/characters/';
 
@@ -20,10 +21,9 @@ async function showCharacter(characterName: number) {
     component.className = 'card';
     component.setAttribute('draggable', 'true');
     component.setAttribute('key', `${data.name}`);
-    const cardTitle = ` <h4>${data.name}</h4>`;
-    const cardSubTitle = `<h5>${data.titles[0]}</h5>`;
-    const cardContent = `<ul><li>Born:${data.born}</li><li>${data.culture}</li></ul>`;
-    component.innerHTML = cardTitle + cardSubTitle + cardContent;
+    const cardTitle = ` <h3>${data.name}</h3>`;
+    const cardSubTitle = `<p>${data.aliases[0]}</p>`;
+    component.innerHTML = cardTitle + diceIcons.point1 + cardSubTitle;
 
     characterList.append(component);
 
