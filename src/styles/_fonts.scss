@@ -1,0 +1,59 @@
+@mixin create-heading(
+  $size: false,
+  $colour: false,
+  $weight: false,
+  $transform: false,
+  $textAlign: false
+) {
+  font-family: 'Lora', serif;
+
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $colour {
+    color: $colour;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $transform {
+    text-transform: $transform;
+  }
+
+  @if $textAlign {
+    text-align: $textAlign;
+  }
+}
+
+@mixin create-text-block(
+  $size: false,
+  $colour: false,
+  $weight: false,
+  $lineHeight: false,
+  $maxWidth: false
+) {
+  font-family: 'Open Sans', sans-serif;
+
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $colour {
+    color: $colour;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+
+  @if $maxWidth {
+    max-width: $maxWidth;
+  }
+}

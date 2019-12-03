@@ -1,5 +1,5 @@
-@import 'mixins';
 @import 'colors';
+@import 'fonts';
 
 .cta {
   display: flex;
@@ -22,8 +22,8 @@
   }
 
   &--big {
-    height: 52px;
-    min-width: 200px;
+    height: 3rem;
+    width: 14rem;
     background: $gold;
     @include create-text-block($size: 1.5rem, $colour: $black, $weight: bold);
   }

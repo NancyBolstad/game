@@ -44,7 +44,6 @@
         var storage_1 = require('./scripts/util/storage');
         var handleDrag_1 = require('./scripts/handleDrag');
         exports.gameStorage = new storage_1.default();
-        exports.gameStorage.get('test');
         if (containers_1.characterList != null) {
           showCharacter_1.default(characters_1.default);
           handleDrag_1.default();
