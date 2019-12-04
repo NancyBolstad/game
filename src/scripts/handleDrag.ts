@@ -16,13 +16,13 @@ function handleDragOver(event: DragEvent): void {
 
 function handleDragEnter(event: DragEvent): void {
   if ((event.target as HTMLElement).id === 'startZone') {
-    (event.target as HTMLElement).style.background = 'purple';
+    (event.target as HTMLElement).style.background = '#745625';
   }
   if ((event.target as HTMLElement).id === 'endZone1') {
-    (event.target as HTMLElement).style.background = 'purple';
+    (event.target as HTMLElement).style.background = '#745625';
   }
   if ((event.target as HTMLElement).id === 'endZone2') {
-    (event.target as HTMLElement).style.background = 'purple';
+    (event.target as HTMLElement).style.background = '#745625';
   }
 }
 function handleDragLeave(event: DragEvent): void {
