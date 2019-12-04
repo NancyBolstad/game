@@ -33,6 +33,12 @@ a {
   cursor: pointer;
 }
 
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
 h1 {
   @include create-heading($size: 2.3rem, $colour: $brand, $weight: bold);
 }
