@@ -5,7 +5,7 @@
   $transform: false,
   $textAlign: false
 ) {
-  font-family: 'Lora', serif;
+  font-family: 'Cinzel', serif;
 
   @if $size {
     font-size: $size;
@@ -35,7 +35,7 @@
   $lineHeight: false,
   $maxWidth: false
 ) {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Cinzel', serif;
 
   @if $size {
     font-size: $size;

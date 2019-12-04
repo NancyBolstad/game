@@ -8,3 +8,22 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($source);
   }
 }
+
+@mixin create-dropZone() {
+  background: $brand;
+  border-radius: 2rem;
+  height: 13.785rem;
+  margin: 1rem;
+  width: 20vw;
+  padding: 0.2rem;
+
+  div {
+    width: 9.5rem;
+    height: 9rem;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    flex-direction: center;
+    justify-content: center;
+  }
+}
