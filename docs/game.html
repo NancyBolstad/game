@@ -17,9 +17,15 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <title>Game Creation</title>
   </head>
-  <body class="game-wrapper">
-    <div class="dice"><span id="diceImage"></span><button>Roll Dice</button></div>
-    <div class="gameBoard"></div>
+  <body>
+    <main class="game--wrapper">
+      <div class="flexChild--gameBoard">
+        <div class="gameBoard"></div>
+      </div>
+      <div class="flexChild--gameBoard">
+        <div class="dice"><span id="diceImage"></span><button>Roll Dice</button></div>
+      </div>
+    </main>
     <script src="bundle.js"></script>
   </body>
 </html>
