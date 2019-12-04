@@ -208,6 +208,10 @@
   justify-content: center;
 }
 
+.btn--wrapper {
+  display: flex;
+}
+
 body {
   overflow-x: hidden;
   width: 100%;

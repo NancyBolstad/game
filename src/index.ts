@@ -10,6 +10,8 @@ import {
   diceContainer,
   startTile,
   validateSelectionBtn,
+  player1Btn,
+  player2Btn,
 } from './scripts/util/containers';
 import { diceArray } from './scripts/util/dice';
 import Storage from './scripts/util/storage';
@@ -20,20 +22,28 @@ if (characterList != null) {
   getCharacterCards(characters);
   handleDrag();
 }
-
-const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
-
-if (diceContainer != null) diceContainer.innerHTML = diceArray[defaultIndex - 1];
-
 if (board != null) {
   createBoard(board);
   playGame();
 }
 
+const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
+
+if (diceContainer != null) showDiceResult();
+
 if (startTile != null) startTile.innerHTML = diceArray[defaultIndex - 1];
 
 if (validateSelectionBtn != null)
   validateSelectionBtn.addEventListener('click', handleSelection, false);
+
+if (player1Btn) player1Btn.addEventListener('click', showDiceResult, false);
+if (player2Btn) player2Btn.addEventListener('click', showDiceResult, false);
+
+function showDiceResult() {
+  console.log(99999999999999);
+  const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
+  diceContainer.innerHTML = diceArray[defaultIndex - 1];
+}
 
 function playGame() {
   let isPlaying: boolean = true;
