@@ -22,7 +22,7 @@ async function showCharacter(characterName: number) {
     component.setAttribute('draggable', 'true');
     component.setAttribute('key', `${data.name}`);
     const cardTitle = ` <h3>${data.name}</h3>`;
-    const cardSubTitle = `<p>${data.aliases[0]}</p>`;
+    const cardSubTitle = `<p>${data.titles[0]}</p>`;
     component.innerHTML = cardTitle + diceIcons.point1 + cardSubTitle;
 
     characterList.append(component);

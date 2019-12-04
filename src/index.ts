@@ -50,8 +50,8 @@ function playGame() {
     console.log(`Player 1 rolled: ${currentDicePoint}`);
 
     if (currentDicePoint === 6) {
-      player1Status += currentDicePoint;
-      updatePlayer1Status();
+      player1Status += currentDicePoint; //update
+      updatePlayer1Status(); //checkUpdate
       console.log('Since you rolled 6, you got a Bonus movement');
       runPlayer1Turn();
     } else {
