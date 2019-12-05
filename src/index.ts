@@ -164,3 +164,5 @@ function playGame() {
     }
   }
 }
+
+console.log(gameStorage.get('player1Name'));

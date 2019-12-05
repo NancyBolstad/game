@@ -1,5 +1,6 @@
 import { characterList } from './util/containers';
 import { ResponseObjTypes } from './util/types';
+import createImage from './util/createImage';
 
 const BASE_URL: string = 'https://www.anapioficeandfire.com/api/characters/';
 
@@ -20,11 +21,11 @@ async function showCharacter(characterNameIndex: number) {
     component.className = 'card';
     component.setAttribute('draggable', 'true');
     component.setAttribute('key', `${characterNameIndex}`);
-    const characterImage = document.createElement('img');
-    characterImage.setAttribute('draggable', 'false');
-    const test = `<img draggable="false" src="https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575549674/game/${characterNameIndex}.png" class="card__image">`;
+    const cardImage = `<img draggable="false" src=${createImage(
+      characterNameIndex,
+    )} class="card__image">`;
     const cardTitle = ` <h3>${data.name}</h3>`;
-    component.innerHTML = test + cardTitle;
+    component.innerHTML = cardImage + cardTitle;
 
     characterList.append(component);
 
