@@ -47,45 +47,60 @@
 #endZone1 {
   background: #c99240;
   border-radius: 2rem;
-  height: 13.785rem;
   margin: 1rem;
-  width: 20vw;
+  width: 350px;
+  height: 280px;
   padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #endZone1 div {
-  width: 9.5rem;
-  height: 9rem;
-  margin-left: auto;
-  margin-right: auto;
-  flex-direction: column;
-  flex-direction: center;
-  justify-content: center;
+  width: 100%;
+  height: 180px;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+#endZone1 div img {
+  width: 108px;
+  height: 148px;
 }
 
 #endZone2 {
   background: #c99240;
   border-radius: 2rem;
-  height: 13.785rem;
   margin: 1rem;
-  width: 20vw;
+  width: 350px;
+  height: 280px;
   padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #endZone2 div {
-  width: 9.5rem;
-  height: 9rem;
-  margin-left: auto;
-  margin-right: auto;
-  flex-direction: column;
-  flex-direction: center;
-  justify-content: center;
+  width: 100%;
+  height: 180px;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+#endZone2 div img {
+  width: 108px;
+  height: 148px;
 }
 
 #selectedArea {
   display: flex;
   justify-content: center;
   width: 100vw;
+  max-width: 1280px;
   text-align: center;
 }
 
@@ -93,43 +108,42 @@
   display: flex;
   justify-content: center;
   width: 80vw;
-  height: 240px;
-  border: 2px dotted #c99240;
+  height: 320px;
   border-radius: 2.5rem;
-  padding: 0.875rem;
+  padding: 2.25rem;
+  margin-top: 1rem;
 }
 
 .card {
-  width: 13%;
-  background: white;
-  padding: 2rem;
-  box-shadow: 4px 4px 12px 2px rgba(0, 0, 0, 0.6);
+  width: 20%;
+  padding: 0.5rem;
+  margin: 1rem;
   transition: 0.2s;
-  color: black;
+  color: wheat;
   display: flex;
   flex-direction: column;
-  flex-direction: center;
+  align-items: center;
   justify-content: center;
-}
-
-.card h4,
-.card h5 {
-  color: black;
-}
-
-.card ul {
-  margin: 0;
-  padding: 0;
+  text-align: center;
 }
 
 .card:hover,
 .card:focus-within {
-  transform: translatey(-4rem);
+  transform: translatey(-1rem);
 }
 
 .card:hover ~ .card,
 .card:focus-within ~ .card {
-  transform: 3rem;
+  transform: 1rem;
+}
+
+.card__image {
+  width: 100%;
+  height: 230px;
+}
+
+.cta--validation {
+  margin: 3.5rem auto;
 }
 
 .game--wrapper {
@@ -197,6 +211,10 @@
 .tile {
   width: 6rem;
   height: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .dice {
@@ -210,6 +228,11 @@
 
 .btn--wrapper {
   display: flex;
+}
+
+.board__figure {
+  width: 3rem;
+  height: 4.25rem;
 }
 
 body {

@@ -1,3 +1,5 @@
+import createImage from './util/createImage';
+
 export const trap1: number = 4;
 export const trap2: number = 7;
 export const trap3: number = 13;
@@ -8,9 +10,8 @@ export const trap6: number = 29;
 export function createBoard(container: HTMLDivElement): void {
   for (let i = 1; i <= 30; i++) {
     const tile = document.createElement('div');
-    tile.className = `tile tile-index-${i}`;
-
-    tile.setAttribute('tile-index', `${i}`);
+    tile.className = `tile`;
+    tile.setAttribute('id', `tile-index-${i}`);
 
     if (i % 2 !== 0) {
       tile.style.backgroundColor = 'brown';
@@ -39,5 +40,21 @@ export function createBoard(container: HTMLDivElement): void {
     }
 
     container.appendChild(tile);
+  }
+}
+
+export function displayPlayers(container: HTMLElement, playerIndex: number) {
+  const player: HTMLImageElement = document.createElement('img');
+
+  player.src = `${createImage(playerIndex)}`;
+
+  player.setAttribute('class', 'board__figure');
+
+  player.setAttribute('alt', `Game figure no.${playerIndex}`);
+
+  player.setAttribute('id', `figure-${playerIndex}`);
+
+  if (container != null) {
+    container.appendChild(player);
   }
 }
