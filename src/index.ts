@@ -33,7 +33,6 @@ if (validateSelectionBtn != null)
   validateSelectionBtn.addEventListener('click', handleSelection, false);
 
 function playGame() {
-  let isPlaying: boolean = true;
   let player1Status: number = 1;
   let player2Status: number = 1;
   let isPlayer1Turn: boolean = true;
@@ -44,45 +43,48 @@ function playGame() {
 
   player2Btn.addEventListener('click', runPlayer2Turn, false);
 
-  while (isPlaying) {
-    runPlayer1Turn();
-    runPlayer2Turn();
-  }
-
   function runPlayer1Turn(): void {
     const currentDicePoint = rollDice();
     showDiceResult(diceContainer, currentDicePoint);
     console.log(`Player 1 rolled: ${currentDicePoint}`);
+    player1Status += currentDicePoint;
+
+    if (player1Status >= 30) {
+      console.log('Player 1 winner');
+      alert('Winner');
+      player1Btn.disabled = true;
+      player2Btn.disabled = true;
+      return null;
+    }
 
     if (currentDicePoint === 6) {
-      player1Status += currentDicePoint; //update
       updatePlayer1Status(); //checkUpdate
       console.log('Since you rolled 6, you got a Bonus movement');
-      runPlayer1Turn();
+      return null;
     } else {
-      player1Status += currentDicePoint;
       updatePlayer1Status();
     }
     console.log(`player1Status:${player1Status}`);
     console.log(`player2Status:${player2Status}`);
-
-    if (player1Status >= 30) {
-      console.log('Player 1 winner');
-      isPlaying = false;
-      return null;
-    }
+    isPlayer1Turn = false;
+    updateButton(isPlayer1Turn, player1Btn, player2Btn);
   }
 
   function runPlayer2Turn(): void {
     const currentDicePoint = rollDice();
     showDiceResult(diceContainer, currentDicePoint);
     console.log(`Player 2 rolled: ${currentDicePoint}`);
+    player2Status += currentDicePoint;
+
+    if (player2Status >= 30) {
+      console.log('Player 2 winner');
+      return null;
+    }
 
     if (currentDicePoint === 6) {
-      player2Status += currentDicePoint;
       updatePlayer2Status();
       console.log('Since you rolled 6, you got a Bonus movement');
-      runPlayer2Turn();
+      return null;
     } else {
       player2Status += currentDicePoint;
       updatePlayer2Status();
@@ -90,11 +92,8 @@ function playGame() {
     console.log(`player1Status:${player1Status}`);
     console.log(`player2Status:${player2Status}`);
 
-    if (player2Status >= 30) {
-      console.log('Player 2 winner');
-      isPlaying = false;
-      return null;
-    }
+    isPlayer1Turn = true;
+    updateButton(isPlayer1Turn, player1Btn, player2Btn);
   }
 
   function updatePlayer2Status() {
