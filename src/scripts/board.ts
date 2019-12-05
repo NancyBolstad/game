@@ -1,3 +1,6 @@
+import createImage from './util/createImage';
+import { gameStorage } from '../index';
+
 export const trap1: number = 4;
 export const trap2: number = 7;
 export const trap3: number = 13;
@@ -16,6 +19,22 @@ export function createBoard(container: HTMLDivElement): void {
       tile.style.backgroundColor = 'brown';
     } else {
       tile.style.backgroundColor = 'white';
+    }
+
+    if (i == 1) {
+      const player1: HTMLImageElement = document.createElement('img');
+      const player2: HTMLImageElement = document.createElement('img');
+      player1.className = 'board__figure';
+      player2.className = 'board__figure';
+      const player1Index: number = gameStorage.getUnserialize('player1Name');
+      const player2Index: number = gameStorage.getUnserialize('player2Name');
+
+      player1.src = createImage(player1Index);
+
+      player2.src = createImage(player2Index);
+
+      tile.appendChild(player1);
+      tile.appendChild(player2);
     }
 
     if (i == 4) {

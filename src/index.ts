@@ -8,7 +8,6 @@ import {
   board,
   characterList,
   diceContainer,
-  startTile,
   validateSelectionBtn,
   player1Btn,
   player2Btn,
@@ -27,11 +26,7 @@ if (board != null) {
   playGame();
 }
 
-const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
-
 if (diceContainer != null) showDiceResult();
-
-if (startTile != null) startTile.innerHTML = diceArray[defaultIndex - 1];
 
 if (validateSelectionBtn != null)
   validateSelectionBtn.addEventListener('click', handleSelection, false);

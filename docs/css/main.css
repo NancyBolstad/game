@@ -226,6 +226,11 @@
   display: flex;
 }
 
+.board__figure {
+  width: 3rem;
+  height: 4.25rem;
+}
+
 body {
   overflow-x: hidden;
   width: 100%;
