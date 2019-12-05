@@ -16,40 +16,53 @@ function rollDice(): number {
   return Math.floor(Math.random() * 6) + 1;
 }
 
+function removePlayer(player: number): void {
+  document.getElementById(`figure-${player}`).remove();
+}
+
 function runGame(): void {
-  if (board != null) {
+  const player1: number = gameStorage.getUnserialize('player1Name');
+  const player2: number = gameStorage.getUnserialize('player2Name');
+  if (board != null && player1 && player2) {
     createBoard(board);
-    playGame();
+    playGame(player1, player2);
     if (diceContainer != null) showDiceResult(diceContainer, rollDice());
   }
 }
 
-function playGame() {
+function playGame(player1: number, player2: number): void {
+  const startPlace: HTMLElement = document.getElementById('tile-index-1');
   let player1Status: number = 1;
   let player2Status: number = 1;
   let isPlayer1Turn: boolean = true;
 
-  const startPlace: HTMLElement = document.getElementById('tile-index-1');
-  const player1Index: number = gameStorage.getUnserialize('player1Name');
-  const player2Index: number = gameStorage.getUnserialize('player2Name');
-  displayPlayers(startPlace, player1Index);
-  displayPlayers(startPlace, player2Index);
-
+  displayPlayers(startPlace, player1);
+  displayPlayers(startPlace, player2);
   updateButton(isPlayer1Turn, player1Btn, player2Btn);
+
   player1Btn.addEventListener('click', runPlayer1Turn, false);
   player2Btn.addEventListener('click', runPlayer2Turn, false);
+
   function runPlayer1Turn(): void {
     const currentDicePoint = rollDice();
     showDiceResult(diceContainer, currentDicePoint);
     console.log(`Player 1 rolled: ${currentDicePoint}`);
+    removePlayer(player1);
     player1Status += currentDicePoint;
+
     if (player1Status >= 30) {
-      console.log('Player 1 winner');
-      alert('Winner');
+      const finalPosition = document.getElementById('tile-index-30');
+      displayPlayers(finalPosition, player1);
       player1Btn.disabled = true;
       player2Btn.disabled = true;
+      console.log('Player 1 winner');
+      alert('Winner');
       return null;
     }
+
+    const updatePosition = document.getElementById(`tile-index-${player1Status}`);
+    displayPlayers(updatePosition, player1);
+
     if (currentDicePoint === 6) {
       updatePlayer1Status(); //checkUpdate
       console.log('Since you rolled 6, you got a Bonus movement');
@@ -62,21 +75,33 @@ function playGame() {
     isPlayer1Turn = false;
     updateButton(isPlayer1Turn, player1Btn, player2Btn);
   }
+
   function runPlayer2Turn(): void {
     const currentDicePoint = rollDice();
     showDiceResult(diceContainer, currentDicePoint);
     console.log(`Player 2 rolled: ${currentDicePoint}`);
-    player2Status += currentDicePoint;
+    removePlayer(player2);
+    player1Status += currentDicePoint;
+
     if (player2Status >= 30) {
+      const finalPosition = document.getElementById('tile-index-30');
+      displayPlayers(finalPosition, player2);
+      player1Btn.disabled = true;
+      player2Btn.disabled = true;
       console.log('Player 2 winner');
+      alert('Winner!!!');
+      return null;
       return null;
     }
+
+    const updatePosition = document.getElementById(`tile-index-${player1Status}`);
+    displayPlayers(updatePosition, player2);
+
     if (currentDicePoint === 6) {
       updatePlayer2Status();
       console.log('Since you rolled 6, you got a Bonus movement');
       return null;
     } else {
-      player2Status += currentDicePoint;
       updatePlayer2Status();
     }
     console.log(`player1Status:${player1Status}`);
@@ -92,6 +117,8 @@ function playGame() {
         break;
       case trap2:
         player2Status -= 2;
+        const updatePosition = document.getElementById(`tile-index-${player2Status}`);
+        displayPlayers(updatePosition, player2);
         console.log(`Trap 2: move back 2 steps >>>Current player 2: ${player2Status}`);
         break;
       case trap3:

@@ -52,6 +52,8 @@ export function displayPlayers(container: HTMLElement, playerIndex: number) {
 
   player.setAttribute('alt', `Game figure no.${playerIndex}`);
 
+  player.setAttribute('id', `figure-${playerIndex}`);
+
   if (container != null) {
     container.appendChild(player);
   }

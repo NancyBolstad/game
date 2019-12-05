@@ -56,23 +56,26 @@
         function rollDice() {
           return Math.floor(Math.random() * 6) + 1;
         }
+        function removePlayer(player) {
+          document.getElementById('figure-' + player).remove();
+        }
         function runGame() {
-          if (containers_1.board != null) {
+          var player1 = index_1.gameStorage.getUnserialize('player1Name');
+          var player2 = index_1.gameStorage.getUnserialize('player2Name');
+          if (containers_1.board != null && player1 && player2) {
             board_1.createBoard(containers_1.board);
-            playGame();
+            playGame(player1, player2);
             if (containers_1.diceContainer != null)
               game_1.showDiceResult(containers_1.diceContainer, rollDice());
           }
         }
-        function playGame() {
+        function playGame(player1, player2) {
+          var startPlace = document.getElementById('tile-index-1');
           var player1Status = 1;
           var player2Status = 1;
           var isPlayer1Turn = true;
-          var startPlace = document.getElementById('tile-index-1');
-          var player1Index = index_1.gameStorage.getUnserialize('player1Name');
-          var player2Index = index_1.gameStorage.getUnserialize('player2Name');
-          board_1.displayPlayers(startPlace, player1Index);
-          board_1.displayPlayers(startPlace, player2Index);
+          board_1.displayPlayers(startPlace, player1);
+          board_1.displayPlayers(startPlace, player2);
           game_1.updateButton(isPlayer1Turn, containers_1.player1Btn, containers_1.player2Btn);
           containers_1.player1Btn.addEventListener('click', runPlayer1Turn, false);
           containers_1.player2Btn.addEventListener('click', runPlayer2Turn, false);
@@ -80,14 +83,19 @@
             var currentDicePoint = rollDice();
             game_1.showDiceResult(containers_1.diceContainer, currentDicePoint);
             console.log('Player 1 rolled: ' + currentDicePoint);
+            removePlayer(player1);
             player1Status += currentDicePoint;
             if (player1Status >= 30) {
-              console.log('Player 1 winner');
-              alert('Winner');
+              var finalPosition = document.getElementById('tile-index-30');
+              board_1.displayPlayers(finalPosition, player1);
               containers_1.player1Btn.disabled = true;
               containers_1.player2Btn.disabled = true;
+              console.log('Player 1 winner');
+              alert('Winner');
               return null;
             }
+            var updatePosition = document.getElementById('tile-index-' + player1Status);
+            board_1.displayPlayers(updatePosition, player1);
             if (currentDicePoint === 6) {
               updatePlayer1Status();
               console.log('Since you rolled 6, you got a Bonus movement');
@@ -104,17 +112,25 @@
             var currentDicePoint = rollDice();
             game_1.showDiceResult(containers_1.diceContainer, currentDicePoint);
             console.log('Player 2 rolled: ' + currentDicePoint);
-            player2Status += currentDicePoint;
+            removePlayer(player2);
+            player1Status += currentDicePoint;
             if (player2Status >= 30) {
+              var finalPosition = document.getElementById('tile-index-30');
+              board_1.displayPlayers(finalPosition, player2);
+              containers_1.player1Btn.disabled = true;
+              containers_1.player2Btn.disabled = true;
               console.log('Player 2 winner');
+              alert('Winner!!!');
+              return null;
               return null;
             }
+            var updatePosition = document.getElementById('tile-index-' + player1Status);
+            board_1.displayPlayers(updatePosition, player2);
             if (currentDicePoint === 6) {
               updatePlayer2Status();
               console.log('Since you rolled 6, you got a Bonus movement');
               return null;
             } else {
-              player2Status += currentDicePoint;
               updatePlayer2Status();
             }
             console.log('player1Status:' + player1Status);
@@ -130,6 +146,8 @@
                 break;
               case board_1.trap2:
                 player2Status -= 2;
+                var updatePosition = document.getElementById('tile-index-' + player2Status);
+                board_1.displayPlayers(updatePosition, player2);
                 console.log('Trap 2: move back 2 steps >>>Current player 2: ' + player2Status);
                 break;
               case board_1.trap3:
@@ -268,6 +286,7 @@
           player.src = '' + createImage_1.default(playerIndex);
           player.setAttribute('class', 'board__figure');
           player.setAttribute('alt', 'Game figure no.' + playerIndex);
+          player.setAttribute('id', 'figure-' + playerIndex);
           if (container != null) {
             container.appendChild(player);
           }
