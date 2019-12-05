@@ -12,10 +12,11 @@ import {
   player1Btn,
   player2Btn,
 } from './scripts/util/containers';
-import { diceArray } from './scripts/util/dice';
 import Storage from './scripts/util/storage';
+import { updateButton, showDiceResult } from './scripts/game';
 
 export const gameStorage = new Storage();
+const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
 
 if (characterList != null) {
   getCharacterCards(characterIndex);
@@ -26,23 +27,22 @@ if (board != null) {
   playGame();
 }
 
-if (diceContainer != null) showDiceResult();
+if (diceContainer != null) showDiceResult(diceContainer, defaultIndex);
 
 if (validateSelectionBtn != null)
   validateSelectionBtn.addEventListener('click', handleSelection, false);
-
-if (player1Btn) player1Btn.addEventListener('click', showDiceResult, false);
-if (player2Btn) player2Btn.addEventListener('click', showDiceResult, false);
-
-function showDiceResult() {
-  const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
-  diceContainer.innerHTML = diceArray[defaultIndex - 1];
-}
 
 function playGame() {
   let isPlaying: boolean = true;
   let player1Status: number = 1;
   let player2Status: number = 1;
+  let isPlayer1Turn: boolean = true;
+
+  updateButton(isPlayer1Turn, player1Btn, player2Btn);
+
+  player1Btn.addEventListener('click', runPlayer1Turn, false);
+
+  player2Btn.addEventListener('click', runPlayer2Turn, false);
 
   while (isPlaying) {
     runPlayer1Turn();
@@ -51,6 +51,7 @@ function playGame() {
 
   function runPlayer1Turn(): void {
     const currentDicePoint = rollDice();
+    showDiceResult(diceContainer, currentDicePoint);
     console.log(`Player 1 rolled: ${currentDicePoint}`);
 
     if (currentDicePoint === 6) {
@@ -74,6 +75,7 @@ function playGame() {
 
   function runPlayer2Turn(): void {
     const currentDicePoint = rollDice();
+    showDiceResult(diceContainer, currentDicePoint);
     console.log(`Player 2 rolled: ${currentDicePoint}`);
 
     if (currentDicePoint === 6) {
