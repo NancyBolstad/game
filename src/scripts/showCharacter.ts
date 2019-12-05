@@ -22,12 +22,9 @@ async function showCharacter(characterNameIndex: number) {
     component.setAttribute('key', `${characterNameIndex}`);
     const characterImage = document.createElement('img');
     characterImage.setAttribute('draggable', 'false');
-    const test = `<img draggable="false" src="https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575540559/game/238.png" class="card__image">`;
-    characterImage.src = `https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575540559/game/238.png`;
-    characterImage.className = 'card__image';
+    const test = `<img draggable="false" src="https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575549674/game/${characterNameIndex}.png" class="card__image">`;
     const cardTitle = ` <h3>${data.name}</h3>`;
-    const subTitle = `<span>${data.born}</span>`;
-    component.innerHTML = test + cardTitle + subTitle;
+    component.innerHTML = test + cardTitle;
 
     characterList.append(component);
 

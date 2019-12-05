@@ -12,18 +12,25 @@
 @mixin create-dropZone() {
   background: $brand;
   border-radius: 2rem;
-  height: 13.785rem;
   margin: 1rem;
-  width: 20vw;
+  width: 350px;
+  height: 280px;
   padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   div {
-    width: 9.5rem;
-    height: 9rem;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: column;
-    flex-direction: center;
-    justify-content: center;
+    width: 100%;
+    height: 180px;
+    margin: 0;
+    padding: 0;
+    color: black;
+
+    img {
+      width: 108px;
+      height: 148px;
+    }
   }
 }
