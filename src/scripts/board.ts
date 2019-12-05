@@ -43,21 +43,16 @@ export function createBoard(container: HTMLDivElement): void {
   }
 }
 
-export function displayPlayers(container: HTMLElement, player1Index: number, player2Index: number) {
-  const player1: HTMLImageElement = document.createElement('img');
-  const player2: HTMLImageElement = document.createElement('img');
+export function displayPlayers(container: HTMLElement, playerIndex: number) {
+  const player: HTMLImageElement = document.createElement('img');
 
-  player1.src = `${createImage(player1Index)}`;
-  player2.src = `${createImage(player2Index)}`;
+  player.src = `${createImage(playerIndex)}`;
 
-  player1.setAttribute('class', 'board__figure');
-  player2.setAttribute('class', 'board__figure');
+  player.setAttribute('class', 'board__figure');
 
-  player1.setAttribute('alt', `Game figure no.${player1Index}`);
-  player2.setAttribute('alt', `Game figure no.${player2Index}`);
+  player.setAttribute('alt', `Game figure no.${playerIndex}`);
 
   if (container != null) {
-    container.appendChild(player1);
-    container.appendChild(player2);
+    container.appendChild(player);
   }
 }

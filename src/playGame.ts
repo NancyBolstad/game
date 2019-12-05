@@ -23,6 +23,7 @@ function runGame(): void {
     if (diceContainer != null) showDiceResult(diceContainer, rollDice());
   }
 }
+
 function playGame() {
   let player1Status: number = 1;
   let player2Status: number = 1;
@@ -31,7 +32,8 @@ function playGame() {
   const startPlace: HTMLElement = document.getElementById('tile-index-1');
   const player1Index: number = gameStorage.getUnserialize('player1Name');
   const player2Index: number = gameStorage.getUnserialize('player2Name');
-  displayPlayers(startPlace, player1Index, player2Index);
+  displayPlayers(startPlace, player1Index);
+  displayPlayers(startPlace, player2Index);
 
   updateButton(isPlayer1Turn, player1Btn, player2Btn);
   player1Btn.addEventListener('click', runPlayer1Turn, false);

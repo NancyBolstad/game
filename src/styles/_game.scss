@@ -64,6 +64,10 @@
 .tile {
   width: 6rem;
   height: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .dice {
