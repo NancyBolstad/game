@@ -11,30 +11,19 @@ export const trap6: number = 29;
 export function createBoard(container: HTMLDivElement): void {
   for (let i = 1; i <= 30; i++) {
     const tile = document.createElement('div');
-    tile.className = `tile tile-index-${i}`;
+    tile.className = `tile`;
+    tile.setAttribute('id', `tile-index-${i}`);
 
-    tile.setAttribute('tile-index', `${i}`);
+    if (i == 1) {
+      const player1Index: number = gameStorage.getUnserialize('player1Name');
+      const player2Index: number = gameStorage.getUnserialize('player2Name');
+      displayPlayers(tile, player1Index, player2Index);
+    }
 
     if (i % 2 !== 0) {
       tile.style.backgroundColor = 'brown';
     } else {
       tile.style.backgroundColor = 'white';
-    }
-
-    if (i == 1) {
-      const player1: HTMLImageElement = document.createElement('img');
-      const player2: HTMLImageElement = document.createElement('img');
-      player1.className = 'board__figure';
-      player2.className = 'board__figure';
-      const player1Index: number = gameStorage.getUnserialize('player1Name');
-      const player2Index: number = gameStorage.getUnserialize('player2Name');
-
-      player1.src = createImage(player1Index);
-
-      player2.src = createImage(player2Index);
-
-      tile.appendChild(player1);
-      tile.appendChild(player2);
     }
 
     if (i == 4) {
@@ -58,5 +47,24 @@ export function createBoard(container: HTMLDivElement): void {
     }
 
     container.appendChild(tile);
+  }
+}
+
+export function displayPlayers(container: HTMLElement, player1Index: number, player2Index: number) {
+  const player1: HTMLImageElement = document.createElement('img');
+  const player2: HTMLImageElement = document.createElement('img');
+
+  player1.src = `${createImage(player1Index)}`;
+  player2.src = `${createImage(player2Index)}`;
+
+  player1.setAttribute('class', 'board__figure');
+  player2.setAttribute('class', 'board__figure');
+
+  player1.setAttribute('alt', `Game figure no.${player1Index}`);
+  player2.setAttribute('alt', `Game figure no.${player2Index}`);
+
+  if (container != null) {
+    container.appendChild(player1);
+    container.appendChild(player2);
   }
 }

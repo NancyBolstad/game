@@ -23,7 +23,7 @@ async function showCharacter(characterNameIndex: number) {
     component.setAttribute('key', `${characterNameIndex}`);
     const cardImage = `<img draggable="false" src=${createImage(
       characterNameIndex,
-    )} class="card__image">`;
+    )} class="card__image" alt="Game figure no.${characterNameIndex}">`;
     const cardTitle = ` <h3>${data.name}</h3>`;
     component.innerHTML = cardImage + cardTitle;
 
