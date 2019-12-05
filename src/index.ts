@@ -3,7 +3,7 @@ import handleDrag from './scripts/handleDrag';
 import { handleSelection } from './scripts/handleSelection';
 import { rollDice } from './scripts/rollDice';
 import getCharacterCards from './scripts/showCharacter';
-import characters from './scripts/util/characters';
+import characterIndex from './scripts/util/characterIndex';
 import {
   board,
   characterList,
@@ -19,7 +19,7 @@ import Storage from './scripts/util/storage';
 export const gameStorage = new Storage();
 
 if (characterList != null) {
-  getCharacterCards(characters);
+  getCharacterCards(characterIndex);
   handleDrag();
 }
 if (board != null) {
@@ -40,7 +40,6 @@ if (player1Btn) player1Btn.addEventListener('click', showDiceResult, false);
 if (player2Btn) player2Btn.addEventListener('click', showDiceResult, false);
 
 function showDiceResult() {
-  console.log(99999999999999);
   const defaultIndex: number = Math.floor(Math.random() * 6) + 1;
   diceContainer.innerHTML = diceArray[defaultIndex - 1];
 }
