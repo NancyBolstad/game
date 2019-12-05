@@ -1,9 +1,3 @@
-export interface PlayerTypes {
-  selectedCharacter?: string;
-  isWinner?: boolean;
-  currentPosition?: any;
-}
-
 export interface ResponseObjTypes {
   url: string;
   name: string;

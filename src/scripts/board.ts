@@ -1,5 +1,4 @@
 import createImage from './util/createImage';
-import { gameStorage } from '../index';
 
 export const trap1: number = 4;
 export const trap2: number = 7;
@@ -13,12 +12,6 @@ export function createBoard(container: HTMLDivElement): void {
     const tile = document.createElement('div');
     tile.className = `tile`;
     tile.setAttribute('id', `tile-index-${i}`);
-
-    if (i == 1) {
-      const player1Index: number = gameStorage.getUnserialize('player1Name');
-      const player2Index: number = gameStorage.getUnserialize('player2Name');
-      displayPlayers(tile, player1Index, player2Index);
-    }
 
     if (i % 2 !== 0) {
       tile.style.backgroundColor = 'brown';
