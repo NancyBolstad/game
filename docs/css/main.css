@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins&display=swap');
 .cta {
   display: flex;
   justify-content: center;
@@ -24,20 +25,12 @@
   height: 2rem;
   width: 6rem;
   background: #d4af37;
-  font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
-  color: #000000;
-  font-weight: bold;
 }
 
 .cta--big {
   height: 3rem;
   width: 14rem;
   background: #d4af37;
-  font-family: 'Cinzel', serif;
-  font-size: 1.5rem;
-  color: #000000;
-  font-weight: bold;
 }
 
 .cta--big:hover {
@@ -199,8 +192,6 @@
   flex-wrap: wrap;
   width: 30rem;
   height: 30rem;
-  margin-left: auto;
-  margin-right: auto;
   z-index: 1;
   position: absolute;
   top: 0;
@@ -242,14 +233,7 @@ body {
   padding: 0;
   margin: 0;
   background: #000000;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cinzel', serif;
+  color: #d9d9d9;
 }
 
 ul > li {
@@ -269,26 +253,19 @@ button {
 }
 
 h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 2.3rem;
-  color: #c99240;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.875rem;
   font-weight: bold;
 }
 
 h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  color: #c99240;
-  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.875rem;
 }
 
 .block {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .block--welcome {
@@ -298,11 +275,6 @@ h2 {
   background-position: center center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('https://res.cloudinary.com/dnkfgmzy1/image/upload/q_auto:good/v1574011164/game/wa7ak54wbtrhnvfihpqc.jpg');
-}
-
-.block--intro {
-  margin-top: 1.5rem;
-  margin-bottom: 1.2rem;
 }
 
 .block--selection {
@@ -328,12 +300,8 @@ h2 {
 .block__content__title--large {
   display: block;
   margin-top: 1rem;
-  border-top: solid 2px #ffffff;
-  border-bottom: solid 2px #ffffff;
-  font-family: 'Cinzel', serif;
-  font-size: 3.5rem;
-  color: white;
-  font-weight: bold;
+  border-top: solid 2px #d9d9d9;
+  border-bottom: solid 2px #d9d9d9;
 }
 
 .block__content__subTitle {

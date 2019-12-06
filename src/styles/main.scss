@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+@import 'fonts';
 @import 'colors';
 @import 'buttons';
 @import 'layout';
-@import 'fonts';
 @import 'functions';
 @import 'select';
 @import 'game';
@@ -15,10 +14,6 @@ body {
   margin: 0;
   background: $black;
   color: $white;
-  @include flexbox($direction: column);
-  @include vertical-center;
-
-  @include create-text-block;
 }
 
 ul > {
@@ -40,19 +35,16 @@ button {
 }
 
 h1 {
-  @include create-heading($size: 2.3rem, $colour: $brand, $weight: bold);
+  @include heading1();
 }
 
 h2 {
-  @include create-heading($size: 1.8rem, $colour: $brand, $weight: bold);
+  @include heading2();
 }
 
 .block {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  @include vertical-center;
 
   &--welcome {
     @include create-background-cover(
@@ -62,7 +54,6 @@ h2 {
   }
 
   &--intro {
-    @include verticalSpacer($top: 1.5rem, $bottom: 1.2rem);
   }
 
   &--selection {
@@ -89,7 +80,6 @@ h2 {
       margin-top: 1rem;
       border-top: solid 2px $white;
       border-bottom: solid 2px $white;
-      @include create-heading($size: 3.5rem, $colour: white, $weight: bold);
     }
 
     &__subTitle {

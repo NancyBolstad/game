@@ -1,31 +1,24 @@
-@mixin create-heading(
-  $size: false,
-  $colour: false,
-  $weight: false,
-  $transform: false,
-  $textAlign: false
-) {
-  font-family: 'Cinzel', serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins&display=swap');
 
-  @if $size {
-    font-size: $size;
-  }
+@mixin heading1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.875rem;
+  font-weight: bold;
+}
 
-  @if $colour {
-    color: $colour;
-  }
+@mixin heading2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.875rem;
+}
 
-  @if $weight {
-    font-weight: $weight;
-  }
+@mixin footer-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.875rem;
+}
 
-  @if $transform {
-    text-transform: $transform;
-  }
-
-  @if $textAlign {
-    text-align: $textAlign;
-  }
+@mixin header-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125rem;
 }
 
 @mixin create-text-block(

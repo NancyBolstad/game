@@ -25,14 +25,12 @@
     height: 2rem;
     width: 6rem;
     background: $gold;
-    @include create-text-block($size: 1.2rem, $colour: $black, $weight: bold);
   }
 
   &--big {
     height: 3rem;
     width: 14rem;
     background: $gold;
-    @include create-text-block($size: 1.5rem, $colour: $black, $weight: bold);
   }
 
   &--big:hover {
