@@ -5,38 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="Nancy Bolstad" />
-    <meta
-      name="description"
-      content="Play game of thrones themed multiplayer board game for free."
+    <meta name="description" content="Free game of thrones themed board game." />
+    <meta name="keywords" content="Game of thrones, board game, online, free" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
     />
-    <meta name="keywords" content="game of thrones, board game, online, free" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <title>Game Creation</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <title>Cartoon Game of Thrones</title>
   </head>
   <body>
-    <div class="block block--intro">
-      <h1>Choose your character</h1>
-    </div>
-    <div class="block block--selection">
-      <div id="startZone" class="cards"></div>
-      <div id="selectedArea">
-        <div>
-          <h3>Player 1</h3>
-          <div id="endZone1"></div>
-        </div>
-        <div>
-          <h3>Player 2</h3>
-          <div id="endZone2"></div>
+    <header>
+      <div class="row">
+        <div class="header-navigation">
+          <a
+            class="header-navigation__logo"
+            href="index.html"
+            title="Go to home page"
+            aria-label="Go to home page"
+            class="logo"
+          ></a>
+          <div class="header-navigation__links--wrapper">
+            <ul class="header-navigation__links--left">
+              <li>
+                <a href="index.html" title="Go to home page" aria-label="Go to home page">Home</a>
+              </li>
+              <li>
+                <a href="#" title="Got to milestones page" aria-label="Go to milestones page"
+                  >About us</a
+                >
+              </li>
+            </ul>
+            <ul class="header-navigation__links--right">
+              <li>
+                <a
+                  class="header-navigation__links--contact"
+                  href="index.html"
+                  title="Go to home page"
+                  aria-label="Go to home page"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <a
-      href="#"
-      title="Start the game"
-      aria-label="Start the game"
-      class="cta cta--big cta--validation"
-      >Next</a
-    >
+    </header>
+    <main>
+      <div class="row">
+        <div class="block block--intro">
+          <h1>Which character are you ?</h1>
+          <h2>Drag and drop the character to the selected area</h2>
+        </div>
+      </div>
+      <div class="block block--selection">
+        <div id="startZone" class="row block__cards"></div>
+        <div id="selectedArea" class="row block__selected-area">
+          <div>
+            <h3>Player 1’s Character</h3>
+            <div id="endZone1"></div>
+          </div>
+          <div>
+            <h3>Player 2’s Character</h3>
+            <div id="endZone2"></div>
+          </div>
+        </div>
+        <a
+          href="#"
+          title="Start the game"
+          aria-label="Start the game"
+          class="cta cta--big cta--validation"
+          >Next</a
+        >
+      </div>
+    </main>
+    <footer>
+      <div class="row"><span>&copy; 2019 - Designed and Developed By Nancy Y. Bolstad</span></div>
+    </footer>
     <script src="bundle.js"></script>
   </body>
 </html>

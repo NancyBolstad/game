@@ -11,6 +11,11 @@
   font-size: 1.875rem;
 }
 
+@mixin heading3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
 @mixin footer-text {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.875rem;
@@ -28,7 +33,7 @@
   $lineHeight: false,
   $maxWidth: false
 ) {
-  font-family: 'Cinzel', serif;
+  font-family: 'Open Sans', sans-serif;
 
   @if $size {
     font-size: $size;
