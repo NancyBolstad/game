@@ -8,19 +8,20 @@
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
-  border: 3px solid white;
   padding: 1rem 1.5rem;
   font-weight: bold;
   min-width: 84px;
   font-size: 1.2rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  color: black;
+  font-weight: bold;
+  border: 2px solid $brandLight;
 
   &:hover,
   &:active,
   &:focus {
-    text-decoration: none;
-    background: white;
+    background: $brandLight;
     color: black;
   }
 
