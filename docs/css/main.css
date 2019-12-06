@@ -401,3 +401,15 @@ footer {
   text-align: center;
   margin-bottom: 2.1rem;
 }
+
+.overlay {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 35%;
+  display: none;
+  background-color: yellow;
+  opacity: 0.8;
+  text-align: center;
+  width: 25vw;
+}
