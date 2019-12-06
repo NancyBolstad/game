@@ -8,32 +8,20 @@
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  border: 2px solid white;
+  padding: 1.1rem 2rem;
+  font-weight: bold;
 
   &:hover,
   &:active,
   &:focus {
     text-decoration: none;
-    opacity: 0.7;
+    background: white;
+    color: black;
   }
 
   &:disabled {
     pointer-events: none;
     opacity: 0.5;
-  }
-
-  &--default {
-    height: 2rem;
-    width: 6rem;
-    background: $gold;
-  }
-
-  &--big {
-    height: 3rem;
-    width: 14rem;
-    background: $gold;
-  }
-
-  &--big:hover {
-    color: $black;
   }
 }
