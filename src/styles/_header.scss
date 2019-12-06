@@ -1,0 +1,39 @@
+header {
+  position: fixed;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 3rem;
+  @include header-text;
+}
+.header-navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: $black;
+  color: white;
+  margin-left: 140px;
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+
+  &__logo {
+    background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655416/game/logo-small.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 3.5rem;
+    width: 6rem;
+    display: inline-block;
+  }
+
+  &__links-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      padding-right: 1rem;
+      color: $white;
+    }
+  }
+}

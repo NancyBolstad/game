@@ -37,6 +37,48 @@
   color: #000000;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 3rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125rem;
+}
+
+.header-navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #000000;
+  color: white;
+  margin-left: 140px;
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.header-navigation__logo {
+  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655416/game/logo-small.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 3.5rem;
+  width: 6rem;
+  display: inline-block;
+}
+
+.header-navigation__links-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-navigation__links-wrapper li {
+  padding-right: 1rem;
+  color: #d9d9d9;
+}
+
 #endZone1 {
   background: #c99240;
   border-radius: 2rem;
@@ -230,6 +272,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
+  width: 1160px;
   padding: 0;
   margin: 0;
   background: #000000;
@@ -244,6 +287,25 @@ a {
   text-decoration: none;
   border-bottom: none;
   cursor: pointer;
+}
+
+a:link {
+  color: #fffafa;
+}
+
+/* unvisited link */
+a:visited {
+  color: #fffafa;
+}
+
+/* visited link */
+a:hover {
+  color: #fffafa;
+}
+
+/* mouse over link */
+a:active {
+  color: #fffafa;
 }
 
 button {
