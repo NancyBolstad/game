@@ -1,11 +1,30 @@
-@mixin create-background-cover($source: false) {
+@function convert-to-percent($value, $context: $max) {
+  @return ($value/$context) * 100%;
+}
+
+@function create-columns($amount, $gutter) {
+  @return (100% / $amount)-$amount * convert-to-percent($gutter);
+}
+
+@mixin create-background-cover($imageUrl: false, $color: false, $linearGradient: false) {
   background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 
   @if $source {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($source);
+    background-image: url($imageUrl);
+  }
+
+  @if $default-color {
+    background-color: $color;
+  }
+
+  @if $linearGradient {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, $linearGradient),
+      rgba(0, 0, 0, $linearGradient)
+    );
   }
 }
 

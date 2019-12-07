@@ -1,12 +1,13 @@
-@mixin vertical-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-}
+.wrapper {
+  max-width: $max;
+  margin: 0 auto;
+  @include flex-direction($value: column);
+  @include flex-wrap;
+  @include flex-center;
 
-@mixin horizontal-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 72.5rem;
+  &__row {
+    width: 100%;
+    @include flex;
+    @include flex-wrap;
+  }
 }
