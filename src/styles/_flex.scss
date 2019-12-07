@@ -1,6 +1,6 @@
 @mixin flex($value: false) {
   display: flex;
-  @if $style== 'inline-flex' {
+  @if $value== 'inline-flex' {
     display: inline-flex;
   }
 }
@@ -12,7 +12,7 @@
 @mixin flex-wrap($wrap: false) {
   flex-wrap: wrap;
 
-  @if $value == 'nowrap' {
+  @if $wrap == 'nowrap' {
     flex-wrap: nowrap;
   }
 }

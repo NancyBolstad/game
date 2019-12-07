@@ -28,39 +28,10 @@ header {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.125rem;
   color: #d9d9d9;
-  /* unvisited link */
-  /* visited link */
-  /* mouse over link */
+  border-bottom: 1px solid #d9d9d9;
 }
 
-header a:link {
-  color: #fffafa;
-}
-
-header a:visited {
-  color: #fffafa;
-}
-
-header a:hover {
-  color: #fffafa;
-}
-
-header a:active {
-  color: #fffafa;
-}
-
-.header-navigation {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  background-color: #000000;
-}
-
-.header-navigation a:hover {
-  color: #c99240;
-}
-
-.header-navigation__logo {
+.wrapper__row__logo {
   background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655416/game/logo-small.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -71,24 +42,39 @@ header a:active {
   margin-top: 0.6875rem;
 }
 
-.header-navigation__links--wrapper {
+.wrapper__row__links--wrapper {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
 }
 
-.header-navigation__links--left {
+.wrapper__row__links--wrapper a:link,
+.wrapper__row__links--wrapper a:visited {
+  color: #d9d9d9;
+}
+
+.wrapper__row__links--wrapper a:hover,
+.wrapper__row__links--wrapper a:active {
+  color: #f5deb3;
+}
+
+.wrapper__row__links--left {
   display: flex;
 }
 
-.header-navigation__links--left li {
+.wrapper__row__links--left li {
   padding-right: 1.3rem;
 }
 
-.header-navigation__links--contact {
+.wrapper__row__links--contact {
   font-weight: bold;
   border: 1px solid white;
   padding: 0.3rem 1rem;
+}
+
+.wrapper__row__links--contact:hover,
+.wrapper__row__links--contact:active {
+  border-color: #f5deb3;
 }
 
 #endZone1 {
@@ -310,26 +296,33 @@ h3 {
   font-size: 1.2rem;
 }
 
-header {
-  border-bottom: 1px solid #d9d9d9;
+.wrapper {
+  max-width: 72.5rem;
+  margin: 0 auto;
+}
+
+.wrapper__row {
+  width: 100%;
+}
+
+.wrapper__row--header-navigation {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapper__row--footer {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
+  width: 100%;
   padding-top: 2rem;
   padding-bottom: 2rem;
   opacity: 0.7;
   border-top: 1px solid #d9d9d9;
-}
-
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1160px;
-  height: 100%;
-  width: 100%;
 }
 
 .block {
