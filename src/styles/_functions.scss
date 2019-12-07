@@ -1,11 +1,3 @@
-@function convert-to-percent($value, $context: $max) {
-  @return ($value/$context) * 100%;
-}
-
-@function create-columns($amount, $gutter) {
-  @return (100% / $amount)-$amount * convert-to-percent($gutter);
-}
-
 @mixin create-background-cover($imageUrl: false, $color: false, $linearGradient: false) {
   background-color: black;
   background-repeat: no-repeat;

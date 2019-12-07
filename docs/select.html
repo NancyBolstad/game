@@ -18,17 +18,17 @@
   </head>
   <body>
     <header>
-      <div class="row">
-        <div class="header-navigation">
+      <div class="wrapper">
+        <div class="wrapper__row--header-navigation">
           <a
-            class="header-navigation__logo"
+            class="wrapper__row__logo"
             href="index.html"
             title="Go to home page"
             aria-label="Go to home page"
             class="logo"
           ></a>
-          <div class="header-navigation__links--wrapper">
-            <ul class="header-navigation__links--left">
+          <div class="wrapper__row__links--wrapper">
+            <ul class="wrapper__row__links--left">
               <li>
                 <a href="index.html" title="Go to home page" aria-label="Go to home page">Home</a>
               </li>
@@ -38,10 +38,10 @@
                 >
               </li>
             </ul>
-            <ul class="header-navigation__links--right">
+            <ul class="wrapper__row__links--right">
               <li>
                 <a
-                  class="header-navigation__links--contact"
+                  class="wrapper__row__links--contact"
                   href="index.html"
                   title="Go to home page"
                   aria-label="Go to home page"
@@ -54,38 +54,48 @@
       </div>
     </header>
     <main>
-      <div class="row">
-        <div class="block block--intro">
-          <h1>Which character are you ?</h1>
-          <h2>Drag and drop the character to the selected area</h2>
+      <div class="wrapper">
+        <div class="wrapper__row">
+          <div class="wrapper__row--intro">
+            <h1>Which character are you ?</h1>
+            <h2>Drag and drop the character to the selected area</h2>
+          </div>
         </div>
       </div>
-      <div class="block block--selection">
-        <div id="startZone" class="row block__cards"></div>
-        <div id="selectedArea" class="row block__selected-area">
-          <div>
-            <h3>Player 1’s Character</h3>
+      <div class="wrapper">
+        <div class="wrapper__row--cards" id="startZone"></div>
+        <div class="wrapper__row--selected-area" id="selectedArea">
+          <div class="row__item--selection">
+            <h3>Player 1’s Selected Character</h3>
             <div id="endZone1"></div>
           </div>
-          <div>
-            <h3>Player 2’s Character</h3>
+          <div class="row__item--selection">
+            <h3>Player 2’s Selected Character</h3>
             <div id="endZone2"></div>
           </div>
         </div>
-        <a
-          href="#"
-          title="Start the game"
-          aria-label="Start the game"
-          class="cta cta--big cta--validation"
-          >Next</a
-        >
+      </div>
+      <div class="wrapper">
+        <div class="wrapper__row--next-page">
+          <a
+            href="#"
+            title="Start the game"
+            aria-label="Start the game"
+            class="cta cta--big cta--validation"
+            >Next</a
+          >
+        </div>
       </div>
       <div class="overlay">
         <h1>Hollo!</h1>
       </div>
     </main>
     <footer>
-      <div class="row"><span>&copy; 2019 - Designed and Developed By Nancy Y. Bolstad</span></div>
+      <div class="wrapper">
+        <div class="wrapper__row--footer">
+          <span>&copy; 2019 - Designed and Developed By Nancy Y. Bolstad</span>
+        </div>
+      </div>
     </footer>
     <script src="bundle.js"></script>
   </body>

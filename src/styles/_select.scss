@@ -5,50 +5,6 @@
   @include create-dropZone();
 }
 
-#selectedArea {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-}
-
-.block__cards {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 220px;
-  border-radius: 2.5rem;
-  margin-top: 2.8rem;
-
-  &__item {
-    width: 20%;
-    padding: 0.5rem;
-    margin: 1rem;
-    transition: 0.2s;
-    color: $secondary;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    &__image {
-      width: 100%;
-      height: 11.5625rem;
-    }
-
-    &:hover,
-    :focus-within {
-      transform: translatey(-1rem);
-    }
-
-    &:hover ~ &,
-    :focus-within ~ & {
-      transform: 1rem;
-    }
-  }
-}
-
 .cta--validation {
   margin: 3.5rem auto;
 }

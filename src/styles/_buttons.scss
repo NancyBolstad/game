@@ -1,13 +1,19 @@
 @import 'colors';
 @import 'fonts';
 
+button:disabled {
+  opacity: 0.6;
+}
+
 .cta {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.1428rem;
+  font-weight: bold;
   height: 2.5rem;
   padding-left: 3.375rem;
   padding-right: 3.375rem;
