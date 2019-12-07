@@ -29,19 +29,6 @@ a {
   cursor: pointer;
 }
 
-a:link {
-  color: #fffafa;
-} /* unvisited link */
-a:visited {
-  color: #fffafa;
-} /* visited link */
-a:hover {
-  color: #fffafa;
-} /* mouse over link */
-a:active {
-  color: #fffafa;
-}
-
 button {
   outline: none;
   cursor: pointer;
@@ -60,10 +47,15 @@ h3 {
   @include heading3();
 }
 
+header {
+  border-bottom: 1px solid $white;
+}
+
 footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
   opacity: 0.7;
+  border-top: 1px solid $white;
 }
 
 .row {

@@ -2,31 +2,24 @@
 @import 'fonts';
 
 .cta {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
-  padding: 1rem 1.5rem;
-  font-weight: bold;
-  min-width: 84px;
-  font-size: 1.2rem;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  color: black;
-  font-weight: bold;
-  border: 2px solid $brandLight;
+  font-size: 1.1428rem;
+  height: 2.5rem;
+  padding-left: 3.375rem;
+  padding-right: 3.375rem;
+  background-color: $secondary;
+  transition: background-color 0.15s ease-in-out;
+  color: $black;
 
   &:hover,
   &:active,
   &:focus {
-    background: $brandLight;
-    color: black;
-  }
-
-  &:disabled {
-    pointer-events: none;
-    opacity: 0.5;
+    border: 2px solid $secondary;
+    background-color: $black;
+    color: $secondary;
   }
 }

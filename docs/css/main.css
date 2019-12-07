@@ -1,33 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins&display=swap');
 .cta {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
-  padding: 1rem 1.5rem;
-  font-weight: bold;
-  min-width: 84px;
-  font-size: 1.2rem;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  color: black;
-  font-weight: bold;
-  border: 2px solid #f5deb3;
+  font-size: 1.1428rem;
+  height: 2.5rem;
+  padding-left: 3.375rem;
+  padding-right: 3.375rem;
+  background-color: #f5deb3;
+  transition: background-color 0.15s ease-in-out;
+  color: #000000;
 }
 
 .cta:hover,
 .cta:active,
 .cta:focus {
-  background: #f5deb3;
-  color: black;
-}
-
-.cta:disabled {
-  pointer-events: none;
-  opacity: 0.5;
+  border: 2px solid #f5deb3;
+  background-color: #000000;
+  color: #f5deb3;
 }
 
 header {
@@ -35,6 +28,25 @@ header {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.125rem;
   color: #d9d9d9;
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+}
+
+header a:link {
+  color: #fffafa;
+}
+
+header a:visited {
+  color: #fffafa;
+}
+
+header a:hover {
+  color: #fffafa;
+}
+
+header a:active {
+  color: #fffafa;
 }
 
 .header-navigation {
@@ -276,25 +288,6 @@ a {
   cursor: pointer;
 }
 
-a:link {
-  color: #fffafa;
-}
-
-/* unvisited link */
-a:visited {
-  color: #fffafa;
-}
-
-/* visited link */
-a:hover {
-  color: #fffafa;
-}
-
-/* mouse over link */
-a:active {
-  color: #fffafa;
-}
-
 button {
   outline: none;
   cursor: pointer;
@@ -317,10 +310,15 @@ h3 {
   font-size: 1.2rem;
 }
 
+header {
+  border-bottom: 1px solid #d9d9d9;
+}
+
 footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
   opacity: 0.7;
+  border-top: 1px solid #d9d9d9;
 }
 
 .row {
