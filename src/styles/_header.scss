@@ -1,0 +1,51 @@
+header {
+  width: 100%;
+  @include header-text;
+  color: $white;
+  border-bottom: 1px solid $white;
+}
+
+.wrapper__row {
+  &__logo {
+    background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655416/game/logo-small.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 2.375rem;
+    height: 2.375rem;
+    margin-top: 0.6875rem;
+  }
+  &__links--wrapper {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+
+    a:link,
+    a:visited {
+      color: $white;
+    }
+
+    a:hover,
+    a:active {
+      color: $secondary;
+    }
+  }
+  &__links--left {
+    display: flex;
+
+    li {
+      padding-right: 1.3rem;
+    }
+  }
+  &__links--contact {
+    font-weight: bold;
+    border: 1px solid white;
+    padding: 0.3rem 1rem;
+
+    &:hover,
+    &:active {
+      border-color: $secondary;
+    }
+  }
+}

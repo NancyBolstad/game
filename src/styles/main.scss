@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+@import 'fonts';
 @import 'colors';
 @import 'buttons';
-@import 'layout';
-@import 'fonts';
-@import 'functions';
-@import 'select';
+@import 'flex';
+@import 'helpers';
+@import 'header';
 @import 'game';
 
 body {
@@ -15,10 +14,6 @@ body {
   margin: 0;
   background: $black;
   color: $white;
-  @include flexbox($direction: column);
-  @include vertical-center;
-
-  @include create-text-block;
 }
 
 ul > {
@@ -40,61 +35,151 @@ button {
 }
 
 h1 {
-  @include create-heading($size: 2.3rem, $colour: $brand, $weight: bold);
+  @include heading1();
 }
 
 h2 {
-  @include create-heading($size: 1.8rem, $colour: $brand, $weight: bold);
+  @include heading2();
 }
 
-.block {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  @include vertical-center;
+h3 {
+  @include heading3();
+}
 
-  &--welcome {
-    @include create-background-cover(
-      $source:
-        'https://res.cloudinary.com/dnkfgmzy1/image/upload/q_auto:good/v1574011164/game/wa7ak54wbtrhnvfihpqc.jpg'
-    );
+.wrapper {
+  max-width: 72.5rem;
+  margin: 0 auto;
+
+  &__row {
+    width: 100%;
+
+    &--header-navigation {
+      @include flex;
+      @include flex-direction(row);
+    }
+
+    &--footer {
+      @include flex-direction(column);
+      @include flex-center;
+    }
+    &--hero {
+      @include flex;
+      @include flex-direction(row);
+      height: 83vh;
+    }
+    &--intro {
+      @include flex-direction(column);
+      @include flex-center;
+      h1 {
+        color: $brand;
+        margin-bottom: 1rem;
+      }
+    }
+    &--cards {
+      @include flex-direction(row);
+      @include flex-center;
+      border-radius: 2.5rem;
+      margin-top: 5rem;
+      margin-bottom: 4rem;
+      height: 240px;
+    }
+    &--selected-area {
+      @include flex-direction(row);
+      @include flex-center;
+    }
+    &--next-page {
+      @include flex-direction(column);
+      @include flex-center;
+    }
+    &--reset {
+      @include flex-direction(column);
+      @include flex-center;
+    }
   }
+}
 
-  &--intro {
-    @include verticalSpacer($top: 1.5rem, $bottom: 1.2rem);
+.row__item {
+  &--hero-content {
+    @include flex-direction(column);
+    @include flex-center;
+    flex-basis: 50%;
+    flex: 1;
   }
+  &--card {
+    flex-basis: 21%;
+    transition: 0.2s;
+    color: $secondary;
+    @include flex-direction(column);
+    @include flex-center;
+    text-align: center;
 
+    &:hover,
+    :focus-within {
+      transform: translatey(-1rem);
+    }
+
+    &:hover ~ &,
+    :focus-within ~ & {
+      transform: 1rem;
+    }
+  }
   &--selection {
-    display: flex;
-    flex-direction: column;
-    max-width: 1330px;
+    @include flex-direction(column);
+    @include flex-center;
   }
+}
 
-  &__content {
-    width: 60vw;
-    height: 100vh;
-    margin-top: 20vh;
+.item {
+  &--logo {
+    height: 296px;
+    width: 100%;
+  }
+  &--featured-image {
+    height: 27.375rem;
+    width: 100%;
+  }
+  &--card-image {
+    width: 100%;
+    height: 11.5625rem;
+  }
+  &--player-selected {
+    border-radius: 2rem;
+    border: 2px solid $brand;
+    margin: 1rem;
+    width: 350px;
+    height: 280px;
+    padding: 0.2rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 
-    &__title--small {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+    div {
+      width: 80%;
 
-    &__title--large {
-      display: block;
-      margin-top: 1rem;
-      border-top: solid 2px $white;
-      border-bottom: solid 2px $white;
-      @include create-heading($size: 3.5rem, $colour: white, $weight: bold);
-    }
-
-    &__subTitle {
-      text-align: center;
-      margin-bottom: 2.1rem;
+      img {
+        width: 60%;
+      }
     }
   }
+}
+
+footer {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  opacity: 0.7;
+  border-top: 1px solid $white;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 35%;
+  display: none;
+  background-color: yellow;
+  opacity: 0.8;
+  text-align: center;
+  width: 25vw;
 }

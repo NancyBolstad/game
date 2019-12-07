@@ -1,41 +1,31 @@
 @import 'colors';
 @import 'fonts';
+@import 'helpers';
 
 .cta {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1428rem;
+  font-weight: bold;
+  height: 2.5rem;
+  padding-left: 3.375rem;
+  padding-right: 3.375rem;
+  background-color: $secondary;
+  transition: background-color 0.15s ease-in-out;
+  color: $black;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
   &:hover,
   &:active,
-  &:focus {
-    text-decoration: none;
-    opacity: 0.7;
-  }
-
+  &:focus,
   &:disabled {
-    pointer-events: none;
-    opacity: 0.5;
-  }
-
-  &--default {
-    height: 2rem;
-    width: 6rem;
-    background: $gold;
-    @include create-text-block($size: 1.2rem, $colour: $black, $weight: bold);
-  }
-
-  &--big {
-    height: 3rem;
-    width: 14rem;
-    background: $gold;
-    @include create-text-block($size: 1.5rem, $colour: $black, $weight: bold);
-  }
-
-  &--big:hover {
-    color: $black;
+    border: 2px solid $secondary;
+    background-color: $black;
+    color: $secondary;
   }
 }

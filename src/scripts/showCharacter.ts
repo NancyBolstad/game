@@ -16,16 +16,18 @@ async function showCharacter(characterNameIndex: number) {
   try {
     const response = await fetch(url);
     const data: ResponseObjTypes = await response.json();
+    const { name, titles, aliases } = data;
 
     const component = document.createElement('div');
-    component.className = 'card';
+    component.className = 'row__item--card';
     component.setAttribute('draggable', 'true');
     component.setAttribute('key', `${characterNameIndex}`);
     const cardImage = `<img draggable="false" src=${createImage(
       characterNameIndex,
-    )} class="card__image" alt="Game figure no.${characterNameIndex}">`;
-    const cardTitle = ` <h3>${data.name}</h3>`;
-    component.innerHTML = cardImage + cardTitle;
+    )} class="item--card-image" alt="Game figure no.${characterNameIndex}">`;
+    const cardTitle = ` <h3>${name}</h3>`;
+    const cardSubTitle = `<span>${titles[0] ? titles[0] : aliases[0]}</span>`;
+    component.innerHTML = cardImage + cardTitle + cardSubTitle;
 
     characterList.append(component);
 

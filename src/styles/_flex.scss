@@ -1,0 +1,32 @@
+@mixin flex($value: false) {
+  display: flex;
+  @if $value== 'inline-flex' {
+    display: inline-flex;
+  }
+}
+
+@mixin flex-direction($value) {
+  flex-direction: $value;
+}
+
+@mixin flex-wrap($wrap: false) {
+  flex-wrap: wrap;
+
+  @if $wrap == 'nowrap' {
+    flex-wrap: nowrap;
+  }
+}
+
+@mixin flex-basis($amount, $gutter) {
+  flex-basis: create-columns($amount: amount, $gutter: $gutter);
+}
+
+@mixin flex-center {
+  @include flex(flex);
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-equal-items {
+  flex: 1;
+}

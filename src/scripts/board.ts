@@ -1,15 +1,9 @@
 import createImage from './util/createImage';
-
-export const trap1: number = 4;
-export const trap2: number = 7;
-export const trap3: number = 13;
-export const trap4: number = 16;
-export const trap5: number = 23;
-export const trap6: number = 29;
+import { traps } from './util/traps';
 
 export function createBoard(container: HTMLDivElement): void {
-  for (let i = 1; i <= 30; i++) {
-    const tile = document.createElement('div');
+  for (let i: number = 1; i <= 30; i++) {
+    const tile: HTMLDivElement = document.createElement('div');
     tile.className = `tile`;
     tile.setAttribute('id', `tile-index-${i}`);
 
@@ -19,24 +13,13 @@ export function createBoard(container: HTMLDivElement): void {
       tile.style.backgroundColor = 'white';
     }
 
-    if (i == 4) {
-      tile.style.backgroundColor = 'orange';
-    }
-    if (i == 7) {
-      tile.style.backgroundColor = 'orange';
-    }
-    if (i == 13) {
-      tile.style.backgroundColor = 'orange';
-    }
-    if (i == 16) {
-      tile.style.backgroundColor = 'orange';
-    }
-    if (i == 23) {
-      tile.style.backgroundColor = 'orange';
-    }
-
-    if (i == 29) {
-      tile.style.backgroundColor = 'orange';
+    if (traps.includes(i)) {
+      const trapNumber: number = traps.indexOf(i) + 1;
+      tile.style.backgroundColor = 'yellow';
+      tile.style.backgroundImage = `url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655734/game/trap${trapNumber}.svg')`;
+      tile.style.backgroundSize = '4rem';
+      tile.style.backgroundRepeat = 'no-repeat';
+      tile.style.backgroundPosition = 'center center';
     }
 
     container.appendChild(tile);

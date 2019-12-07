@@ -5,38 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="Nancy Bolstad" />
-    <meta
-      name="description"
-      content="Play game of thrones themed multiplayer board game for free."
+    <meta name="description" content="Free game of thrones themed board game." />
+    <meta name="keywords" content="Game of thrones, board game, online, free" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
     />
-    <meta name="keywords" content="game of thrones, board game, online, free" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <title>Game Creation</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <title>Cartoon Game of Thrones</title>
   </head>
   <body>
-    <div class="block block--intro">
-      <h1>Choose your character</h1>
-    </div>
-    <div class="block block--selection">
-      <div id="startZone" class="cards"></div>
-      <div id="selectedArea">
-        <div>
-          <h3>Player 1</h3>
-          <div id="endZone1"></div>
-        </div>
-        <div>
-          <h3>Player 2</h3>
-          <div id="endZone2"></div>
+    <header>
+      <div class="wrapper">
+        <div class="wrapper__row--header-navigation">
+          <a
+            class="wrapper__row__logo"
+            href="index.html"
+            title="Go to home page"
+            aria-label="Go to home page"
+            class="logo"
+          ></a>
+          <div class="wrapper__row__links--wrapper">
+            <ul class="wrapper__row__links--left">
+              <li>
+                <a href="index.html" title="Go to home page" aria-label="Go to home page">Home</a>
+              </li>
+              <li>
+                <a href="#" title="Got to milestones page" aria-label="Go to milestones page"
+                  >About us</a
+                >
+              </li>
+            </ul>
+            <ul class="wrapper__row__links--right">
+              <li>
+                <a
+                  class="wrapper__row__links--contact"
+                  href="index.html"
+                  title="Go to home page"
+                  aria-label="Go to home page"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <a
-      href="#"
-      title="Start the game"
-      aria-label="Start the game"
-      class="cta cta--big cta--validation"
-      >Next</a
-    >
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="wrapper__row">
+          <div class="wrapper__row--intro">
+            <h1>Which character are you ?</h1>
+            <h2>Drag and drop the character to the selected area</h2>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="wrapper__row--cards" id="startZone"></div>
+        <div class="wrapper__row--selected-area" id="selectedArea">
+          <div class="row__item--selection">
+            <h3>Player 1’s Selected Character</h3>
+            <div id="endZone1" class="item--player-selected"></div>
+          </div>
+          <div class="row__item--selection">
+            <h3>Player 2’s Selected Character</h3>
+            <div id="endZone2" class="item--player-selected"></div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="wrapper__row--next-page">
+          <a
+            href="#"
+            title="Start the game"
+            aria-label="Start the game"
+            class="cta cta--big cta--validation"
+            >Start Game</a
+          >
+        </div>
+      </div>
+      <div class="overlay">
+        <h1>Hollo!</h1>
+      </div>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <div class="wrapper__row--footer">
+          <span>&copy; 2019 - Designed and Developed By Nancy Y. Bolstad</span>
+        </div>
+      </div>
+    </footer>
     <script src="bundle.js"></script>
   </body>
 </html>
