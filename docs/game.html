@@ -18,23 +18,51 @@
     <title>Game Creation</title>
   </head>
   <body>
-    <h1>Game Playing</h1>
-    <div class="game--wrapper">
-      <div class="gameBoard"></div>
-      <div class="game__sidebar--1">
-        hello
+    <header>
+      <div class="wrapper">
+        <div class="wrapper__row--header-navigation">
+          <a
+            class="wrapper__row__logo"
+            href="index.html"
+            title="Go to home page"
+            aria-label="Go to home page"
+            class="logo"
+          ></a>
+          <div class="wrapper__row__links--wrapper">
+            <ul class="wrapper__row__links--left">
+              <li>
+                <a href="index.html" title="Go to home page" aria-label="Go to home page">Home</a>
+              </li>
+              <li>
+                <a href="#" title="Got to milestones page" aria-label="Go to milestones page"
+                  >About us</a
+                >
+              </li>
+            </ul>
+            <ul class="wrapper__row__links--right">
+              <li>
+                <a
+                  class="wrapper__row__links--contact"
+                  href="index.html"
+                  title="Go to home page"
+                  aria-label="Go to home page"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="game__sidebar--2">
-        hello
+    </header>
+    <main>
+      <h1>Game Playing</h1>
+      <div class="game--wrapper">
+        <div class="gameBoard"></div>
+        <div class="dice">
+          <span id="diceImage"></span>
+        </div>
       </div>
-    </div>
-    <div class="dice">
-      <span id="diceImage"></span>
-      <div class="btn--wrapper">
-        <button class="cta cta--default btn-Player1">1st</button>
-        <button class="cta cta--default btn-Player2">2nd</button>
-      </div>
-    </div>
+    </main>
     <script src="bundle.js"></script>
   </body>
 </html>
