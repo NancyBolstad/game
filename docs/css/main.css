@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins&display=swap');
-button:disabled {
-  opacity: 0.6;
-}
-
 .cta {
   display: inline-flex;
   justify-content: center;
@@ -19,6 +15,8 @@ button:disabled {
   background-color: #f5deb3;
   transition: background-color 0.15s ease-in-out;
   color: #000000;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .cta:hover,
@@ -81,52 +79,6 @@ header {
 .wrapper__row__links--contact:hover,
 .wrapper__row__links--contact:active {
   border-color: #f5deb3;
-}
-
-#endZone1 {
-  border-radius: 2rem;
-  border: 2px solid #c99240;
-  margin: 1rem;
-  width: 350px;
-  height: 280px;
-  padding: 0.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#endZone1 div {
-  width: 80%;
-}
-
-#endZone1 div img {
-  width: 60%;
-}
-
-#endZone2 {
-  border-radius: 2rem;
-  border: 2px solid #c99240;
-  margin: 1rem;
-  width: 350px;
-  height: 280px;
-  padding: 0.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#endZone2 div {
-  width: 80%;
-}
-
-#endZone2 div img {
-  width: 60%;
-}
-
-.cta--validation {
-  margin: 3.5rem auto;
 }
 
 .game--wrapper {
@@ -298,15 +250,14 @@ h3 {
 }
 
 .wrapper__row--cards {
-  display: flex;
   flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 220px;
   border-radius: 2.5rem;
   margin-top: 5rem;
   margin-bottom: 4rem;
+  height: 240px;
 }
 
 .wrapper__row--selected-area {
@@ -375,6 +326,27 @@ h3 {
   height: 11.5625rem;
 }
 
+.item--player-selected {
+  border-radius: 2rem;
+  border: 2px solid #c99240;
+  margin: 1rem;
+  width: 350px;
+  height: 280px;
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item--player-selected div {
+  width: 80%;
+}
+
+.item--player-selected div img {
+  width: 60%;
+}
+
 footer {
   width: 100%;
   padding-top: 2rem;
@@ -393,46 +365,4 @@ footer {
   opacity: 0.8;
   text-align: center;
   width: 25vw;
-}
-
-#endZone1 {
-  border-radius: 2rem;
-  border: 2px solid #c99240;
-  margin: 1rem;
-  width: 350px;
-  height: 280px;
-  padding: 0.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#endZone1 div {
-  width: 80%;
-}
-
-#endZone1 div img {
-  width: 60%;
-}
-
-#endZone2 {
-  border-radius: 2rem;
-  border: 2px solid #c99240;
-  margin: 1rem;
-  width: 350px;
-  height: 280px;
-  padding: 0.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#endZone2 div {
-  width: 80%;
-}
-
-#endZone2 div img {
-  width: 60%;
 }
