@@ -138,58 +138,6 @@ header {
   width: 10%;
 }
 
-.tile {
-  background-size: 3rem;
-}
-
-#tile-index-4 {
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: center;
-  background-position: center center;
-  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655734/game/trap1.svg');
-}
-
-#tile-index-7 {
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: center;
-  background-position: center center;
-  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655734/game/trap2.svg');
-}
-
-#tile-index-13 {
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: center;
-  background-position: center center;
-  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655734/game/trap3.svg');
-}
-
-#tile-index-16 {
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: center;
-  background-position: center center;
-  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655734/game/trap4.svg');
-}
-
-#tile-index-29 {
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: center;
-  background-position: center center;
-  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655734/game/trap5.svg');
-}
-
-#tile-index-30 {
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: center;
-  background-position: center center;
-  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655734/game/throne.svg');
-}
-
 body {
   overflow-x: hidden;
   width: 100%;

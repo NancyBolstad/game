@@ -1,16 +1,13 @@
 import { diceArray } from './util/dice';
+import { player1Btn, player2Btn } from './util/containers';
 
-export function updateButton(
-  condition: boolean,
-  btn1: HTMLButtonElement,
-  btn2: HTMLButtonElement,
-): void {
-  if (condition) {
-    btn1.disabled = false;
-    btn2.disabled = true;
+export function updateButton(isPlayer1Turn: boolean): void {
+  if (isPlayer1Turn) {
+    player1Btn.disabled = false;
+    player2Btn.disabled = true;
   } else {
-    btn2.disabled = false;
-    btn1.disabled = true;
+    player1Btn.disabled = true;
+    player2Btn.disabled = false;
   }
 }
 
