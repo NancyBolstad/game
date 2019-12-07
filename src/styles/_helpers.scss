@@ -1,14 +1,14 @@
-@mixin create-background($imageUrl: false, $color: false, $linearGradient: false) {
+@mixin create-background($imageUrl: false, $color: false, $linearGradient: false, $size: false) {
   background-color: black;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: center;
   background-position: center center;
 
-  @if $source {
+  @if $imageUrl {
     background-image: url($imageUrl);
   }
 
-  @if $default-color {
+  @if $color {
     background-color: $color;
   }
 
@@ -17,5 +17,9 @@
       rgba(0, 0, 0, $linearGradient),
       rgba(0, 0, 0, $linearGradient)
     );
+  }
+
+  @if $size {
+    background-size: $size;
   }
 }

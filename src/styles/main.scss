@@ -91,6 +91,10 @@ h3 {
       @include flex-direction(column);
       @include flex-center;
     }
+    &--reset {
+      @include flex-direction(column);
+      @include flex-center;
+    }
   }
 }
 
