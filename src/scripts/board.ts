@@ -3,7 +3,7 @@ import { traps } from './util/traps';
 
 export function createBoard(container: HTMLDivElement): void {
   for (let i: number = 1; i <= 30; i++) {
-    const tile = document.createElement('div');
+    const tile: HTMLDivElement = document.createElement('div');
     tile.className = `tile`;
     tile.setAttribute('id', `tile-index-${i}`);
 
