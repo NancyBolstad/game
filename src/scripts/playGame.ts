@@ -1,4 +1,3 @@
-import { traps } from './board';
 import {
   showDiceResult,
   updatePlayer1Button,
@@ -7,7 +6,8 @@ import {
   removePlayer,
   checkWinner,
   gameEnd,
-} from './gameHelpers';
+  traps,
+} from './util/gameHelpers';
 import { diceContainer, player1Btn, player2Btn } from './util/containers';
 
 function playGame(player1: number, player2: number): void {

@@ -9,5 +9,3 @@ export const board: HTMLDivElement = document.querySelector('.gameBoard');
 export const diceContainer: HTMLElement = document.getElementById('diceImage');
 export const player1Btn: HTMLButtonElement = document.querySelector('.btn-Player1');
 export const player2Btn: HTMLButtonElement = document.querySelector('.btn-Player2');
-export const startPosition: HTMLElement = document.getElementById('tile-index-1');
-export const finalPosition = document.getElementById('tile-index-30');

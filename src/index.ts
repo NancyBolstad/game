@@ -1,7 +1,6 @@
 import Storage from './scripts/util/storage';
 import playGame from './scripts/playGame';
-import { createBoard } from './scripts/board';
-import { showDiceResult, rollDice } from './scripts/gameHelpers';
+import { showDiceResult, rollDice, createBoard } from './scripts/util/gameHelpers';
 import { board, diceContainer } from './scripts/util/containers';
 import handleDrag from './scripts/handleDrag';
 import { handleSelection } from './scripts/handleSelection';
