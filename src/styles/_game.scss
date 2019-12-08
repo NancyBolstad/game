@@ -1,11 +1,12 @@
-.game--wrapper {
+.wrapper__row--game-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.gameBoard {
+
+.item__board {
   display: flex;
   flex-wrap: wrap;
   width: 30rem;
@@ -21,7 +22,7 @@
   justify-content: center;
 }
 
-.dice {
+.row__item--dice {
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -30,7 +31,7 @@
   width: 30%;
 }
 
-.btn--wrapper {
+.item--btn-wrapper {
   display: flex;
 }
 
@@ -39,7 +40,7 @@
   height: 4.25rem;
 }
 
-.board {
+.row__item--board {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,8 +48,4 @@
   width: 60%;
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.tool-bar {
-  width: 10%;
 }

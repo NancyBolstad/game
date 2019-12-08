@@ -56,20 +56,15 @@
     </header>
     <main>
       <div class="wrapper">
-        <div class="wrapper__row game--wrapper">
-          <div class="tool-bar">
-            <button class="cta--reset">
-              Reset Game
-            </button>
+        <div class="wrapper__row wrapper__row--game-wrapper">
+          <div class="row__item row__item--board">
+            <div class="item__board" id="gameBoard"></div>
           </div>
-          <div class="board">
-            <div class="gameBoard"></div>
-          </div>
-          <div class="dice">
-            <span id="diceImage"></span>
-            <div class="btn--wrapper">
-              <button class="cta cta--default btn-Player1">1st</button>
-              <button class="cta cta--default btn-Player2">2nd</button>
+          <div class="row__item row__item--dice">
+            <span class="item--dice-image" id="diceImage"></span>
+            <div class="item--btn-wrapper">
+              <button class="cta cta--default btn--Player1">1st</button>
+              <button class="cta cta--default btn--Player2">2nd</button>
             </div>
           </div>
         </div>

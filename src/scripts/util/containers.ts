@@ -5,10 +5,10 @@ export const player2Selection: HTMLElement = document.getElementById('endZone2')
 export const validateSelectionBtn: HTMLAnchorElement = document.querySelector('.cta--validation');
 
 //page:game
-export const board: HTMLDivElement = document.querySelector('.gameBoard');
+export const board: HTMLElement = document.getElementById('gameBoard');
 export const diceContainer: HTMLElement = document.getElementById('diceImage');
-export const player1Btn: HTMLButtonElement = document.querySelector('.btn-Player1');
-export const player2Btn: HTMLButtonElement = document.querySelector('.btn-Player2');
+export const player1Btn: HTMLButtonElement = document.querySelector('.btn--Player1');
+export const player2Btn: HTMLButtonElement = document.querySelector('.btn--Player2');
 
 //page:winner
 export const winnerContainer: HTMLElement = document.getElementById('winner');
