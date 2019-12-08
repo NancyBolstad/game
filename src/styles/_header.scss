@@ -5,7 +5,7 @@ header {
   border-bottom: 1px solid $white;
 }
 
-.wrapper__row {
+.row {
   &__logo {
     background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655416/game/logo-small.svg');
     background-repeat: no-repeat;
@@ -31,14 +31,22 @@ header {
       color: $secondary;
     }
   }
-  &__links--left {
+  &--left {
     display: flex;
 
     li {
       padding-right: 1.3rem;
     }
   }
-  &__links--contact {
+}
+.links--left {
+  @include flex;
+}
+
+.links__item {
+  padding-right: 1.375rem;
+
+  &--contact {
     font-weight: bold;
     border: 1px solid white;
     padding: 0.3rem 1rem;

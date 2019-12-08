@@ -35,7 +35,7 @@ header {
   border-bottom: 1px solid #d9d9d9;
 }
 
-.wrapper__row__logo {
+.row__logo {
   background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655416/game/logo-small.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -46,38 +46,46 @@ header {
   margin-top: 0.6875rem;
 }
 
-.wrapper__row__links--wrapper {
+.row__links--wrapper {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
 }
 
-.wrapper__row__links--wrapper a:link,
-.wrapper__row__links--wrapper a:visited {
+.row__links--wrapper a:link,
+.row__links--wrapper a:visited {
   color: #d9d9d9;
 }
 
-.wrapper__row__links--wrapper a:hover,
-.wrapper__row__links--wrapper a:active {
+.row__links--wrapper a:hover,
+.row__links--wrapper a:active {
   color: #f5deb3;
 }
 
-.wrapper__row__links--left {
+.row--left {
   display: flex;
 }
 
-.wrapper__row__links--left li {
+.row--left li {
   padding-right: 1.3rem;
 }
 
-.wrapper__row__links--contact {
+.links--left {
+  display: flex;
+}
+
+.links__item {
+  padding-right: 1.375rem;
+}
+
+.links__item--contact {
   font-weight: bold;
   border: 1px solid white;
   padding: 0.3rem 1rem;
 }
 
-.wrapper__row__links--contact:hover,
-.wrapper__row__links--contact:active {
+.links__item--contact:hover,
+.links__item--contact:active {
   border-color: #f5deb3;
 }
 
