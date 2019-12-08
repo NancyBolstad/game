@@ -63,6 +63,13 @@ export function createBoard(container: HTMLElement): void {
       }
     });
 
+    if (i == 30) {
+      tile.style.backgroundImage = `url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655553/game/throne.svg')`;
+      tile.style.backgroundSize = '4rem';
+      tile.style.backgroundRepeat = 'no-repeat';
+      tile.style.backgroundPosition = 'center center';
+    }
+
     container.appendChild(tile);
   }
 }
