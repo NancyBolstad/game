@@ -13,3 +13,4 @@ export const player2Btn: HTMLButtonElement = document.querySelector('.btn-Player
 //page:winner
 export const winnerContainer: HTMLElement = document.getElementById('winner');
 export const congratulationMessage: HTMLElement = document.getElementById('congratulation');
+export const resetBtn: HTMLElement = document.getElementById('reset');

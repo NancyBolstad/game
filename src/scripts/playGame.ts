@@ -1,3 +1,4 @@
+import { gameStorage } from './../index';
 import {
   showDiceResult,
   updatePlayer1Button,
@@ -9,7 +10,7 @@ import {
   traps,
 } from './util/gameHelpers';
 import { diceContainer, player1Btn, player2Btn } from './util/containers';
-import showWinner, { Winner as WinnerTypes } from '../scripts/showWinner';
+import { Winner as WinnerTypes } from '../scripts/showWinner';
 
 function playGame(player1: number, player2: number): void {
   const startPosition: HTMLElement = document.getElementById('tile-index-1');
@@ -34,12 +35,12 @@ function playGame(player1: number, player2: number): void {
         index: player1,
         name: 'Player 1',
       };
+      gameStorage.setSerialize('winner', winner);
       removePlayer(player1);
       displayPlayers(finalPosition, player1);
       gameEnd(player1);
       setTimeout(function() {
         window.location.href = 'winner.html';
-        showWinner(winner);
       }, 1000);
     } else {
       alert(`Player 1 rolled: ${currentDicePoint}`);
@@ -83,12 +84,12 @@ function playGame(player1: number, player2: number): void {
         index: player2,
         name: 'Player 2',
       };
+      gameStorage.setSerialize('winner', winner);
       removePlayer(player2);
       displayPlayers(finalPosition, player2);
       gameEnd(player2);
       setTimeout(function() {
         window.location.href = 'winner.html';
-        showWinner(winner);
       }, 1000);
     } else {
       alert(`Player 2 rolled: ${currentDicePoint}`);

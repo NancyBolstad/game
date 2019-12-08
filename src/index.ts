@@ -2,12 +2,13 @@ import handleDrag from './scripts/handleDrag';
 import { handleSelection } from './scripts/handleSelection';
 import playGame from './scripts/playGame';
 import getCharacterCards from './scripts/showCharacter';
-import showWinner, { Winner as WinnerTypes } from './scripts/showWinner';
+import showWinner, { Winner as WinnerType } from './scripts/showWinner';
 import characterIndex from './scripts/util/characterIndex';
 import {
   board,
   characterList,
   diceContainer,
+  resetBtn,
   validateSelectionBtn,
   winnerContainer,
 } from './scripts/util/containers';
@@ -34,13 +35,21 @@ if (board != null && diceContainer != null) {
   }
 }
 
-console.log(1111111987798);
-
 if (winnerContainer != null) {
-  const winner: WinnerTypes = {
-    index: 238,
-    name: 'Player 1',
-  };
-  console.log(99999999);
+  const winner: WinnerType = gameStorage.getUnserialize('winner');
+  console.log(winner);
   showWinner(winner);
+}
+
+if (resetBtn != null) {
+  resetBtn.addEventListener(
+    'click',
+    function() {
+      gameStorage.delete('player1Index');
+      gameStorage.delete('player2Index');
+      gameStorage.delete('winner');
+      window.location.href = 'select.html';
+    },
+    false,
+  );
 }
