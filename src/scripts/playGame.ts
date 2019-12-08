@@ -31,6 +31,9 @@ function playGame(player1: number, player2: number): void {
     if (checkWinner(player1Status)) {
       removePlayer(player1);
       displayPlayers(finalPosition, player1);
+      setTimeout(function() {
+        alert(`Winner is ${player1}`);
+      }, 1000);
       gameEnd(player1);
     } else {
       alert(`Player 1 rolled: ${currentDicePoint}`);
@@ -73,12 +76,11 @@ function playGame(player1: number, player2: number): void {
 
     if (player2Status >= 30) {
       removePlayer(player2);
-      const finalPosition = document.getElementById('tile-index-30');
       displayPlayers(finalPosition, player2);
-      player1Btn.disabled = true;
-      player2Btn.disabled = true;
-      console.log('Player 2 winner');
-      alert('Winner! Player 2 got the throne!');
+      setTimeout(function() {
+        alert(`Winner is ${player1}`);
+      }, 1000);
+      gameEnd(player1);
     } else {
       alert(`Player 2 rolled: ${currentDicePoint}`);
 

@@ -47,5 +47,4 @@ export function checkWinner(playerStatus: number): boolean {
 export function gameEnd(winner: number) {
   player1Btn.disabled = true;
   player2Btn.disabled = true;
-  alert(`Winner is ${winner}`);
 }
