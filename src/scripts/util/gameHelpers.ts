@@ -44,7 +44,7 @@ export const traps: trap[] = [trap1, trap2, trap3, trap4, trap5];
 export function createBoard(container: HTMLElement): void {
   for (let i: number = 1; i <= 30; i++) {
     const tile: HTMLDivElement = document.createElement('div');
-    tile.className = `tile`;
+    tile.className = `board__tile`;
     tile.setAttribute('id', `tile-index-${i}`);
 
     if (i % 2 !== 0) {
