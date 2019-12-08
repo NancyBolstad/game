@@ -64,7 +64,12 @@ function playGame(player1: number, player2: number): void {
           displayPlayers(newPosition, player1);
         }, 1000);
       }
-      checkDice(currentDicePoint, false);
+      updateButton(false);
+
+      if (currentDicePoint === 6) {
+        alert('Since you rolled 6, you got a Bonus movement. Roll the dice again');
+        updateButton(true);
+      }
     }
   }
 
