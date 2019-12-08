@@ -19,29 +19,29 @@
   <body>
     <header>
       <div class="wrapper">
-        <div class="wrapper__row--header-navigation">
+        <div class="wrapper__row wrapper__row--header-navigation">
           <a
-            class="wrapper__row__logo"
+            class="row__logo"
             href="index.html"
             title="Go to home page"
             aria-label="Go to home page"
             class="logo"
           ></a>
-          <div class="wrapper__row__links--wrapper">
-            <ul class="wrapper__row__links--left">
-              <li>
+          <div class="row__links--wrapper">
+            <ul class="links--left">
+              <li class="links__item">
                 <a href="index.html" title="Go to home page" aria-label="Go to home page">Home</a>
               </li>
-              <li>
+              <li class="links__item">
                 <a href="#" title="Got to milestones page" aria-label="Go to milestones page"
                   >About us</a
                 >
               </li>
             </ul>
-            <ul class="wrapper__row__links--right">
+            <ul class="links--right">
               <li>
                 <a
-                  class="wrapper__row__links--contact"
+                  class="links__item--contact"
                   href="index.html"
                   title="Go to home page"
                   aria-label="Go to home page"
@@ -54,10 +54,10 @@
       </div>
     </header>
     <main class="wrapper">
-      <div class="wrapper__row--hero">
-        <div class="row__item--hero-content">
+      <div class="wrapper__row wrapper__row--hero">
+        <div class="row__item row__item--hero-content">
           <img
-            class="item--logo"
+            class="item item--logo"
             src="https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575666313/game/l4uggmvbi0lymanjkcns.svg"
             alt="Game logo: Cartoon Game of Thrones"
           />
@@ -65,13 +65,13 @@
             href="select.html"
             title="Go to the character selection page"
             aria-label="Go to the character selection page"
-            class="item--link cta cta--big"
+            class="item item--link cta cta--big"
             >Play Now</a
           >
         </div>
-        <div class="row__item--hero-content">
+        <div class="row__item row__item--hero-content">
           <img
-            class="item--featured-image"
+            class="item item--featured-image"
             src="https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655400/game/zuyrhcs1p3cq2c7tul8w.svg"
             alt="Featured image for the page hero"
           />
@@ -80,8 +80,11 @@
     </main>
     <footer>
       <div class="wrapper">
-        <div class="wrapper__row--footer">
-          <span>&copy; 2019 - Designed and Developed By Nancy Y. Bolstad</span>
+        <div class="wrapper__row wrapper__row--footer">
+          <span class="row__item row__item--footer"
+            >&copy; 2019 Developed by Nancy Bolstad - Based on the book
+            <i>A Song of Ice and Fire</i> written by George R. R. Martin.</span
+          >
         </div>
       </div>
     </footer>

@@ -20,29 +20,29 @@
   <body>
     <header>
       <div class="wrapper">
-        <div class="wrapper__row--header-navigation">
+        <div class="wrapper__row wrapper__row--header-navigation">
           <a
-            class="wrapper__row__logo"
+            class="row__logo"
             href="index.html"
             title="Go to home page"
             aria-label="Go to home page"
             class="logo"
           ></a>
-          <div class="wrapper__row__links--wrapper">
-            <ul class="wrapper__row__links--left">
-              <li>
+          <div class="row__links--wrapper">
+            <ul class="links--left">
+              <li class="links__item">
                 <a href="index.html" title="Go to home page" aria-label="Go to home page">Home</a>
               </li>
-              <li>
+              <li class="links__item">
                 <a href="#" title="Got to milestones page" aria-label="Go to milestones page"
                   >About us</a
                 >
               </li>
             </ul>
-            <ul class="wrapper__row__links--right">
+            <ul class="links--right">
               <li>
                 <a
-                  class="wrapper__row__links--contact"
+                  class="links__item--contact"
                   href="index.html"
                   title="Go to home page"
                   aria-label="Go to home page"
@@ -56,20 +56,25 @@
     </header>
     <main>
       <div class="wrapper">
-        <div class="wrapper__row game--wrapper">
-          <div class="tool-bar">
-            <button class="cta--reset">
-              Reset Game
-            </button>
+        <div class="wrapper__row wrapper__row--game-wrapper">
+          <div class="row__item row__item--board">
+            <div class="item__board" id="gameBoard"></div>
           </div>
-          <div class="board">
-            <div class="gameBoard"></div>
-          </div>
-          <div class="dice">
-            <span id="diceImage"></span>
-            <div class="btn--wrapper">
-              <button class="cta cta--default btn-Player1">1st</button>
-              <button class="cta cta--default btn-Player2">2nd</button>
+          <div class="row__item row__item--side-bar">
+            <span class="item item--dice-image" id="diceImage"></span>
+            <span class="item item--information">Click the player name to roll the dice </span>
+            <div class="item--btn-wrapper">
+              <button class="cta cta--default btn--Player1">Player 1</button>
+              <button class="cta cta--default btn--Player2">Player 2</button>
+            </div>
+            <div class="item item--game-rules">
+              <h1 class="item__content item__content--title">How to play</h1>
+              <ul class="item__content item__content--rules">
+                <li class="content__text">1. Player cast the dice in turn.</li>
+                <li class="content__text">2. Move forward if you didn't meet a trap.</li>
+                <li class="content__text">3. Get a bonus turn when the dice point is 6.</li>
+                <li class="content__text">4. The first one get the crown wins.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -77,8 +82,11 @@
     </main>
     <footer>
       <div class="wrapper">
-        <div class="wrapper__row--footer">
-          <span>&copy; 2019 - Designed and Developed By Nancy Y. Bolstad</span>
+        <div class="wrapper__row wrapper__row--footer">
+          <span class="row__item row__item--footer"
+            >&copy; 2019 Developed by Nancy Bolstad - Based on the book
+            <i>A Song of Ice and Fire</i> written by George R. R. Martin.</span
+          >
         </div>
       </div>
     </footer>

@@ -1,3 +1,4 @@
+import { gameStorage } from './../index';
 import {
   showDiceResult,
   updatePlayer1Button,
@@ -9,6 +10,7 @@ import {
   traps,
 } from './util/gameHelpers';
 import { diceContainer, player1Btn, player2Btn } from './util/containers';
+import { Winner as WinnerTypes } from '../scripts/showWinner';
 
 function playGame(player1: number, player2: number): void {
   const startPosition: HTMLElement = document.getElementById('tile-index-1');
@@ -29,12 +31,17 @@ function playGame(player1: number, player2: number): void {
     player1Status += currentDicePoint;
 
     if (checkWinner(player1Status)) {
+      const winner: WinnerTypes = {
+        index: player1,
+        name: 'Player 1',
+      };
+      gameStorage.setSerialize('winner', winner);
       removePlayer(player1);
       displayPlayers(finalPosition, player1);
-      setTimeout(function() {
-        alert(`Winner is ${player1}`);
-      }, 1000);
       gameEnd(player1);
+      setTimeout(function() {
+        window.location.href = 'winner.html';
+      }, 1000);
     } else {
       alert(`Player 1 rolled: ${currentDicePoint}`);
 
@@ -52,9 +59,7 @@ function playGame(player1: number, player2: number): void {
           alert(`${message}`);
 
           setTimeout(function() {
-            console.log(1111111);
             removePlayer(player1);
-            console.log(2222222);
             displayPlayers(newPosition, player1);
           }, 1000);
         }
@@ -74,13 +79,18 @@ function playGame(player1: number, player2: number): void {
     showDiceResult(diceContainer, currentDicePoint);
     player2Status += currentDicePoint;
 
-    if (player2Status >= 30) {
+    if (checkWinner(player2Status)) {
+      const winner: WinnerTypes = {
+        index: player2,
+        name: 'Player 2',
+      };
+      gameStorage.setSerialize('winner', winner);
       removePlayer(player2);
       displayPlayers(finalPosition, player2);
+      gameEnd(player2);
       setTimeout(function() {
-        alert(`Winner is ${player1}`);
+        window.location.href = 'winner.html';
       }, 1000);
-      gameEnd(player1);
     } else {
       alert(`Player 2 rolled: ${currentDicePoint}`);
 

@@ -12,8 +12,8 @@
   font-size: 1.1428rem;
   font-weight: bold;
   height: 2.5rem;
-  padding-left: 3.375rem;
-  padding-right: 3.375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background-color: $secondary;
   transition: background-color 0.15s ease-in-out;
   color: $black;
@@ -26,5 +26,10 @@
     border: 2px solid $secondary;
     background-color: $black;
     color: $secondary;
+  }
+
+  &--big {
+    padding-left: 3.175rem;
+    padding-right: 3.175rem;
   }
 }

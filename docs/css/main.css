@@ -10,8 +10,8 @@
   font-size: 1.1428rem;
   font-weight: bold;
   height: 2.5rem;
-  padding-left: 3.375rem;
-  padding-right: 3.375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background-color: #f5deb3;
   transition: background-color 0.15s ease-in-out;
   color: #000000;
@@ -27,6 +27,11 @@
   color: #f5deb3;
 }
 
+.cta--big {
+  padding-left: 3.175rem;
+  padding-right: 3.175rem;
+}
+
 header {
   width: 100%;
   font-family: 'Open Sans', sans-serif;
@@ -35,7 +40,7 @@ header {
   border-bottom: 1px solid #d9d9d9;
 }
 
-.wrapper__row__logo {
+.row__logo {
   background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655416/game/logo-small.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -46,42 +51,50 @@ header {
   margin-top: 0.6875rem;
 }
 
-.wrapper__row__links--wrapper {
+.row__links--wrapper {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
 }
 
-.wrapper__row__links--wrapper a:link,
-.wrapper__row__links--wrapper a:visited {
+.row__links--wrapper a:link,
+.row__links--wrapper a:visited {
   color: #d9d9d9;
 }
 
-.wrapper__row__links--wrapper a:hover,
-.wrapper__row__links--wrapper a:active {
+.row__links--wrapper a:hover,
+.row__links--wrapper a:active {
   color: #f5deb3;
 }
 
-.wrapper__row__links--left {
+.row--left {
   display: flex;
 }
 
-.wrapper__row__links--left li {
+.row--left li {
   padding-right: 1.3rem;
 }
 
-.wrapper__row__links--contact {
+.links--left {
+  display: flex;
+}
+
+.links__item {
+  padding-right: 1.375rem;
+}
+
+.links__item--contact {
   font-weight: bold;
   border: 1px solid white;
   padding: 0.3rem 1rem;
 }
 
-.wrapper__row__links--contact:hover,
-.wrapper__row__links--contact:active {
+.links__item--contact:hover,
+.links__item--contact:active {
   border-color: #f5deb3;
 }
 
-.game--wrapper {
+.wrapper__row--game-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -89,14 +102,14 @@ header {
   padding-bottom: 2rem;
 }
 
-.gameBoard {
+.item__board {
   display: flex;
   flex-wrap: wrap;
   width: 30rem;
   height: 30rem;
 }
 
-.tile {
+.board__tile {
   width: 6rem;
   height: 5rem;
   display: flex;
@@ -105,17 +118,24 @@ header {
   justify-content: center;
 }
 
-.dice {
+.row__item--side-bar {
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 40%;
 }
 
-.btn--wrapper {
+.item--btn-wrapper {
   display: flex;
+}
+
+.item--information {
+  color: #c99240;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 1rem;
 }
 
 .board__figure {
@@ -123,7 +143,7 @@ header {
   height: 4.25rem;
 }
 
-.board {
+.row__item--board {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,8 +153,29 @@ header {
   padding-bottom: 2rem;
 }
 
-.tool-bar {
-  width: 10%;
+.item--game-rules {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px dotted #d9d9d9;
+  border-radius: 2.5rem;
+}
+
+.item__content {
+  text-align: left;
+}
+
+.item__content--title {
+  font-size: 1.5rem;
+}
+
+.item__content--rules {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: 0;
 }
 
 body {
@@ -184,6 +225,11 @@ h3 {
   margin: 0 auto;
 }
 
+.wrapper--selection {
+  display: flex;
+  flex-direction: row;
+}
+
 .wrapper__row {
   width: 100%;
 }
@@ -206,6 +252,12 @@ h3 {
   height: 83vh;
 }
 
+.wrapper__row--winner {
+  display: flex;
+  flex-direction: row;
+  height: 83vh;
+}
+
 .wrapper__row--intro {
   flex-direction: column;
   display: flex;
@@ -223,14 +275,14 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   border-radius: 2.5rem;
   margin-top: 5rem;
   margin-bottom: 4rem;
-  height: 240px;
 }
 
 .wrapper__row--selected-area {
-  flex-direction: row;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,6 +311,30 @@ h3 {
   flex: 1;
 }
 
+.row__item--winner-content-left {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: center;
+  background-position: center center;
+  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575819359/game/ixbpbe0utghdofmgm9l1.png');
+  background-size: 410px;
+  flex-basis: 50%;
+  flex: 1;
+}
+
+.row__item--winner-content-right {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+  flex: 1;
+}
+
 .row__item--card {
   flex-basis: 21%;
   transition: 0.2s;
@@ -268,6 +344,7 @@ h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .row__item--card:hover,
@@ -297,8 +374,16 @@ h3 {
   width: 100%;
 }
 
+.item--winner-image {
+  height: 15.375rem;
+  width: 53%;
+}
+
+.item--congratulations {
+  color: #c99240;
+}
+
 .item--card-image {
-  width: 80%;
   height: 11.5625rem;
 }
 
@@ -317,6 +402,7 @@ h3 {
 
 .item--player-selected div {
   width: 80%;
+  margin-bottom: 0;
 }
 
 .item--player-selected div img {
