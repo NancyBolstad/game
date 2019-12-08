@@ -60,11 +60,21 @@
           <div class="row__item row__item--board">
             <div class="item__board" id="gameBoard"></div>
           </div>
-          <div class="row__item row__item--dice">
-            <span class="item--dice-image" id="diceImage"></span>
+          <div class="row__item row__item--side-bar">
+            <span class="item item--dice-image" id="diceImage"></span>
+            <span class="item item--information">Click the player name to roll the dice </span>
             <div class="item--btn-wrapper">
-              <button class="cta cta--default btn--Player1">1st</button>
-              <button class="cta cta--default btn--Player2">2nd</button>
+              <button class="cta cta--default btn--Player1">Player 1</button>
+              <button class="cta cta--default btn--Player2">Player 2</button>
+            </div>
+            <div class="item item--game-rules">
+              <h1 class="item__content item__content--title">How to play</h1>
+              <ul class="item__content item__content--rules">
+                <li class="content__text">1. Player cast the dice in turn.</li>
+                <li class="content__text">2. Move forward if you didn't meet a trap.</li>
+                <li class="content__text">3. Get a bonus turn when the dice point is 6.</li>
+                <li class="content__text">4. The first one get the crown wins.</li>
+              </ul>
             </div>
           </div>
         </div>

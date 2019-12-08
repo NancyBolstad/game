@@ -10,8 +10,8 @@
   font-size: 1.1428rem;
   font-weight: bold;
   height: 2.5rem;
-  padding-left: 3.375rem;
-  padding-right: 3.375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background-color: #f5deb3;
   transition: background-color 0.15s ease-in-out;
   color: #000000;
@@ -25,6 +25,11 @@
   border: 2px solid #f5deb3;
   background-color: #000000;
   color: #f5deb3;
+}
+
+.cta--big {
+  padding-left: 3.175rem;
+  padding-right: 3.175rem;
 }
 
 header {
@@ -113,17 +118,24 @@ header {
   justify-content: center;
 }
 
-.row__item--dice {
+.row__item--side-bar {
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 40%;
 }
 
 .item--btn-wrapper {
   display: flex;
+}
+
+.item--information {
+  color: #c99240;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 1rem;
 }
 
 .board__figure {
@@ -139,6 +151,31 @@ header {
   width: 60%;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.item--game-rules {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px dotted #d9d9d9;
+  border-radius: 2.5rem;
+}
+
+.item__content {
+  text-align: left;
+}
+
+.item__content--title {
+  font-size: 1.5rem;
+}
+
+.item__content--rules {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: 0;
 }
 
 body {

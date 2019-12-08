@@ -22,17 +22,24 @@
   justify-content: center;
 }
 
-.row__item--dice {
+.row__item--side-bar {
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 40%;
 }
 
 .item--btn-wrapper {
   display: flex;
+}
+
+.item--information {
+  color: $brand;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 1rem;
 }
 
 .board__figure {
@@ -48,4 +55,27 @@
   width: 60%;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.item--game-rules {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px dotted $white;
+  border-radius: 2.5rem;
+}
+
+.item__content {
+  text-align: left;
+  &--title {
+    font-size: 1.5rem;
+  }
+  &--rules {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: 0;
+  }
 }
