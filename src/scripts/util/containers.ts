@@ -7,6 +7,5 @@ export const validateSelectionBtn: HTMLAnchorElement = document.querySelector('.
 //page:game
 export const board: HTMLDivElement = document.querySelector('.gameBoard');
 export const diceContainer: HTMLElement = document.getElementById('diceImage');
-export const startTile: HTMLElement = document.getElementById('tile-index-1');
 export const player1Btn: HTMLButtonElement = document.querySelector('.btn-Player1');
 export const player2Btn: HTMLButtonElement = document.querySelector('.btn-Player2');
