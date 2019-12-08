@@ -9,8 +9,8 @@ import characterIndex from './scripts/util/characterIndex';
 import { characterList, validateSelectionBtn } from './scripts/util/containers';
 
 export const gameStorage = new Storage();
-const player1: number = gameStorage.getUnserialize('player1Name');
-const player2: number = gameStorage.getUnserialize('player2Name');
+const player1: number = gameStorage.getUnserialize('player1Index');
+const player2: number = gameStorage.getUnserialize('player2Index');
 
 if (characterList != null) {
   getCharacterCards(characterIndex);
@@ -19,8 +19,11 @@ if (characterList != null) {
     validateSelectionBtn.addEventListener('click', handleSelection, false);
 }
 
-if (board != null && diceContainer && player1 && player2) {
+if (board != null && diceContainer) {
   createBoard(board);
   showDiceResult(diceContainer, rollDice());
+}
+
+if (player1 && player2) {
   playGame(player1, player2);
 }

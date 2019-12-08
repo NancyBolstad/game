@@ -51,7 +51,7 @@ function handleDrop(event: DragEvent): void {
     (event.target as HTMLElement).style.background = '';
     dragged.parentNode.removeChild(dragged);
     (event.target as HTMLElement).appendChild(dragged);
-    gameStorage.set('player1Name', `${dragged.getAttribute('key')}`);
+    gameStorage.set('player1Index', `${dragged.getAttribute('key')}`);
   }
 
   if ((event.target as HTMLElement).id == 'endZone2') {
@@ -63,7 +63,7 @@ function handleDrop(event: DragEvent): void {
     (event.target as HTMLElement).style.background = '';
     dragged.parentNode.removeChild(dragged);
     (event.target as HTMLElement).appendChild(dragged);
-    gameStorage.set('player2Name', `${dragged.getAttribute('key')}`);
+    gameStorage.set('player2Index', `${dragged.getAttribute('key')}`);
   }
 
   if ((event.target as HTMLElement).id == 'startZone') {
