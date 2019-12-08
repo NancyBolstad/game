@@ -1,26 +1,14 @@
-import { gameStorage } from './index';
-import { createBoard, traps } from './scripts/board';
+import { traps } from './board';
 import {
   showDiceResult,
-  updateButton,
+  updatePlayer1Button,
   rollDice,
   displayPlayers,
   removePlayer,
-  checkDice,
   checkWinner,
   gameEnd,
-} from './scripts/gameHelpers';
-import { board, diceContainer, player1Btn, player2Btn } from './scripts/util/containers';
-
-function runGame(): void {
-  const player1: number = gameStorage.getUnserialize('player1Name');
-  const player2: number = gameStorage.getUnserialize('player2Name');
-  if (board != null && diceContainer && player1 && player2) {
-    createBoard(board);
-    showDiceResult(diceContainer, rollDice());
-    playGame(player1, player2);
-  }
-}
+} from './gameHelpers';
+import { diceContainer, player1Btn, player2Btn } from './util/containers';
 
 function playGame(player1: number, player2: number): void {
   const startPosition: HTMLElement = document.getElementById('tile-index-1');
@@ -28,11 +16,10 @@ function playGame(player1: number, player2: number): void {
 
   let player1Status: number = 1;
   let player2Status: number = 1;
-  let isPlayer1Turn: boolean = true;
 
   displayPlayers(startPosition, player1);
   displayPlayers(startPosition, player2);
-  updateButton(isPlayer1Turn);
+  updatePlayer1Button(true);
   player1Btn.addEventListener('click', runPlayer1Turn, false);
   player2Btn.addEventListener('click', runPlayer2Turn, false);
 
@@ -64,11 +51,12 @@ function playGame(player1: number, player2: number): void {
           displayPlayers(newPosition, player1);
         }, 1000);
       }
-      updateButton(false);
+
+      updatePlayer1Button(false);
 
       if (currentDicePoint === 6) {
         alert('Since you rolled 6, you got a Bonus movement. Roll the dice again');
-        updateButton(true);
+        updatePlayer1Button(true);
       }
     }
   }
@@ -104,9 +92,14 @@ function playGame(player1: number, player2: number): void {
         }, 1000); //delay is in milliseconds
       }
 
-      checkDice(currentDicePoint, true);
+      updatePlayer1Button(true);
+
+      if (currentDicePoint === 6) {
+        alert('Since you rolled 6, you got a Bonus movement. Roll the dice again');
+        updatePlayer1Button(false);
+      }
     }
   }
 }
 
-export default runGame;
+export default playGame;

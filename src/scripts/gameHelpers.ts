@@ -2,7 +2,7 @@ import { player1Btn, player2Btn } from './util/containers';
 import { diceArray } from './util/dice';
 import createImage from './util/createImage';
 
-export function updateButton(isPlayer1Turn: boolean): void {
+export function updatePlayer1Button(isPlayer1Turn: boolean): void {
   if (isPlayer1Turn) {
     player1Btn.disabled = false;
     player2Btn.disabled = true;
@@ -37,14 +37,6 @@ export function displayPlayers(container: HTMLElement, playerIndex: number) {
 
   if (container != null) {
     container.appendChild(player);
-  }
-}
-
-export function checkDice(dicePoints: number, isPlayer1Turn: boolean) {
-  if (dicePoints === 6) {
-    alert('Since you rolled 6, you got a Bonus movement. Roll the dice again');
-  } else {
-    updateButton(isPlayer1Turn);
   }
 }
 

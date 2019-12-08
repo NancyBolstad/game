@@ -1,7 +1,27 @@
 import Storage from './scripts/util/storage';
-import renderCharacterList from './renderCharacterList';
-import runGame from './playGame';
+import playGame from './scripts/playGame';
+import { createBoard } from './scripts/board';
+import { showDiceResult, rollDice } from './scripts/gameHelpers';
+import { board, diceContainer } from './scripts/util/containers';
+import handleDrag from './scripts/handleDrag';
+import { handleSelection } from './scripts/handleSelection';
+import getCharacterCards from './scripts/showCharacter';
+import characterIndex from './scripts/util/characterIndex';
+import { characterList, validateSelectionBtn } from './scripts/util/containers';
 
 export const gameStorage = new Storage();
-renderCharacterList();
-runGame();
+const player1: number = gameStorage.getUnserialize('player1Name');
+const player2: number = gameStorage.getUnserialize('player2Name');
+
+if (characterList != null) {
+  getCharacterCards(characterIndex);
+  handleDrag();
+  if (validateSelectionBtn != null)
+    validateSelectionBtn.addEventListener('click', handleSelection, false);
+}
+
+if (board != null && diceContainer && player1 && player2) {
+  createBoard(board);
+  showDiceResult(diceContainer, rollDice());
+  playGame(player1, player2);
+}

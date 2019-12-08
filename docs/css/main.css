@@ -21,7 +21,6 @@
 
 .cta:hover,
 .cta:active,
-.cta:focus,
 .cta:disabled {
   border: 2px solid #f5deb3;
   background-color: #000000;
