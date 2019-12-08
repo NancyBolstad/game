@@ -1,3 +1,4 @@
+import { gameStorage } from './../index';
 import {
   showDiceResult,
   updatePlayer1Button,
@@ -31,10 +32,11 @@ function playGame(player1: number, player2: number): void {
     if (checkWinner(player1Status)) {
       removePlayer(player1);
       displayPlayers(finalPosition, player1);
-      setTimeout(function() {
-        alert(`Winner is ${player1}`);
-      }, 1000);
       gameEnd(player1);
+      gameStorage.set('winner', `${player1}`);
+      setTimeout(function() {
+        window.location.href = 'winner.html';
+      }, 1000);
     } else {
       alert(`Player 1 rolled: ${currentDicePoint}`);
 
@@ -74,13 +76,14 @@ function playGame(player1: number, player2: number): void {
     showDiceResult(diceContainer, currentDicePoint);
     player2Status += currentDicePoint;
 
-    if (player2Status >= 30) {
+    if (checkWinner(player2Status)) {
       removePlayer(player2);
       displayPlayers(finalPosition, player2);
+      gameEnd(player2);
+      gameStorage.set('winner', `${player2}`);
       setTimeout(function() {
-        alert(`Winner is ${player1}`);
+        window.location.href = 'winner.html';
       }, 1000);
-      gameEnd(player1);
     } else {
       alert(`Player 2 rolled: ${currentDicePoint}`);
 

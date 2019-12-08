@@ -184,6 +184,10 @@ h3 {
   margin: 0 auto;
 }
 
+.wrapper--winner {
+  max-width: 100vw;
+}
+
 .wrapper__row {
   width: 100%;
 }
@@ -200,10 +204,16 @@ h3 {
   align-items: center;
 }
 
-.wrapper__row--hero {
+.wrapper__row--hero,
+.wrapper__row--winner {
   display: flex;
   flex-direction: row;
   height: 83vh;
+}
+
+.wrapper__row--winner {
+  background: pink;
+  transition: background-color 0.3s ease-out;
 }
 
 .wrapper__row--intro {
