@@ -139,7 +139,7 @@ h3 {
     @include flex-direction(column);
     @include flex-center;
     text-align: center;
-    margin-top: 2rem;
+    margin-bottom: 2rem;
 
     &:hover,
     :focus-within {
@@ -190,6 +190,7 @@ h3 {
 
     div {
       width: 80%;
+      margin-bottom: 0;
 
       img {
         width: 60%;

@@ -344,7 +344,7 @@ h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .row__item--card:hover,
@@ -402,6 +402,7 @@ h3 {
 
 .item--player-selected div {
   width: 80%;
+  margin-bottom: 0;
 }
 
 .item--player-selected div img {
