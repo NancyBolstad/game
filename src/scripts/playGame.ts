@@ -39,18 +39,23 @@ function playGame(player1: number, player2: number): void {
       removePlayer(player1);
       displayPlayers(updatePosition, player1);
 
-      if (traps.includes(player1Status)) {
-        const trapIndex: number = traps.indexOf(player1Status) + 1;
-        player1Status -= trapIndex;
-        const newPosition: HTMLElement = document.getElementById(`tile-index-${player1Status}`);
+      traps.forEach(element => {
+        if (element.token == player1Status) {
+          const { action, message } = element;
+          player1Status -= action;
+          const newPosition = document.getElementById(`tile-index-${player1Status}`);
+          console.log(newPosition);
 
-        alert(`Trap ${trapIndex}`);
+          alert(`${message}`);
 
-        setTimeout(function() {
-          removePlayer(player1);
-          displayPlayers(newPosition, player1);
-        }, 1000);
-      }
+          setTimeout(function() {
+            console.log(1111111);
+            removePlayer(player1);
+            console.log(2222222);
+            displayPlayers(newPosition, player1);
+          }, 1000);
+        }
+      });
 
       updatePlayer1Button(false);
 
@@ -81,16 +86,23 @@ function playGame(player1: number, player2: number): void {
       removePlayer(player2);
       displayPlayers(updatePosition, player2);
 
-      if (traps.includes(player2Status)) {
-        player2Status -= traps.indexOf(player2Status) + 1;
-        const newPosition: HTMLElement = document.getElementById(`tile-index-${player2Status}`);
-        alert(`Trap ${traps.indexOf(player2Status) + 1}`);
+      traps.forEach(element => {
+        if (element.token == player2Status) {
+          const { action, message } = element;
+          player2Status -= action;
+          const newPosition = document.getElementById(`tile-index-${player2Status}`);
+          console.log(newPosition);
 
-        setTimeout(function() {
-          removePlayer(player2);
-          displayPlayers(newPosition, player2);
-        }, 1000); //delay is in milliseconds
-      }
+          alert(`${message}`);
+
+          setTimeout(function() {
+            console.log(1111111);
+            removePlayer(player2);
+            console.log(2222222);
+            displayPlayers(newPosition, player2);
+          }, 1000);
+        }
+      });
 
       updatePlayer1Button(true);
 
