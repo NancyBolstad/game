@@ -66,15 +66,15 @@ h3 {
       @include flex-direction(column);
       @include flex-center;
     }
-    &--hero,
-    &--winner {
+    &--hero {
       @include flex;
       @include flex-direction(row);
       height: 83vh;
     }
     &--winner {
-      background: pink;
-      transition: background-color 0.3s ease-out;
+      @include flex;
+      @include flex-direction(row);
+      height: 83vh;
     }
     &--intro {
       @include flex-direction(column);
@@ -114,6 +114,23 @@ h3 {
     flex-basis: 50%;
     flex: 1;
   }
+  &--winner-content-left {
+    @include flex-direction(column);
+    @include flex-center;
+    @include create-background(
+      $imageUrl:
+        'https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575819359/game/ixbpbe0utghdofmgm9l1.png',
+      $size: 410px
+    );
+    flex-basis: 50%;
+    flex: 1;
+  }
+  &--winner-content-right {
+    @include flex-direction(column);
+    @include flex-center;
+    flex-basis: 50%;
+    flex: 1;
+  }
   &--card {
     flex-basis: 21%;
     transition: 0.2s;
@@ -146,6 +163,13 @@ h3 {
   &--featured-image {
     height: 27.375rem;
     width: 100%;
+  }
+  &--winner-image {
+    height: 15.375rem;
+    width: 53%;
+  }
+  &--congratulations {
+    color: $brand;
   }
   &--card-image {
     width: 80%;

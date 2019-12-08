@@ -53,20 +53,22 @@
         </div>
       </div>
     </header>
-    <main class="wrapper--winner">
-      <div class="wrapper__row--winner">
-        <div class="row__item--hero-content" id="winner">
-          <img class="item--featured-image" src="" alt="Featured image for the winner" />
-        </div>
-        <div class="row__item--hero-content">
-          <h1>Congratulations!</h1>
-          <a
-            href="select.html"
-            title="Go to the character selection page"
-            aria-label="Go to the character selection page"
-            class="item--link cta cta--big"
-            >PLay Again</a
-          >
+    <main>
+      <div class="wrapper">
+        <div class="wrapper__row--winner">
+          <div class="row__item--winner-content-left" id="winner"></div>
+          <div class="row__item--winner-content-right">
+            <h1 class="item--congratulations">Congratulations!</h1>
+            <h2 id="congratulation"></h2>
+            <a
+              href="select.html"
+              title="Go to the character selection page"
+              aria-label="Go to the character selection page"
+              class="item--link cta cta--big"
+              id="reset"
+              >PLay Again</a
+            >
+          </div>
         </div>
       </div>
     </main>
@@ -77,5 +79,6 @@
         </div>
       </div>
     </footer>
+    <script src="bundle.js"></script>
   </body>
 </html>
