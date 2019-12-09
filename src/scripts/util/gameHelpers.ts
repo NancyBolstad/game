@@ -1,4 +1,4 @@
-import { player1Btn, player2Btn } from './containers';
+import { player1Btn, player2Btn, overlay, message } from './containers';
 import { diceArray } from './dice';
 import createImage from './createImage';
 
@@ -120,4 +120,15 @@ export function checkWinner(playerStatus: number): boolean {
 export function gameEnd(winner: number) {
   player1Btn.disabled = true;
   player2Btn.disabled = true;
+}
+
+export function showMessage(content: string) {
+  message.innerText = content;
+  overlay.style.visibility = 'visible';
+}
+
+export function deleteMessage() {
+  setTimeout(function() {
+    overlay.style.visibility = 'hidden';
+  }, 1500);
 }

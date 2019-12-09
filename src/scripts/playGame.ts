@@ -8,20 +8,11 @@ import {
   checkWinner,
   gameEnd,
   traps,
+  showMessage,
+  deleteMessage,
 } from './util/gameHelpers';
-import { diceContainer, player1Btn, player2Btn, overlay, message } from './util/containers';
+import { diceContainer, player1Btn, player2Btn } from './util/containers';
 import { Winner as WinnerTypes } from '../scripts/showWinner';
-
-function showMessage(content: string) {
-  message.innerText = content;
-  overlay.style.visibility = 'visible';
-}
-
-function deleteMessage() {
-  setTimeout(function() {
-    overlay.style.visibility = 'hidden';
-  }, 1500);
-}
 
 function playGame(player1: number, player2: number): void {
   const startPosition: HTMLElement = document.getElementById('tile-index-1');
