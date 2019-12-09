@@ -41,13 +41,13 @@ header {
 }
 
 .row__logo {
-  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655416/game/logo-small.svg');
+  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575877298/game/t3k3iauo3phxgmsdzmwu.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   display: inline-block;
-  width: 2.375rem;
-  height: 2.375rem;
+  width: 17.875rem;
+  height: 3rem;
   margin-top: 0.6875rem;
 }
 
@@ -100,6 +100,7 @@ header {
   flex-wrap: wrap;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  height: 75vh;
 }
 
 .item__board {
