@@ -9,7 +9,7 @@ export interface Winner {
 function showWinner({ index, name }: Winner): void {
   if (winnerContainer != null) {
     const winnerImage: HTMLImageElement = document.createElement('img');
-    winnerImage.className = 'item--winner-image';
+    winnerImage.className = 'item item--winner-image item--shake';
     winnerImage.src = `${createImage(index)}`;
     winnerImage.alt = 'Featured image for the winner';
     winnerContainer.appendChild(winnerImage);

@@ -196,6 +196,22 @@ header {
   font-family: 'Open Sans', sans-serif;
 }
 
+.item--shake {
+  animation: shake 550ms infinite linear;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(15px, 0);
+  }
+  50% {
+    transform: translate(-15px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 .row__item--overlay {
   background-color: black;
   border-radius: 2px;
