@@ -46,6 +46,7 @@ export function createBoard(container: HTMLElement): void {
     const tile: HTMLDivElement = document.createElement('div');
     tile.className = `board__tile`;
     tile.setAttribute('id', `tile-index-${i}`);
+    tile.innerHTML = `<span class='tile__number'>${i}</span>`;
 
     if (i % 2 !== 0) {
       tile.style.backgroundColor = 'brown';
@@ -108,7 +109,7 @@ export function displayPlayers(container: HTMLElement, playerIndex: number) {
   player.setAttribute('id', `figure-${playerIndex}`);
 
   if (container != null) {
-    container.appendChild(player);
+    container.append(player);
   }
 }
 

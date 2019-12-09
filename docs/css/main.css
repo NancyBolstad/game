@@ -117,6 +117,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .row__item--side-bar {
@@ -177,6 +178,16 @@ header {
   font-size: 1.2rem;
   line-height: 1.5;
   padding: 0;
+}
+
+.tile__number {
+  position: absolute;
+  top: 1px;
+  right: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+  opacity: 0.7;
 }
 
 .row__item--overlay {
