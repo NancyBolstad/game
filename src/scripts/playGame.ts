@@ -20,7 +20,7 @@ function showMessage(content: string) {
 function deleteMessage() {
   setTimeout(function() {
     overlay.style.visibility = 'hidden';
-  }, 2000);
+  }, 1500);
 }
 
 function playGame(player1: number, player2: number): void {
@@ -70,17 +70,17 @@ function playGame(player1: number, player2: number): void {
           setTimeout(function() {
             removePlayer(player1);
             displayPlayers(newPosition, player1);
-          }, 2000);
+          }, 3000);
         }
       });
 
       updatePlayer1Button(false);
+    }
 
-      if (currentDicePoint === 6) {
-        showMessage('Since you rolled 6, you got a Bonus movement. Roll the dice again');
-        deleteMessage();
-        updatePlayer1Button(true);
-      }
+    if (currentDicePoint === 6) {
+      showMessage('Since you rolled 6, you got a Bonus movement. Roll the dice again');
+      deleteMessage();
+      updatePlayer1Button(true);
     }
   }
 
@@ -119,17 +119,17 @@ function playGame(player1: number, player2: number): void {
           setTimeout(function() {
             removePlayer(player2);
             displayPlayers(newPosition, player2);
-          }, 2000);
+          }, 3000);
         }
       });
 
       updatePlayer1Button(true);
+    }
 
-      if (currentDicePoint === 6) {
-        showMessage('Since you rolled 6, you got a Bonus movement. Roll the dice again');
-        deleteMessage();
-        updatePlayer1Button(false);
-      }
+    if (currentDicePoint === 6) {
+      showMessage('Since you rolled 6, you got a Bonus movement. Roll the dice again');
+      deleteMessage();
+      updatePlayer1Button(false);
     }
   }
 }

@@ -230,7 +230,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  visibility: visible;
+  visibility: hidden;
   font-family: 'Open Sans', sans-serif;
 }
 
