@@ -8,6 +8,8 @@ import {
   checkWinner,
   gameEnd,
   traps,
+  showMessage,
+  deleteMessage,
 } from './util/gameHelpers';
 import { diceContainer, player1Btn, player2Btn } from './util/containers';
 import { Winner as WinnerTypes } from '../scripts/showWinner';
@@ -43,8 +45,6 @@ function playGame(player1: number, player2: number): void {
         window.location.href = 'winner.html';
       }, 1000);
     } else {
-      alert(`Player 1 rolled: ${currentDicePoint}`);
-
       const updatePosition = document.getElementById(`tile-index-${player1Status}`);
       removePlayer(player1);
       displayPlayers(updatePosition, player1);
@@ -54,23 +54,24 @@ function playGame(player1: number, player2: number): void {
           const { action, message } = element;
           player1Status -= action;
           const newPosition = document.getElementById(`tile-index-${player1Status}`);
-          console.log(newPosition);
 
-          alert(`${message}`);
+          showMessage(`${message}`);
+          deleteMessage();
 
           setTimeout(function() {
             removePlayer(player1);
             displayPlayers(newPosition, player1);
-          }, 1000);
+          }, 3000);
         }
       });
 
       updatePlayer1Button(false);
+    }
 
-      if (currentDicePoint === 6) {
-        alert('Since you rolled 6, you got a Bonus movement. Roll the dice again');
-        updatePlayer1Button(true);
-      }
+    if (currentDicePoint === 6) {
+      showMessage('Since you rolled 6, you got a Bonus movement. Roll the dice again');
+      deleteMessage();
+      updatePlayer1Button(true);
     }
   }
 
@@ -92,8 +93,6 @@ function playGame(player1: number, player2: number): void {
         window.location.href = 'winner.html';
       }, 1000);
     } else {
-      alert(`Player 2 rolled: ${currentDicePoint}`);
-
       const updatePosition = document.getElementById(`tile-index-${player2Status}`);
       removePlayer(player2);
       displayPlayers(updatePosition, player2);
@@ -105,23 +104,23 @@ function playGame(player1: number, player2: number): void {
           const newPosition = document.getElementById(`tile-index-${player2Status}`);
           console.log(newPosition);
 
-          alert(`${message}`);
+          showMessage(`${message}`);
+          deleteMessage();
 
           setTimeout(function() {
-            console.log(1111111);
             removePlayer(player2);
-            console.log(2222222);
             displayPlayers(newPosition, player2);
-          }, 1000);
+          }, 3000);
         }
       });
 
       updatePlayer1Button(true);
+    }
 
-      if (currentDicePoint === 6) {
-        alert('Since you rolled 6, you got a Bonus movement. Roll the dice again');
-        updatePlayer1Button(false);
-      }
+    if (currentDicePoint === 6) {
+      showMessage('Since you rolled 6, you got a Bonus movement. Roll the dice again');
+      deleteMessage();
+      updatePlayer1Button(false);
     }
   }
 }
