@@ -9,6 +9,8 @@ export const board: HTMLElement = document.getElementById('gameBoard');
 export const diceContainer: HTMLElement = document.getElementById('diceImage');
 export const player1Btn: HTMLButtonElement = document.querySelector('.btn--Player1');
 export const player2Btn: HTMLButtonElement = document.querySelector('.btn--Player2');
+export const overlay: HTMLElement = document.getElementById('overlay');
+export const message: HTMLElement = document.getElementById('message');
 
 //page:winner
 export const winnerContainer: HTMLElement = document.getElementById('winner');
