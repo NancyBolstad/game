@@ -20,7 +20,7 @@ function showMessage(content: string) {
 function deleteMessage() {
   setTimeout(function() {
     overlay.style.visibility = 'hidden';
-  }, 1000);
+  }, 2000);
 }
 
 function playGame(player1: number, player2: number): void {

@@ -28,6 +28,11 @@
     color: $secondary;
   }
 
+  &:disabled {
+    opacity: 0.6;
+    cursor: none;
+  }
+
   &--big {
     padding-left: 3.175rem;
     padding-right: 3.175rem;
