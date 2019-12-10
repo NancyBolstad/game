@@ -70,7 +70,6 @@ function handleDrop(event: DragEvent): void {
     (event.target as HTMLElement).style.background = '';
     dragged.parentNode.removeChild(dragged);
     (event.target as HTMLElement).appendChild(dragged);
-    console.log(dragged);
   }
 }
 

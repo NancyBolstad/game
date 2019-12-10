@@ -29,7 +29,7 @@ function playGame(player1: number, player2: number): void {
 
   function runPlayer1Turn(): void {
     const currentDicePoint = rollDice();
-    showDiceResult(diceContainer, currentDicePoint);
+    showDiceResult(diceContainer, currentDicePoint, 300);
     player1Status += currentDicePoint;
 
     if (checkWinner(player1Status)) {
@@ -77,7 +77,7 @@ function playGame(player1: number, player2: number): void {
 
   function runPlayer2Turn(): void {
     const currentDicePoint = rollDice();
-    showDiceResult(diceContainer, currentDicePoint);
+    showDiceResult(diceContainer, currentDicePoint, 300);
     player2Status += currentDicePoint;
 
     if (checkWinner(player2Status)) {
@@ -102,7 +102,6 @@ function playGame(player1: number, player2: number): void {
           const { action, message } = element;
           player2Status -= action;
           const newPosition = document.getElementById(`tile-index-${player2Status}`);
-          console.log(newPosition);
 
           showMessage(`${message}`);
           deleteMessage();

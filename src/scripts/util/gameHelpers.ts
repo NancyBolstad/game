@@ -13,26 +13,22 @@ const trap1: trap = {
   action: 1,
   message: 'Pirates ahead! Retreat one field to avoid being noticed.',
 };
-
 const trap2: trap = {
   token: 14,
   action: 2,
   message: 'A wolf emerges from the night woods. Retreat two fields to escape its chase.',
 };
-
 const trap3: trap = {
   token: 18,
   action: 3,
   message:
     'A white walker has been spotted! Immediately retreat three fields to narrowly escape death.',
 };
-
 const trap4: trap = {
   token: 24,
   action: 4,
   message: 'Enemy horsemen on the horizon! Outnumbered, you must retreat four fields',
 };
-
 const trap5: trap = {
   token: 28,
   action: 5,
@@ -85,8 +81,13 @@ export function updatePlayer1Button(isPlayer1Turn: boolean): void {
   }
 }
 
-export function showDiceResult(container: HTMLElement, point: number) {
+export function showDiceResult(container: HTMLElement, point: number, delay?: number) {
   container.innerHTML = diceArray[point - 1];
+  container.className += ' item--shake';
+
+  setTimeout(function() {
+    container.classList.remove('item--shake');
+  }, delay);
 }
 
 export function rollDice(): number {
