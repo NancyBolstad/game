@@ -14,7 +14,7 @@ import {
 } from './scripts/util/containers';
 import { createBoard, rollDice, showDiceResult } from './scripts/util/gameHelpers';
 import Storage from './scripts/util/storage';
-import { startConfetti } from './scripts/drawConfetti';
+import drawConfetti from './scripts/confetti';
 
 export const gameStorage = new Storage();
 
@@ -55,27 +55,11 @@ if (resetBtn != null) {
   );
 }
 
-const canvasConfiguration = {
-  maxShapes: 100,
-  props: ['circle', 'rectangle', 'line', 'triangle', 'square'],
-  colors: [
-    '#E85F42',
-    '#F0FB05',
-    '#27FF01',
-    '#01FFC1',
-    '#01B2FF',
-    '#69E8FA',
-    '#0104FF',
-    '#FF01DC',
-    '#FF0127',
-  ],
-  speed: 5,
-  maxRotate: 50,
-};
-
-var canvas = <HTMLCanvasElement>document.getElementById('canvas');
-var ctx = <CanvasRenderingContext2D>canvas.getContext('2d');
+const canvas = <HTMLCanvasElement>document.getElementById('canvas');
+const context = <CanvasRenderingContext2D>canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-startConfetti(canvasConfiguration, canvas, ctx);
+if (canvas != null && context != null) {
+  drawConfetti(context, canvas);
+}
