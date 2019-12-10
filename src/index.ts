@@ -11,6 +11,7 @@ import {
   resetBtn,
   validateSelectionBtn,
   winnerContainer,
+  canvas,
 } from './scripts/util/containers';
 import { createBoard, rollDice, showDiceResult } from './scripts/util/gameHelpers';
 import Storage from './scripts/util/storage';
@@ -38,7 +39,6 @@ if (board != null && diceContainer != null) {
 
 if (winnerContainer != null) {
   const winner: WinnerType = gameStorage.getUnserialize('winner');
-  console.log(winner);
   showWinner(winner);
 }
 
@@ -55,11 +55,9 @@ if (resetBtn != null) {
   );
 }
 
-const canvas = <HTMLCanvasElement>document.getElementById('canvas');
-const context = <CanvasRenderingContext2D>canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-if (canvas != null && context != null) {
+if (canvas != null) {
+  const context = <CanvasRenderingContext2D>canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
   drawConfetti(context, canvas);
 }

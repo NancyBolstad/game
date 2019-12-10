@@ -102,7 +102,6 @@ function playGame(player1: number, player2: number): void {
           const { action, message } = element;
           player2Status -= action;
           const newPosition = document.getElementById(`tile-index-${player2Status}`);
-          console.log(newPosition);
 
           showMessage(`${message}`);
           deleteMessage();
