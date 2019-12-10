@@ -486,9 +486,8 @@ footer {
   z-index: -1;
 }
 
-#winnerText {
+#winnerFooter {
   position: absolute;
-  z-index: 0;
-  left: 12px;
-  top: 10px;
+  bottom: 0;
+  left: 0;
 }
