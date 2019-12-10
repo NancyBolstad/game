@@ -21,37 +21,15 @@
   font-size: 0.875rem;
 }
 
-@mixin header-text {
+@mixin text-block($size: false, $weight: false) {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.125rem;
-}
-
-@mixin create-text-block(
-  $size: false,
-  $colour: false,
-  $weight: false,
-  $lineHeight: false,
-  $maxWidth: false
-) {
-  font-family: 'Open Sans', sans-serif;
 
   @if $size {
     font-size: $size;
   }
 
-  @if $colour {
-    color: $colour;
-  }
-
   @if $weight {
     font-weight: $weight;
-  }
-
-  @if $lineHeight {
-    line-height: $lineHeight;
-  }
-
-  @if $maxWidth {
-    max-width: $maxWidth;
   }
 }

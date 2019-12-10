@@ -1,8 +1,8 @@
 header {
   width: 100%;
-  @include header-text;
   color: $white;
   border-bottom: 1px solid $white;
+  @include text-block($weight: 600);
 }
 
 .row {
