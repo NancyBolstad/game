@@ -292,6 +292,7 @@
               setTimeout(function() {
                 window.location.href = 'winner.html';
               }, 1000);
+              return;
             } else {
               var updatePosition = document.getElementById('tile-index-' + player1Status);
               gameHelpers_1.removePlayer(player1);
@@ -336,6 +337,7 @@
               setTimeout(function() {
                 window.location.href = 'winner.html';
               }, 1000);
+              return;
             } else {
               var updatePosition = document.getElementById('tile-index-' + player2Status);
               gameHelpers_1.removePlayer(player2);
@@ -516,7 +518,7 @@
               data,
               name_1,
               titles,
-              aliases,
+              placeHolder,
               component,
               cardImage,
               cardTitle,
@@ -535,7 +537,8 @@
                   return [4, response.json()];
                 case 3:
                   data = _a.sent();
-                  (name_1 = data.name), (titles = data.titles), (aliases = data.aliases);
+                  (name_1 = data.name), (titles = data.titles);
+                  placeHolder = 'Humble man without title';
                   component = document.createElement('div');
                   component.className = 'row__item--card';
                   component.setAttribute('draggable', 'true');
@@ -547,7 +550,7 @@
                     characterNameIndex +
                     '">';
                   cardTitle = ' <h3>' + name_1 + '</h3>';
-                  cardSubTitle = '<span>' + (titles[0] ? titles[0] : aliases[0]) + '</span>';
+                  cardSubTitle = '<span>' + (titles[0] ? titles[0] : placeHolder) + '</span>';
                   component.innerHTML = cardImage + cardTitle + cardSubTitle;
                   containers_1.characterList.append(component);
                   return [2, data];
@@ -575,7 +578,7 @@
             name = _a.name;
           if (containers_1.winnerContainer != null) {
             var winnerImage = document.createElement('img');
-            winnerImage.className = 'item item--winner-image item--shake';
+            winnerImage.className = 'item item--winner-image';
             winnerImage.src = '' + createImage_1.default(index);
             winnerImage.alt = 'Featured image for the winner';
             containers_1.winnerContainer.appendChild(winnerImage);

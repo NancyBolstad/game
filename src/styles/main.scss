@@ -5,7 +5,7 @@
 @import 'helpers';
 @import 'header';
 @import 'game';
-@import 'overlay';
+@import 'canvas';
 
 body {
   overflow-x: hidden;
@@ -15,6 +15,7 @@ body {
   margin: 0;
   background: $black;
   color: $white;
+  font-family: 'Open Sans', sans-serif;
 }
 
 ul > {
@@ -47,6 +48,12 @@ h3 {
   @include heading3();
 }
 
+span,
+p {
+  @include text-block($size: 1rem);
+  color: $white;
+}
+
 .wrapper {
   max-width: 72.5rem;
   margin: 0 auto;
@@ -55,57 +62,60 @@ h3 {
     @include flex;
     @include flex-direction(row);
   }
+}
 
-  &__row {
-    width: 100%;
+.wrapper__row {
+  width: 100%;
 
-    &--header-navigation {
-      @include flex;
-      @include flex-direction(row);
-    }
+  &--header-navigation {
+    @include flex;
+    @include flex-direction(row);
+  }
 
-    &--footer {
-      @include flex-direction(column);
-      @include flex-center;
+  &--footer {
+    @include flex-direction(column);
+    @include flex-center;
+  }
+  &--hero {
+    @include flex;
+    @include flex-direction(row);
+    height: 83vh;
+  }
+  &--winner {
+    @include flex;
+    @include flex-direction(row);
+    height: 83vh;
+  }
+  &--intro {
+    @include flex-direction(column);
+    @include flex-center;
+    h1 {
+      color: $brand;
+      margin-bottom: 1rem;
     }
-    &--hero {
-      @include flex;
-      @include flex-direction(row);
-      height: 83vh;
-    }
-    &--winner {
-      @include flex;
-      @include flex-direction(row);
-      height: 83vh;
-    }
-    &--intro {
-      @include flex-direction(column);
-      @include flex-center;
-      h1 {
-        color: $brand;
-        margin-bottom: 1rem;
-      }
-    }
-    &--cards {
-      @include flex-direction(row);
-      @include flex-center;
-      flex-wrap: wrap;
-      border-radius: 2.5rem;
-      margin-top: 5rem;
-      margin-bottom: 4rem;
-    }
-    &--selected-area {
-      @include flex-direction(column);
-      @include flex-center;
-    }
-    &--next-page {
-      @include flex-direction(column);
-      @include flex-center;
-    }
-    &--reset {
-      @include flex-direction(column);
-      @include flex-center;
-    }
+  }
+  &--cards {
+    @include flex-direction(row);
+    @include flex-center;
+    flex-wrap: wrap;
+    border-radius: 2.5rem;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    width: 55%;
+    padding: 1.5rem;
+  }
+  &--selected-area {
+    @include flex-direction(column);
+    @include flex-center;
+    width: 45%;
+  }
+  &--next-page {
+    @include flex-direction(column);
+    @include flex-center;
+  }
+  &--reset {
+    @include flex-direction(column);
+    @include flex-center;
   }
 }
 
@@ -131,11 +141,13 @@ h3 {
   &--card {
     flex-basis: 21%;
     transition: 0.2s;
+    font-family: 'Open Sans', sans-serif;
     color: $secondary;
     @include flex-direction(column);
     @include flex-center;
     text-align: center;
     margin-bottom: 2rem;
+    flex: 1;
 
     &:hover,
     :focus-within {
@@ -150,6 +162,26 @@ h3 {
   &--selection {
     @include flex-direction(column);
     @include flex-center;
+  }
+  &--overlay {
+    background-color: black;
+    border-radius: 2px;
+    border: 3px solid $secondary;
+    width: 100%;
+    height: 380px;
+    color: $secondary;
+    font-weight: bold;
+    font-size: 1.8rem;
+    opacity: 0.9;
+    position: relative;
+    transition: all 5s ease-in-out;
+    z-index: 999;
+    top: -85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
   }
 }
 
@@ -193,6 +225,12 @@ h3 {
       }
     }
   }
+  &--game-message {
+    width: 85%;
+    @include flex-direction(column);
+    @include flex-center;
+    @include text-block($size: 1.8rem, $weight: 600);
+  }
 }
 
 footer {
@@ -201,28 +239,5 @@ footer {
   padding-bottom: 2rem;
   opacity: 0.7;
   border-top: 1px solid $white;
-}
-
-.overlay {
-  position: fixed;
-  z-index: 1;
-  top: 50%;
-  left: 35%;
-  display: none;
-  background-color: yellow;
-  opacity: 0.8;
-  text-align: center;
-  width: 25vw;
-}
-
-#canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-}
-#winnerFooter {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  @include text-block;
 }
