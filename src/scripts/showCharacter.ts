@@ -16,7 +16,8 @@ async function showCharacter(characterNameIndex: number) {
   try {
     const response = await fetch(url);
     const data: ResponseObjTypes = await response.json();
-    const { name, titles, aliases } = data;
+    const { name, titles } = data;
+    const placeHolder = 'Humble man without title';
 
     const component = document.createElement('div');
     component.className = 'row__item--card';
@@ -26,7 +27,7 @@ async function showCharacter(characterNameIndex: number) {
       characterNameIndex,
     )} class="item--card-image" alt="Game figure no.${characterNameIndex}">`;
     const cardTitle = ` <h3>${name}</h3>`;
-    const cardSubTitle = `<span>${titles[0] ? titles[0] : aliases[0]}</span>`;
+    const cardSubTitle = `<span>${titles[0] ? titles[0] : placeHolder}</span>`;
     component.innerHTML = cardImage + cardTitle + cardSubTitle;
 
     characterList.append(component);
