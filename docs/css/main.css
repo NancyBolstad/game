@@ -372,12 +372,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: center;
-  background-position: center center;
-  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575819359/game/ixbpbe0utghdofmgm9l1.png');
-  background-size: 410px;
   flex-basis: 50%;
   flex: 1;
 }
@@ -483,4 +477,18 @@ footer {
   opacity: 0.8;
   text-align: center;
   width: 25vw;
+}
+
+#canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+#winnerText {
+  position: absolute;
+  z-index: 0;
+  left: 12px;
+  top: 10px;
 }

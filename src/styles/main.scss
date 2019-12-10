@@ -119,11 +119,6 @@ h3 {
   &--winner-content-left {
     @include flex-direction(column);
     @include flex-center;
-    @include create-background(
-      $imageUrl:
-        'https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575819359/game/ixbpbe0utghdofmgm9l1.png',
-      $size: 410px
-    );
     flex-basis: 50%;
     flex: 1;
   }
@@ -218,4 +213,18 @@ footer {
   opacity: 0.8;
   text-align: center;
   width: 25vw;
+}
+
+#canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+#winnerText {
+  position: absolute;
+  z-index: 0;
+  left: 12px;
+  top: 10px;
 }
