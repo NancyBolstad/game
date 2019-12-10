@@ -44,6 +44,7 @@ function playGame(player1: number, player2: number): void {
       setTimeout(function() {
         window.location.href = 'winner.html';
       }, 1000);
+      return;
     } else {
       const updatePosition = document.getElementById(`tile-index-${player1Status}`);
       removePlayer(player1);
@@ -92,6 +93,7 @@ function playGame(player1: number, player2: number): void {
       setTimeout(function() {
         window.location.href = 'winner.html';
       }, 1000);
+      return;
     } else {
       const updatePosition = document.getElementById(`tile-index-${player2Status}`);
       removePlayer(player2);
