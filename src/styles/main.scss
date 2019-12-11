@@ -85,8 +85,12 @@ p {
   }
   &--hero {
     @include flex;
-    @include flex-direction(row);
-    height: 83vh;
+    @include flex-direction(column);
+
+    @media screen and (min-width: 1080px) {
+      @include flex-direction(row);
+      height: 83vh;
+    }
   }
   &--winner {
     @include flex;

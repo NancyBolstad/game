@@ -350,8 +350,14 @@ p {
 
 .wrapper__row--hero {
   display: flex;
-  flex-direction: row;
-  height: 83vh;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1080px) {
+  .wrapper__row--hero {
+    flex-direction: row;
+    height: 83vh;
+  }
 }
 
 .wrapper__row--winner {
