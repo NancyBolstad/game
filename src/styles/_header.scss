@@ -18,7 +18,7 @@ header {
   }
   &__links--wrapper {
     width: 100%;
-    display: inline-flex;
+    display: none;
     justify-content: space-between;
 
     a:link,
@@ -29,6 +29,10 @@ header {
     a:hover,
     a:active {
       color: $secondary;
+    }
+
+    @media screen and (min-width: 1080px) {
+      @include flex;
     }
   }
   &--left {
