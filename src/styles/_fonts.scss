@@ -2,13 +2,21 @@
 
 @mixin heading1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.875rem;
+  font-size: 1.875rem;
   font-weight: bold;
+
+  @media screen and (min-width: 1080px) {
+    font-size: 2.875rem;
+  }
 }
 
 @mixin heading2 {
   font-family: 'Poppins', sans-serif;
   font-size: 1.875rem;
+
+  @media screen and (min-width: 1080px) {
+    font-size: 1.5rem;
+  }
 }
 
 @mixin heading3 {
