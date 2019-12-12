@@ -95,6 +95,7 @@ header {
 @media screen and (min-width: 1080px) {
   .row__links--wrapper {
     justify-content: space-between;
+    margin-left: 1.2rem;
   }
 }
 
