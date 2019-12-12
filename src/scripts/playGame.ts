@@ -10,6 +10,7 @@ import {
   traps,
   showMessage,
   deleteMessage,
+  rollAgainMessage,
 } from './util/gameHelpers';
 import { diceContainer, player1Btn, player2Btn } from './util/containers';
 import { Winner as WinnerTypes } from '../scripts/showWinner';
@@ -70,7 +71,7 @@ function playGame(player1: number, player2: number): void {
     }
 
     if (currentDicePoint === 6) {
-      showMessage('Since you rolled 6, you got a Bonus movement. Roll the dice again');
+      showMessage(`${rollAgainMessage}`);
       deleteMessage();
       updatePlayer1Button(true);
     }
@@ -119,7 +120,7 @@ function playGame(player1: number, player2: number): void {
     }
 
     if (currentDicePoint === 6) {
-      showMessage('Since you rolled 6, you got a Bonus movement. Roll the dice again');
+      showMessage(`${rollAgainMessage}`);
       deleteMessage();
       updatePlayer1Button(false);
     }
