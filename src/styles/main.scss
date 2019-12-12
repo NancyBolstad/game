@@ -76,7 +76,12 @@ p {
 
   &--header-navigation {
     @include flex;
-    @include flex-direction(row);
+    @include flex-direction(column);
+    @include flex-center;
+
+    @media screen and (min-width: 1080px) {
+      @include flex-direction(row);
+    }
   }
 
   &--footer {

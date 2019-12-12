@@ -67,15 +67,35 @@ header {
   background-position: center;
   background-size: contain;
   display: inline-block;
-  width: 17.875rem;
+  width: 14.875rem;
   height: 3rem;
-  margin-top: 0.6875rem;
+}
+
+@media screen and (min-width: 1080px) {
+  .row__logo {
+    width: 22.875rem;
+  }
 }
 
 .row__links--wrapper {
   width: 100%;
-  display: none;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 781px) {
+  .row__links--wrapper {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .row__links--wrapper {
+    justify-content: space-between;
+  }
 }
 
 .row__links--wrapper a:link,
@@ -104,6 +124,27 @@ header {
 
 .links--left {
   display: flex;
+  padding: 0;
+}
+
+.links--left li:last-child {
+  padding-right: 0;
+}
+
+@media screen and (min-width: 781px) {
+  .links--left {
+    padding-right: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .links--left li {
+    padding-left: 1.2rem;
+  }
+}
+
+.links--right {
+  padding: 0;
 }
 
 .links__item {
@@ -184,8 +225,8 @@ header {
 .item--game-rules {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
   border: 1px dotted #d9d9d9;
   border-radius: 2.5rem;
 }
@@ -202,7 +243,7 @@ header {
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.7;
   padding: 0;
 }
 
@@ -286,12 +327,12 @@ h1 {
 
 h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.875rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (min-width: 1080px) {
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
   }
 }
 
@@ -338,7 +379,16 @@ p {
 
 .wrapper__row--header-navigation {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1080px) {
+  .wrapper__row--header-navigation {
+    flex-direction: row;
+  }
 }
 
 .wrapper__row--footer {

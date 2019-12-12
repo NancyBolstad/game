@@ -12,14 +12,26 @@ header {
     background-position: center;
     background-size: contain;
     display: inline-block;
-    width: 17.875rem;
+    width: 14.875rem;
     height: 3rem;
-    margin-top: 0.6875rem;
+
+    @media screen and (min-width: 1080px) {
+      width: 22.875rem;
+    }
   }
   &__links--wrapper {
     width: 100%;
-    display: none;
-    justify-content: space-between;
+    @include flex;
+    @include flex-direction(column);
+    @include flex-center;
+
+    @media screen and (min-width: 781px) {
+      @include flex-direction(row);
+    }
+
+    @media screen and (min-width: 1080px) {
+      justify-content: space-between;
+    }
 
     a:link,
     a:visited {
@@ -45,6 +57,24 @@ header {
 }
 .links--left {
   @include flex;
+  padding: 0;
+  li:last-child {
+    padding-right: 0;
+  }
+
+  @media screen and (min-width: 781px) {
+    padding-right: 1.2rem;
+  }
+
+  @media screen and (min-width: 1080px) {
+    li {
+      padding-left: 1.2rem;
+    }
+  }
+}
+
+.links--right {
+  padding: 0;
 }
 
 .links__item {
