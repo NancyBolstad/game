@@ -314,9 +314,7 @@
               gameHelpers_1.updatePlayer1Button(false);
             }
             if (currentDicePoint === 6) {
-              gameHelpers_1.showMessage(
-                'Since you rolled 6, you got a Bonus movement. Roll the dice again',
-              );
+              gameHelpers_1.showMessage('' + gameHelpers_1.rollAgainMessage);
               gameHelpers_1.deleteMessage();
               gameHelpers_1.updatePlayer1Button(true);
             }
@@ -359,9 +357,7 @@
               gameHelpers_1.updatePlayer1Button(true);
             }
             if (currentDicePoint === 6) {
-              gameHelpers_1.showMessage(
-                'Since you rolled 6, you got a Bonus movement. Roll the dice again',
-              );
+              gameHelpers_1.showMessage('' + gameHelpers_1.rollAgainMessage);
               gameHelpers_1.deleteMessage();
               gameHelpers_1.updatePlayer1Button(false);
             }
@@ -707,24 +703,24 @@
         var trap2 = {
           token: 14,
           action: 2,
-          message: 'A wolf emerges from the night woods. Retreat two fields to escape its chase.',
+          message: 'A wolf emerges from the night woods. Retreat two fields.',
         };
         var trap3 = {
           token: 18,
           action: 3,
-          message:
-            'A white walker has been spotted! Immediately retreat three fields to narrowly escape death.',
+          message: 'A white walker! Retreat three fields to escape death.',
         };
         var trap4 = {
           token: 24,
           action: 4,
-          message: 'Enemy horsemen on the horizon! Outnumbered, you must retreat four fields',
+          message: 'Enemy horsemen on the horizon! You must retreat four fields.',
         };
         var trap5 = {
           token: 28,
           action: 5,
-          message: 'Fire-breathing dragons appear! Retreat five fields to escape their long gaze.',
+          message: 'Dragons! Retreat five fields to escape their fire-breath.',
         };
+        exports.rollAgainMessage = 'You rolled a 6 and get another turn. Roll again!';
         exports.traps = [trap1, trap2, trap3, trap4, trap5];
         function createBoard(container) {
           var _loop_1 = function(i) {
