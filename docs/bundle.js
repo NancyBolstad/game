@@ -106,7 +106,7 @@
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
-        var circleElement = function() {
+        var Particle = function() {
           return {
             coordinateX: getRandomNumber(window.innerWidth),
             coordinateY: getRandomNumber(window.innerHeight),
@@ -140,7 +140,7 @@
           var elements = [];
           var amount = 10;
           for (var i = 0; i < amount; i++) {
-            elements.push(circleElement());
+            elements.push(Particle());
           }
           for (var _i = 0, elements_1 = elements; _i < elements_1.length; _i++) {
             var element = elements_1[_i];
