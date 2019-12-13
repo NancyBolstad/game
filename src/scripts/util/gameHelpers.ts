@@ -82,7 +82,7 @@ export function updatePlayer1Button(isPlayer1Turn: boolean): void {
   }
 }
 
-export function showDiceResult(container: HTMLElement, point: number, delay?: number) {
+export function showDiceResult(container: HTMLElement, point: number, delay?: number): void {
   container.innerHTML = diceArray[point - 1];
   container.className += ' item--shake';
 
@@ -99,7 +99,7 @@ export function removePlayer(player: number): void {
   document.getElementById(`figure-${player}`).remove();
 }
 
-export function displayPlayers(container: HTMLElement, playerIndex: number) {
+export function displayPlayers(container: HTMLElement, playerIndex: number): void {
   const player: HTMLImageElement = document.createElement('img');
 
   player.src = `${createImage(playerIndex)}`;
@@ -119,17 +119,17 @@ export function checkWinner(playerStatus: number): boolean {
   return playerStatus >= 30 ? true : false;
 }
 
-export function gameEnd(winner: number) {
+export function gameEnd(): void {
   player1Btn.disabled = true;
   player2Btn.disabled = true;
 }
 
-export function showMessage(content: string) {
+export function showMessage(content: string): void {
   message.innerText = content;
   overlay.style.visibility = 'visible';
 }
 
-export function deleteMessage() {
+export function deleteMessage(): void {
   setTimeout(function() {
     overlay.style.visibility = 'hidden';
   }, 1500);

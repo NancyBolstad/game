@@ -22,6 +22,6 @@ export const diceArray: string[] = [
   diceIcons.point6,
 ];
 
-export function createDiceIcon(dicePoint: number) {
+export function createDiceIcon(dicePoint: number): string {
   return diceArray[dicePoint - 1];
 }

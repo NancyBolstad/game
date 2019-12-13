@@ -73,7 +73,7 @@ function handleDrop(event: DragEvent): void {
   }
 }
 
-function handleDrag() {
+function handleDrag(): void {
   document.addEventListener('dragstart', handleDragStart);
   document.addEventListener('dragend', handleDragEnd);
   document.addEventListener('dragover', handleDragOver);

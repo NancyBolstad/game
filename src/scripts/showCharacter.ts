@@ -4,7 +4,7 @@ import createImage from './util/createImage';
 
 const BASE_URL: string = 'https://www.anapioficeandfire.com/api/characters/';
 
-function getCharacterCards(characterIndex: number[]) {
+function getCharacterCards(characterIndex: number[]): void {
   characterIndex.map(element => {
     showCharacter(element);
   });

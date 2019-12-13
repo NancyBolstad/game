@@ -106,7 +106,7 @@
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
-        var Particle = function() {
+        var particle = function() {
           return {
             coordinateX: getRandomNumber(window.innerWidth),
             coordinateY: getRandomNumber(window.innerHeight),
@@ -140,7 +140,7 @@
           var elements = [];
           var amount = 10;
           for (var i = 0; i < amount; i++) {
-            elements.push(Particle());
+            elements.push(particle());
           }
           for (var _i = 0, elements_1 = elements; _i < elements_1.length; _i++) {
             var element = elements_1[_i];
@@ -288,7 +288,7 @@
               index_1.gameStorage.setSerialize('winner', winner);
               gameHelpers_1.removePlayer(player1);
               gameHelpers_1.displayPlayers(finalPosition, player1);
-              gameHelpers_1.gameEnd(player1);
+              gameHelpers_1.gameEnd();
               setTimeout(function() {
                 window.location.href = 'winner.html';
               }, 1000);
@@ -331,7 +331,7 @@
               index_1.gameStorage.setSerialize('winner', winner);
               gameHelpers_1.removePlayer(player2);
               gameHelpers_1.displayPlayers(finalPosition, player2);
-              gameHelpers_1.gameEnd(player2);
+              gameHelpers_1.gameEnd();
               setTimeout(function() {
                 window.location.href = 'winner.html';
               }, 1000);
@@ -800,7 +800,7 @@
           return playerStatus >= 30 ? true : false;
         }
         exports.checkWinner = checkWinner;
-        function gameEnd(winner) {
+        function gameEnd() {
           containers_1.player1Btn.disabled = true;
           containers_1.player2Btn.disabled = true;
         }

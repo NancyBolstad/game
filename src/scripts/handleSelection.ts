@@ -1,5 +1,6 @@
 import { player1Selection, player2Selection } from './util/containers';
 import { hasSelected } from './util/hasSelected';
+
 export function handleSelection(): void {
   const hasPlayer1Selected = hasSelected(player1Selection);
   const hasPlayer2Selected = hasSelected(player2Selection);
