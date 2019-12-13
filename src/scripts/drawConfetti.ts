@@ -5,7 +5,7 @@ interface ParticlesConfig {
   speed: number;
 }
 
-const circleElement = (): ParticlesConfig => ({
+const particle = (): ParticlesConfig => ({
   coordinateX: getRandomNumber(window.innerWidth),
   coordinateY: getRandomNumber(window.innerHeight),
   speed: getRandomNumber(5) + 100,
@@ -43,7 +43,7 @@ function drawConfetti(context: CanvasRenderingContext2D, canvas: HTMLCanvasEleme
   const amount = 10;
 
   for (let i = 0; i < amount; i++) {
-    elements.push(circleElement());
+    elements.push(particle());
   }
 
   for (const element of elements) {

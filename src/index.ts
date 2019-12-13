@@ -15,7 +15,7 @@ import {
 } from './scripts/util/containers';
 import { createBoard, rollDice, showDiceResult } from './scripts/util/gameHelpers';
 import Storage from './scripts/util/storage';
-import drawConfetti from './scripts/confetti';
+import drawConfetti from './scripts/drawConfetti';
 
 export const gameStorage = new Storage();
 

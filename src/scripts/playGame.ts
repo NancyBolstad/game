@@ -41,7 +41,7 @@ function playGame(player1: number, player2: number): void {
       gameStorage.setSerialize('winner', winner);
       removePlayer(player1);
       displayPlayers(finalPosition, player1);
-      gameEnd(player1);
+      gameEnd();
       setTimeout(function() {
         window.location.href = 'winner.html';
       }, 1000);
@@ -90,7 +90,7 @@ function playGame(player1: number, player2: number): void {
       gameStorage.setSerialize('winner', winner);
       removePlayer(player2);
       displayPlayers(finalPosition, player2);
-      gameEnd(player2);
+      gameEnd();
       setTimeout(function() {
         window.location.href = 'winner.html';
       }, 1000);
