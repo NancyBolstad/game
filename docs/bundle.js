@@ -807,7 +807,7 @@
         exports.gameEnd = gameEnd;
         function showMessage(content) {
           containers_1.message.innerText = content;
-          containers_1.overlay.style.display = 'flex';
+          containers_1.overlay.style.display = 'block';
         }
         exports.showMessage = showMessage;
         function deleteMessage() {

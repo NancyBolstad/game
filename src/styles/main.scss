@@ -64,6 +64,7 @@ p {
     @include flex;
     @include flex-direction(column);
     @include flex-center;
+
     @media screen and (min-width: 1080px) {
       @include flex-direction(row);
       @include flex-center;
@@ -88,6 +89,7 @@ p {
     @include flex-direction(column);
     @include flex-center;
   }
+
   &--hero {
     @include flex;
     @include flex-direction(column);
@@ -97,19 +99,23 @@ p {
       height: 83vh;
     }
   }
+
   &--winner {
     @include flex;
     @include flex-direction(row);
     height: 83vh;
   }
+
   &--intro {
     @include flex-direction(column);
     @include flex-center;
+
     h1 {
       color: $brand;
       margin-bottom: 1rem;
     }
   }
+
   &--cards {
     @include flex-direction(row);
     @include flex-center;
@@ -126,15 +132,18 @@ p {
       height: 100%;
     }
   }
+
   &--selected-area {
     @include flex-direction(column);
     @include flex-center;
     width: 45%;
   }
+
   &--next-page {
     @include flex-direction(column);
     @include flex-center;
   }
+
   &--reset {
     @include flex-direction(column);
     @include flex-center;
@@ -148,18 +157,21 @@ p {
     flex-basis: 50%;
     flex: 1;
   }
+
   &--winner-content-left {
     @include flex-direction(column);
     @include flex-center;
     flex-basis: 50%;
     flex: 1;
   }
+
   &--winner-content-right {
     @include flex-direction(column);
     @include flex-center;
     flex-basis: 50%;
     flex: 1;
   }
+
   &--card {
     flex-basis: 21%;
     transition: 0.2s;
@@ -181,28 +193,31 @@ p {
       transform: 1rem;
     }
   }
+
   &--selection {
     @include flex-direction(column);
     @include flex-center;
   }
+
   &--overlay {
     background-color: black;
     border-radius: 2px;
     border: 3px solid $secondary;
-    width: 100%;
+    width: 80%;
     height: 380px;
     color: $secondary;
     font-weight: bold;
     font-size: 1.8rem;
     opacity: 0.9;
-    position: relative;
+    margin: 0 auto;
+    position: fixed;
     transition: all 5s ease-in-out;
     z-index: 999;
-    top: -85%;
+    top: 25%;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -211,20 +226,25 @@ p {
     height: 296px;
     width: 100%;
   }
+
   &--featured-image {
     height: 27.375rem;
     width: 100%;
   }
+
   &--winner-image {
     height: 15.375rem;
     width: 53%;
   }
+
   &--congratulations {
     color: $brand;
   }
+
   &--card-image {
     height: 11.5625rem;
   }
+
   &--player-selected {
     border-radius: 2rem;
     border: 2px solid $brand;
@@ -252,11 +272,18 @@ p {
       width: 350px;
     }
   }
+
   &--game-message {
+    @include text-block($size: 2rem, $weight: 600);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 85%;
-    @include flex-direction(column);
-    @include flex-center;
-    @include text-block($size: 1.8rem, $weight: 600);
+    height: 30%;
+    margin: auto;
+    text-align: center;
   }
 }
 
