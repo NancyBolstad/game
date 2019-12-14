@@ -126,7 +126,7 @@ export function gameEnd(): void {
 
 export function showMessage(content: string): void {
   message.innerText = content;
-  overlay.style.display = 'flex';
+  overlay.style.display = 'block';
 }
 
 export function deleteMessage(): void {
