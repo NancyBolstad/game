@@ -544,11 +544,10 @@ p {
   transition: all 5s ease-in-out;
   z-index: 999;
   top: -85%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
 }
 
 .item--logo {
