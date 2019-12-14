@@ -99,24 +99,21 @@
         './scripts/util/characterIndex': 8,
         './scripts/util/containers': 9,
         './scripts/util/gameHelpers': 12,
-        './scripts/util/storage': 14,
+        './scripts/util/storage': 15,
       },
     ],
     2: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
+        var getRandomNumber_1 = require('./util/getRandomNumber');
         var particle = function() {
           return {
-            coordinateX: getRandomNumber(window.innerWidth),
-            coordinateY: getRandomNumber(window.innerHeight),
-            speed: getRandomNumber(5) + 100,
+            coordinateX: getRandomNumber_1.getRandomNumber(window.innerWidth),
+            coordinateY: getRandomNumber_1.getRandomNumber(window.innerHeight),
             color: getRandomColor(),
           };
         };
-        function getRandomNumber(maxNum) {
-          return Math.floor(Math.random() * maxNum);
-        }
         function drawElement(context, element) {
           var coordinateX = element.coordinateX,
             coordinateY = element.coordinateY,
@@ -130,7 +127,7 @@
         }
         function getRandomColor() {
           var colors = ['#FF0000', '#FFFF00', '#00FF00', '#80FFFF', '#FF4000', '#FF00FF'];
-          return colors[getRandomNumber(colors.length)];
+          return colors[getRandomNumber_1.getRandomNumber(colors.length)];
         }
         function clearCanvas(context, canvas) {
           context.clearRect(0, 0, canvas.width, canvas.height);
@@ -145,7 +142,7 @@
           for (var _i = 0, elements_1 = elements; _i < elements_1.length; _i++) {
             var element = elements_1[_i];
             if (element.coordinateY >= canvas.height) {
-              element.coordinateX = getRandomNumber(window.innerWidth);
+              element.coordinateX = getRandomNumber_1.getRandomNumber(window.innerWidth);
               element.coordinateY = 0;
             }
             context.save();
@@ -158,7 +155,7 @@
         }
         exports.default = drawConfetti;
       },
-      {},
+      { './util/getRandomNumber': 13 },
     ],
     3: [
       function(require, module, exports) {
@@ -257,7 +254,7 @@
         }
         exports.handleSelection = handleSelection;
       },
-      { './util/containers': 9, './util/hasSelected': 13 },
+      { './util/containers': 9, './util/hasSelected': 14 },
     ],
     5: [
       function(require, module, exports) {
@@ -823,6 +820,17 @@
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
+        function getRandomNumber(maxNum) {
+          return Math.floor(Math.random() * maxNum);
+        }
+        exports.getRandomNumber = getRandomNumber;
+      },
+      {},
+    ],
+    14: [
+      function(require, module, exports) {
+        'use strict';
+        Object.defineProperty(exports, '__esModule', { value: true });
         function hasSelected(container) {
           return container.hasChildNodes();
         }
@@ -830,7 +838,7 @@
       },
       {},
     ],
-    14: [
+    15: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
