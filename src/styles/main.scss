@@ -124,6 +124,7 @@ p {
 
     @media screen and (min-width: 1080px) {
       height: 100%;
+      align-items: flex-start;
     }
   }
   &--selected-area {
@@ -165,11 +166,11 @@ p {
     transition: 0.2s;
     font-family: 'Open Sans', sans-serif;
     color: $secondary;
-    @include flex-direction(column);
-    @include flex-center;
     text-align: center;
     margin-bottom: 2rem;
-    flex: 1;
+    padding: 0.2rem;
+    @include flex-direction(column);
+    @include flex-center;
 
     &:hover,
     :focus-within {
