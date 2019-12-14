@@ -1,22 +1,18 @@
+import { getRandomNumber } from './util/getRandomNumber';
+
 interface ParticlesConfig {
   coordinateX: number;
   coordinateY: number;
   color: string;
-  speed: number;
 }
 
 const particle = (): ParticlesConfig => ({
   coordinateX: getRandomNumber(window.innerWidth),
   coordinateY: getRandomNumber(window.innerHeight),
-  speed: getRandomNumber(5) + 100,
   color: getRandomColor(),
 });
 
-function getRandomNumber(maxNum: number) {
-  return Math.floor(Math.random() * maxNum);
-}
-
-function drawElement(context: CanvasRenderingContext2D, element: ParticlesConfig) {
+function drawElement(context: CanvasRenderingContext2D, element: ParticlesConfig): void {
   const { coordinateX, coordinateY, color } = element;
   context.beginPath();
   context.moveTo(coordinateX, coordinateY);
@@ -26,17 +22,17 @@ function drawElement(context: CanvasRenderingContext2D, element: ParticlesConfig
   context.stroke();
 }
 
-function getRandomColor() {
+function getRandomColor(): string {
   const colors: string[] = ['#FF0000', '#FFFF00', '#00FF00', '#80FFFF', '#FF4000', '#FF00FF'];
 
   return colors[getRandomNumber(colors.length)];
 }
 
-function clearCanvas(context: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
+function clearCanvas(context: CanvasRenderingContext2D, canvas: HTMLCanvasElement): void {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function drawConfetti(context: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
+function drawConfetti(context: CanvasRenderingContext2D, canvas: HTMLCanvasElement): void {
   clearCanvas(context, canvas);
 
   const elements: ParticlesConfig[] = [];
