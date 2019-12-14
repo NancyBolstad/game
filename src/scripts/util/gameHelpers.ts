@@ -126,11 +126,11 @@ export function gameEnd(): void {
 
 export function showMessage(content: string): void {
   message.innerText = content;
-  overlay.style.visibility = 'visible';
+  overlay.style.display = 'flex';
 }
 
 export function deleteMessage(): void {
   setTimeout(function() {
-    overlay.style.visibility = 'hidden';
+    overlay.style.display = 'none';
   }, 1500);
 }
