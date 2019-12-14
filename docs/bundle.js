@@ -534,7 +534,7 @@
                 case 3:
                   data = _a.sent();
                   (name_1 = data.name), (titles = data.titles);
-                  placeHolder = 'Humble man without title';
+                  placeHolder = 'Humble Man Without Title';
                   component = document.createElement('div');
                   component.className = 'row__item--card';
                   component.setAttribute('draggable', 'true');

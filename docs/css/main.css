@@ -447,6 +447,7 @@ p {
 @media screen and (min-width: 1080px) {
   .wrapper__row--cards {
     height: 100%;
+    align-items: flex-start;
   }
 }
 
@@ -504,13 +505,13 @@ p {
   transition: 0.2s;
   font-family: 'Open Sans', sans-serif;
   color: #f5deb3;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0.2rem;
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  margin-bottom: 2rem;
-  flex: 1;
 }
 
 .row__item--card:hover,
