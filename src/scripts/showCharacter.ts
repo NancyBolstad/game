@@ -17,7 +17,7 @@ async function showCharacter(characterNameIndex: number) {
     const response = await fetch(url);
     const data: ResponseObjTypes = await response.json();
     const { name, titles } = data;
-    const placeHolder = 'Humble man without title';
+    const placeHolder = 'Humble Man Without Title';
 
     const component = document.createElement('div');
     component.className = 'row__item--card';
