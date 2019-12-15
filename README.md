@@ -1,4 +1,4 @@
-# Cartoon Game of Thrones
+# Cartoon Game of Thrones - Board Game
 
 A simple online board game based on A Song of Ice and Fire / Game of Thrones.  
 
