@@ -2,7 +2,7 @@
 
 A simple online board game based on A Song of Ice and Fire / Game of Thrones.  
 
-# Live Page:
+## Live Page:
 
 https://nancybolstad.github.io/game/
 
