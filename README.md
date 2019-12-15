@@ -1,12 +1,23 @@
-# Game
+# Cartoon Game of Thrones
+
+A simple online board game based on A Song of Ice and Fire / Game of Thrones.  
+
+# Live Page:
 
 https://nancybolstad.github.io/game/
 
-## Building
+### Technology Stack
 
-Check out the scripts in `package.json` for examples on how to run a build with either the CLI or the API.
+- TypeScript
+- Modular JavaScript
+- Sass
+- Yarn
 
-```sh
-npm run build-cli
-npm run build-script
+
+### Running locally in development mode
+
+Ensure you have yarn installed
+
+```bash
+yarn build
 ```
