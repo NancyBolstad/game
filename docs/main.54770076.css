@@ -8,161 +8,135 @@
   min-height: 2.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: #f5deb3;
+  background-color: wheat;
   transition: background-color 0.15s ease-in-out;
-  color: #000000;
+  color: #000;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open Sans, sans-serif;
   font-size: 1.125rem;
   font-size: 1.2rem;
   font-weight: 600;
 }
-
-.cta:hover,
 .cta:active,
-.cta:disabled {
-  border: 2px solid #f5deb3;
-  background-color: #000000;
-  color: #f5deb3;
+.cta:disabled,
+.cta:hover {
+  border: 2px solid wheat;
+  background-color: #000;
+  color: wheat;
 }
-
 .cta:disabled {
   opacity: 0.6;
   cursor: none;
 }
-
 .cta--big {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open Sans, sans-serif;
   font-size: 1.125rem;
   font-size: 1.5rem;
   font-weight: 600;
 }
-
 @media screen and (min-width: 1080px) {
   .cta--big {
     padding-left: 3.175rem;
     padding-right: 3.175rem;
   }
 }
-
 .cta--validation {
   margin-bottom: 5rem;
 }
-
 header {
   width: 100%;
   color: #d9d9d9;
   border-bottom: 1px solid #d9d9d9;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open Sans, sans-serif;
   font-size: 1.125rem;
   font-weight: 600;
 }
-
 .row__logo {
-  background-image: url('https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575877298/game/t3k3iauo3phxgmsdzmwu.svg');
+  background-image: url(https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575877298/game/t3k3iauo3phxgmsdzmwu.svg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 50%;
   background-size: contain;
   display: inline-block;
   width: 14.875rem;
   height: 3rem;
 }
-
 @media screen and (min-width: 1080px) {
   .row__logo {
     width: 22.875rem;
   }
 }
-
 .row__links--wrapper {
   width: 100%;
-  display: flex;
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 @media screen and (min-width: 781px) {
   .row__links--wrapper {
     flex-direction: row;
   }
 }
-
 @media screen and (min-width: 1080px) {
   .row__links--wrapper {
     justify-content: space-between;
     margin-left: 1.2rem;
   }
 }
-
 .row__links--wrapper a:link,
 .row__links--wrapper a:visited {
   color: #d9d9d9;
 }
-
-.row__links--wrapper a:hover,
-.row__links--wrapper a:active {
-  color: #f5deb3;
+.row__links--wrapper a:active,
+.row__links--wrapper a:hover {
+  color: wheat;
 }
-
 @media screen and (min-width: 1080px) {
   .row__links--wrapper {
     display: flex;
   }
 }
-
 .row--left {
   display: flex;
 }
-
 .row--left li {
   padding-right: 1.3rem;
 }
-
 .links--left {
   display: flex;
   padding: 0;
 }
-
 .links--left li:last-child {
   padding-right: 0;
 }
-
 @media screen and (min-width: 781px) {
   .links--left {
     padding-right: 1.2rem;
   }
 }
-
 @media screen and (min-width: 1080px) {
   .links--left li {
     padding-left: 1.2rem;
   }
 }
-
 .links--right {
   padding: 0;
 }
-
 .links__item {
   padding-right: 1.375rem;
 }
-
 .links__item--contact {
-  font-weight: bold;
-  border: 1px solid white;
+  font-weight: 700;
+  border: 1px solid #fff;
   padding: 0.3rem 1rem;
 }
-
-.links__item--contact:hover,
-.links__item--contact:active {
-  border-color: #f5deb3;
+.links__item--contact:active,
+.links__item--contact:hover {
+  border-color: wheat;
 }
-
 .wrapper__row--game-wrapper {
   display: flex;
   flex-direction: row;
@@ -171,48 +145,41 @@ header {
   padding-bottom: 2rem;
   height: 75vh;
 }
-
 .item__board {
   display: flex;
   flex-wrap: wrap;
   width: 30rem;
   height: 30rem;
 }
-
 .board__tile {
   width: 6rem;
   height: 5rem;
-  display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
-
+.board__tile,
 .row__item--side-bar {
-  margin-top: 1.5rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.row__item--side-bar {
+  margin-top: 1.5rem;
+  flex-direction: column;
   width: 40%;
 }
-
 .item--btn-wrapper {
   display: flex;
 }
-
 .item--information {
   color: #c99240;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 1rem;
 }
-
 .board__figure {
   width: 3rem;
   height: 4.25rem;
 }
-
 .row__item--board {
   display: flex;
   flex-direction: column;
@@ -222,7 +189,6 @@ header {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-
 .item--game-rules {
   display: flex;
   flex-direction: column;
@@ -231,15 +197,12 @@ header {
   border: 1px dotted #d9d9d9;
   border-radius: 2.5rem;
 }
-
 .item__content {
   text-align: left;
 }
-
 .item__content--title {
   font-size: 1.5rem;
 }
-
 .item__content--rules {
   display: flex;
   flex-direction: column;
@@ -247,124 +210,158 @@ header {
   line-height: 1.7;
   padding: 0;
 }
-
 .tile__number {
   position: absolute;
   top: 1px;
   right: 3px;
   font-size: 14px;
-  font-weight: bold;
-  color: #000000;
+  font-weight: 700;
+  color: #000;
   opacity: 0.7;
 }
-
 .item--shake {
-  animation: shake 550ms infinite linear;
+  animation: shake 0.55s linear infinite;
 }
-
 @keyframes shake {
   0% {
-    transform: translate(15px, 0);
+    transform: translate(15px);
   }
   50% {
-    transform: translate(-15px, 0);
+    transform: translate(-15px);
   }
-  100% {
-    transform: translate(0, 0);
+  to {
+    transform: translate(0);
   }
 }
-
 #canvas {
-  position: absolute;
-  left: 0;
   top: 0;
   z-index: -1;
 }
-
+#canvas,
 #winnerFooter {
   position: absolute;
-  bottom: 0;
   left: 0;
 }
-
+#winnerFooter {
+  bottom: 0;
+}
 body {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
-  background: #000000;
+  background: #000;
   color: #d9d9d9;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open Sans, sans-serif;
 }
-
 ul > li {
   list-style-type: none;
 }
-
 a {
   text-decoration: none;
   border-bottom: none;
+}
+a,
+button {
   cursor: pointer;
 }
-
 button {
   outline: none;
-  cursor: pointer;
   border: none;
 }
-
 h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 1.875rem;
-  font-weight: bold;
+  font-weight: 700;
 }
-
 @media screen and (min-width: 1080px) {
   h1 {
     font-size: 2.875rem;
   }
 }
-
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 1.5rem;
 }
-
 @media screen and (min-width: 1080px) {
   h2 {
     font-size: 1.875rem;
   }
 }
-
 h3 {
-  font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
 }
-
-span,
-p {
-  font-family: 'Open Sans', sans-serif;
+h3,
+p,
+span {
+  font-family: Open Sans, sans-serif;
+}
+p,
+span {
   font-size: 1.125rem;
   font-size: 1rem;
   color: #d9d9d9;
 }
-
+.loading {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 2;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+.loading__content {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 2em;
+  top: 50%;
+  margin-top: -1em;
+  color: #c99240;
+  font-family: Poppins, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 1080px) {
+  .loading__content {
+    font-size: 2.875rem;
+  }
+}
+.loading__content span {
+  display: none;
+}
+.loading__content:after {
+  animation: loading-text 3s infinite;
+  content: '';
+}
+@keyframes loading-text {
+  0% {
+    content: 'Game Loading.';
+  }
+  50% {
+    content: 'Game Loading..';
+  }
+  to {
+    content: 'Game Loading...';
+  }
+}
 .wrapper {
   max-width: 72.5rem;
   margin: 0 auto;
   padding-left: 3rem;
   padding-right: 3rem;
 }
-
 .wrapper--selection {
-  display: flex;
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 @media screen and (min-width: 1080px) {
   .wrapper--selection {
     flex-direction: row;
@@ -373,62 +370,50 @@ p {
     align-items: center;
   }
 }
-
 .wrapper__row {
   width: 100%;
 }
-
 .wrapper__row--header-navigation {
-  display: flex;
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 @media screen and (min-width: 1080px) {
   .wrapper__row--header-navigation {
     flex-direction: row;
   }
 }
-
 .wrapper__row--footer {
-  flex-direction: column;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.wrapper__row--footer,
 .wrapper__row--hero {
-  display: flex;
   flex-direction: column;
+  display: flex;
 }
-
 @media screen and (min-width: 1080px) {
   .wrapper__row--hero {
     flex-direction: row;
     height: 83vh;
   }
 }
-
 .wrapper__row--winner {
   display: flex;
   flex-direction: row;
   height: 83vh;
 }
-
 .wrapper__row--intro {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .wrapper__row--intro h1 {
   color: #c99240;
   margin-bottom: 1rem;
 }
-
 .wrapper__row--cards {
   flex-direction: row;
   display: flex;
@@ -443,54 +428,25 @@ p {
   height: 400px;
   overflow-y: auto;
 }
-
 @media screen and (min-width: 1080px) {
   .wrapper__row--cards {
     height: 100%;
     align-items: flex-start;
   }
 }
-
+.wrapper__row--selected-area {
+  width: 45%;
+}
+.wrapper__row--next-page,
+.wrapper__row--reset,
 .wrapper__row--selected-area {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 45%;
 }
-
-.wrapper__row--next-page {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.wrapper__row--reset {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.row__item--hero-content {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 50%;
-  flex: 1;
-}
-
-.row__item--winner-content-left {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 50%;
-  flex: 1;
-}
-
+.row__item--hero-content,
+.row__item--winner-content-left,
 .row__item--winner-content-right {
   flex-direction: column;
   display: flex;
@@ -499,12 +455,11 @@ p {
   flex-basis: 50%;
   flex: 1;
 }
-
 .row__item--card {
   flex-basis: 21%;
   transition: 0.2s;
-  font-family: 'Open Sans', sans-serif;
-  color: #f5deb3;
+  font-family: Open Sans, sans-serif;
+  color: wheat;
   text-align: center;
   margin-bottom: 2rem;
   padding: 0.2rem;
@@ -513,32 +468,28 @@ p {
   justify-content: center;
   align-items: center;
 }
-
-.row__item--card:hover,
-.row__item--card :focus-within {
+.row__item--card :focus-within,
+.row__item--card:hover {
   transform: translatey(-1rem);
 }
-
 .row__item--card:hover ~ .row__item--card,
 :focus-within ~ .row__item--card {
   transform: 1rem;
 }
-
 .row__item--selection {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .row__item--overlay {
-  background-color: black;
+  background-color: #000;
   border-radius: 2px;
-  border: 3px solid #f5deb3;
+  border: 3px solid wheat;
   width: 80%;
   height: 380px;
-  color: #f5deb3;
-  font-weight: bold;
+  color: wheat;
+  font-weight: 700;
   font-size: 1.8rem;
   opacity: 0.9;
   margin: 0 auto;
@@ -551,30 +502,24 @@ p {
   bottom: 0;
   display: none;
 }
-
 .item--logo {
   height: 296px;
   width: 100%;
 }
-
 .item--featured-image {
   height: 27.375rem;
   width: 100%;
 }
-
 .item--winner-image {
   height: 15.375rem;
   width: 53%;
 }
-
 .item--congratulations {
   color: #c99240;
 }
-
 .item--card-image {
   height: 11.5625rem;
 }
-
 .item--player-selected {
   border-radius: 2rem;
   border: 2px solid #c99240;
@@ -587,16 +532,13 @@ p {
   justify-content: center;
   align-items: center;
 }
-
 .item--player-selected div {
   width: 80%;
   margin-bottom: 0;
 }
-
 .item--player-selected div img {
   width: 60%;
 }
-
 @media screen and (min-width: 1080px) {
   .item--player-selected {
     margin: 1rem;
@@ -604,9 +546,7 @@ p {
     width: 350px;
   }
 }
-
 .item--game-message {
-  font-family: 'Open Sans', sans-serif;
   font-size: 1.125rem;
   font-size: 2rem;
   font-weight: 600;
@@ -620,13 +560,16 @@ p {
   margin: auto;
   text-align: center;
 }
-
+.item--game-message,
+footer {
+  font-family: Open Sans, sans-serif;
+}
 footer {
   width: 100%;
   padding-top: 2rem;
   padding-bottom: 2rem;
   opacity: 0.7;
   border-top: 1px solid #d9d9d9;
-  font-family: 'Open Sans', sans-serif;
   font-size: 1.125rem;
 }
+/*# sourceMappingURL=main.54770076.css.map */

@@ -1,9 +1,9 @@
-import handleDrag from './scripts/handleDrag';
-import { handleSelection } from './scripts/handleSelection';
-import playGame from './scripts/playGame';
-import getCharacterCards from './scripts/showCharacter';
-import showWinner, { Winner as WinnerType } from './scripts/showWinner';
-import characterIndex from './scripts/util/characterIndex';
+import handleDrag from './handleDrag';
+import { handleSelection } from './handleSelection';
+import playGame from './playGame';
+import getCharacterCards from './showCharacter';
+import showWinner, { Winner as WinnerType } from './showWinner';
+import characterIndex from './util/characterIndex';
 import {
   board,
   characterList,
@@ -12,10 +12,10 @@ import {
   validateSelectionBtn,
   winnerContainer,
   canvas,
-} from './scripts/util/containers';
-import { createBoard, rollDice, showDiceResult } from './scripts/util/gameHelpers';
-import Storage from './scripts/util/storage';
-import drawConfetti from './scripts/drawConfetti';
+} from './util/containers';
+import { createBoard, rollDice, showDiceResult } from './util/gameHelpers';
+import Storage from './util/storage';
+import drawConfetti from './drawConfetti';
 
 export const gameStorage = new Storage();
 
