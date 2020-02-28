@@ -6,19 +6,14 @@
   "author": "Nancy Bolstad <litchacha@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel serve src/index.html --open",
-    "watch": "parcel watch src/*.html",
-    "clean": "rm -rf dist/",
-    "build": "rm -rf dist/ && parcel build src/*.html",
-    "build-github-page": "rm -rf doc/ && parcel build src/*.html --out-dir doc/ --no-minify"
+    "serve": "parcel serve src/index.html --open",
+    "dev": "parcel watch src/index.html src/game.html src/winner.html",
+    "clean": "rm -rf docs/",
+    "build": "parcel build src/*.html --public-url ./ --out-dir docs/"
   },
-  "dependencies": {
-    "autoprefixer": "^9.7.2",
-    "browserify": "^12.0.1",
-    "clean-css-cli": "^4.3.0",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
     "husky": "^3.0.8",
-    "node-sass": "^4.13.0",
-    "postcss-cli": "^6.1.3",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "tsify": "*",
@@ -36,8 +31,5 @@
   "bugs": {
     "url": "https://github.com/NancyBolstad/game/issues"
   },
-  "homepage": "https://github.com/NancyBolstad/game#readme",
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4"
-  }
+  "homepage": "https://github.com/NancyBolstad/game#readme"
 }
