@@ -91,15 +91,15 @@
       },
       {
         './scripts/drawConfetti': 2,
-        './scripts/handleDrag': 3,
-        './scripts/handleSelection': 4,
-        './scripts/playGame': 5,
-        './scripts/showCharacter': 6,
-        './scripts/showWinner': 7,
-        './scripts/util/characterIndex': 8,
-        './scripts/util/containers': 9,
-        './scripts/util/gameHelpers': 12,
-        './scripts/util/storage': 15,
+        './scripts/handleDrag': 4,
+        './scripts/handleSelection': 5,
+        './scripts/playGame': 6,
+        './scripts/showCharacter': 7,
+        './scripts/showWinner': 8,
+        './scripts/util/characterIndex': 9,
+        './scripts/util/containers': 10,
+        './scripts/util/gameHelpers': 13,
+        './scripts/util/storage': 16,
       },
     ],
     2: [
@@ -155,9 +155,24 @@
         }
         exports.default = drawConfetti;
       },
-      { './util/getRandomNumber': 13 },
+      { './util/getRandomNumber': 14 },
     ],
     3: [
+      function(require, module, exports) {
+        'use strict';
+        Object.defineProperty(exports, '__esModule', { value: true });
+        function gameLoader() {
+          setTimeout(function() {
+            var element = document.getElementsByClassName('loading')[0];
+            element.innerHTML = '';
+            element.classList.remove('loading');
+          }, 3000);
+        }
+        exports.default = gameLoader;
+      },
+      {},
+    ],
+    4: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -237,7 +252,7 @@
       },
       { '../index': 1 },
     ],
-    4: [
+    5: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -254,9 +269,9 @@
         }
         exports.handleSelection = handleSelection;
       },
-      { './util/containers': 9, './util/hasSelected': 14 },
+      { './util/containers': 10, './util/hasSelected': 15 },
     ],
-    5: [
+    6: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -362,14 +377,21 @@
         }
         exports.default = playGame;
       },
-      { './../index': 1, './util/containers': 9, './util/gameHelpers': 12 },
+      { './../index': 1, './util/containers': 10, './util/gameHelpers': 13 },
     ],
-    6: [
+    7: [
       function(require, module, exports) {
         'use strict';
         var __awaiter =
           (this && this.__awaiter) ||
           function(thisArg, _arguments, P, generator) {
+            function adopt(value) {
+              return value instanceof P
+                ? value
+                : new P(function(resolve) {
+                    resolve(value);
+                  });
+            }
             return new (P || (P = Promise))(function(resolve, reject) {
               function fulfilled(value) {
                 try {
@@ -386,11 +408,7 @@
                 }
               }
               function step(result) {
-                result.done
-                  ? resolve(result.value)
-                  : new P(function(resolve) {
-                      resolve(result.value);
-                    }).then(fulfilled, rejected);
+                result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
               }
               step((generator = generator.apply(thisArg, _arguments || [])).next());
             });
@@ -498,8 +516,10 @@
         Object.defineProperty(exports, '__esModule', { value: true });
         var containers_1 = require('./util/containers');
         var createImage_1 = require('./util/createImage');
+        var gameLoader_1 = require('../scripts/gameLoader');
         var BASE_URL = 'https://www.anapioficeandfire.com/api/characters/';
         function getCharacterCards(characterIndex) {
+          gameLoader_1.default();
           characterIndex.map(function(element) {
             showCharacter(element);
           });
@@ -558,9 +578,9 @@
         }
         exports.default = getCharacterCards;
       },
-      { './util/containers': 9, './util/createImage': 10 },
+      { '../scripts/gameLoader': 3, './util/containers': 10, './util/createImage': 11 },
     ],
-    7: [
+    8: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -582,9 +602,9 @@
         }
         exports.default = showWinner;
       },
-      { './util/containers': 9, './util/createImage': 10 },
+      { './util/containers': 10, './util/createImage': 11 },
     ],
-    8: [
+    9: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -618,7 +638,7 @@
       },
       {},
     ],
-    9: [
+    10: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -639,7 +659,7 @@
       },
       {},
     ],
-    10: [
+    11: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -652,7 +672,7 @@
       },
       {},
     ],
-    11: [
+    12: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -685,7 +705,7 @@
       },
       {},
     ],
-    12: [
+    13: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -814,9 +834,9 @@
         }
         exports.deleteMessage = deleteMessage;
       },
-      { './containers': 9, './createImage': 10, './dice': 11 },
+      { './containers': 10, './createImage': 11, './dice': 12 },
     ],
-    13: [
+    14: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -827,7 +847,7 @@
       },
       {},
     ],
-    14: [
+    15: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });
@@ -838,7 +858,7 @@
       },
       {},
     ],
-    15: [
+    16: [
       function(require, module, exports) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: true });

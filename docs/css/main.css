@@ -350,6 +350,59 @@ p {
   color: #d9d9d9;
 }
 
+.loading {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000000;
+  z-index: 2;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.loading__content {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 2em;
+  top: 50%;
+  margin-top: -1em;
+  color: #c99240;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1080px) {
+  .loading__content {
+    font-size: 2.875rem;
+  }
+}
+
+.loading__content span {
+  display: none;
+}
+
+.loading__content::after {
+  animation: loading-text 3s infinite;
+  content: '';
+}
+
+@keyframes loading-text {
+  0% {
+    content: 'Game Loading.';
+  }
+  50% {
+    content: 'Game Loading..';
+  }
+  100% {
+    content: 'Game Loading...';
+  }
+}
+
 .wrapper {
   max-width: 72.5rem;
   margin: 0 auto;
