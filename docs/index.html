@@ -13,7 +13,7 @@
       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="/main.4d7340ee.css" />
+    <link rel="stylesheet" type="text/css" href="/main.87e570be.css" />
     <title>Cartoon Game of Thrones</title>
   </head>
   <body>
@@ -54,27 +54,32 @@
         </div>
       </div>
     </header>
-    <main>
-      <canvas id="canvas"> </canvas>
-      <div class="wrapper">
-        <div class="wrapper__row--winner">
-          <div class="row__item--winner-content-left" id="winner"></div>
-          <div class="row__item--winner-content-right">
-            <h1 class="item--congratulations">Congratulations!</h1>
-            <h2 id="congratulation"></h2>
-            <button
-              title="Go to the character selection page"
-              aria-label="Go to the character selection page"
-              class="item--link cta cta--big"
-              id="reset"
-            >
-              Play Again
-            </button>
-          </div>
+    <main class="wrapper">
+      <div class="wrapper__row wrapper__row--hero">
+        <div class="row__item row__item--hero-content">
+          <img
+            class="item item--logo"
+            src="https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575666313/game/l4uggmvbi0lymanjkcns.svg"
+            alt="Game logo: Cartoon Game of Thrones"
+          />
+          <a
+            href="/select.html"
+            title="Go to the character selection page"
+            aria-label="Go to the character selection page"
+            class="item item--link cta cta--big"
+            >Play Now</a
+          >
+        </div>
+        <div class="row__item row__item--hero-content">
+          <img
+            class="item item--featured-image"
+            src="https://res.cloudinary.com/dnkfgmzy1/image/upload/v1575655400/game/zuyrhcs1p3cq2c7tul8w.svg"
+            alt="Featured image for the page hero"
+          />
         </div>
       </div>
     </main>
-    <footer id="winnerFooter">
+    <footer>
       <div class="wrapper">
         <div class="wrapper__row wrapper__row--footer">
           <span class="row__item row__item--footer"

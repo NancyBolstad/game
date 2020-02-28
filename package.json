@@ -10,7 +10,7 @@
     "watch": "parcel watch src/*.html",
     "clean": "rm -rf dist/",
     "build": "rm -rf dist/ && parcel build src/*.html",
-    "build-github-page": "rm -rf doc/ && parcel build src/*.html --out-dir doc/ --no-minify"
+    "build-github-page": "rm -rf docs/ && parcel build src/*.html --out-dir docs/ --no-minify"
   },
   "dependencies": {
     "autoprefixer": "^9.7.2",
