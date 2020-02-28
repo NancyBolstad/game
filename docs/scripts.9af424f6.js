@@ -438,7 +438,7 @@ parcelRequire = (function(e, r, t, n) {
       },
       { './index': 'KqmS', './util/gameHelpers': 'fbZQ', './util/containers': 'xBI4' },
     ],
-    iLsJ: [
+    W5hJ: [
       function(require, module, exports) {
         'use strict';
         function e() {
@@ -584,7 +584,7 @@ parcelRequire = (function(e, r, t, n) {
         Object.defineProperty(exports, '__esModule', { value: !0 });
         var n = require('./util/containers'),
           a = r(require('./util/createImage')),
-          i = r(require('../scripts/gameLoader')),
+          i = r(require('./util/gameLoader')),
           u = 'https://www.anapioficeandfire.com/api/characters/';
         function o(e) {
           i.default(),
@@ -594,7 +594,7 @@ parcelRequire = (function(e, r, t, n) {
         }
         function c(r) {
           return e(this, void 0, void 0, function() {
-            var e, i, o, c, s, l, f, h;
+            var e, i, o, c, l, s, f, h;
             return t(this, function(t) {
               switch (t.label) {
                 case 0:
@@ -609,10 +609,10 @@ parcelRequire = (function(e, r, t, n) {
                     (o = i.name),
                     (c = i.titles),
                     'Humble Man Without Title',
-                    ((s = document.createElement('div')).className = 'row__item--card'),
-                    s.setAttribute('draggable', 'true'),
-                    s.setAttribute('key', '' + r),
-                    (l =
+                    ((l = document.createElement('div')).className = 'row__item--card'),
+                    l.setAttribute('draggable', 'true'),
+                    l.setAttribute('key', '' + r),
+                    (s =
                       '<img draggable="false" src=' +
                       a.default(r) +
                       ' class="item--card-image" alt="Game figure no.' +
@@ -620,8 +620,8 @@ parcelRequire = (function(e, r, t, n) {
                       '">'),
                     (f = ' <h3>' + o + '</h3>'),
                     (h = '<span>' + (c[0] ? c[0] : 'Humble Man Without Title') + '</span>'),
-                    (s.innerHTML = l + f + h),
-                    n.characterList.append(s),
+                    (l.innerHTML = s + f + h),
+                    n.characterList.append(l),
                     [2, i]
                   );
                 case 4:
@@ -634,11 +634,7 @@ parcelRequire = (function(e, r, t, n) {
         }
         exports.default = o;
       },
-      {
-        './util/containers': 'xBI4',
-        './util/createImage': 'JtL7',
-        '../scripts/gameLoader': 'iLsJ',
-      },
+      { './util/containers': 'xBI4', './util/createImage': 'JtL7', './util/gameLoader': 'W5hJ' },
     ],
     jG7D: [
       function(require, module, exports) {
@@ -856,4 +852,4 @@ parcelRequire = (function(e, r, t, n) {
   ['KqmS'],
   null,
 );
-//# sourceMappingURL=scripts.4b3517e9.js.map
+//# sourceMappingURL=scripts.9af424f6.js.map

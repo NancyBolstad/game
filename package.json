@@ -12,10 +12,11 @@
     "build": "parcel build src/*.html --public-url ./ --out-dir docs/"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
     "husky": "^3.0.8",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
+    "sass": "^1.26.1",
     "tsify": "*",
     "typescript": "^3.7.2",
     "watchify": "^3.11.1"

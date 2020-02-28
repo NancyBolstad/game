@@ -1,7 +1,7 @@
 import { characterList } from './util/containers';
 import { ResponseObjTypes } from './util/types';
 import createImage from './util/createImage';
-import gameLoader from '../scripts/gameLoader';
+import gameLoader from './util/gameLoader';
 
 const BASE_URL: string = 'https://www.anapioficeandfire.com/api/characters/';
 
