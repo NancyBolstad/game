@@ -1,4 +1,4 @@
-import { gameStorage } from './index';
+import { gameStorage } from '../index';
 let dragged: HTMLElement;
 
 function handleDragStart(event: DragEvent): void {

@@ -1,12 +1,10 @@
 import { characterList } from './util/containers';
 import { ResponseObjTypes } from './util/types';
 import createImage from './util/createImage';
-import gameLoader from '../scripts/gameLoader';
 
 const BASE_URL: string = 'https://www.anapioficeandfire.com/api/characters/';
 
 function getCharacterCards(characterIndex: number[]): void {
-  gameLoader();
   characterIndex.map(element => {
     showCharacter(element);
   });
