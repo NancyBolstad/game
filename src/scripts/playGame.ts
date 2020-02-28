@@ -1,4 +1,4 @@
-import { gameStorage } from './../index';
+import { gameStorage } from './index';
 import {
   showDiceResult,
   updatePlayer1Button,
