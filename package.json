@@ -6,6 +6,7 @@
   "author": "Nancy Bolstad <litchacha@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "parcel docs/index.html",
     "build": "browserify -p tsify src/index.ts > docs/bundle.js && node-sass --output-style=expanded src/styles/main.scss -o docs/css/",
     "dev-ts": "watchify -p tsify src/index.ts -o docs/bundle.js -d",
     "dev-sass": "node-sass -w --output-style=expanded src/styles/main.scss -o docs/css/",
@@ -36,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/NancyBolstad/game/issues"
   },
-  "homepage": "https://github.com/NancyBolstad/game#readme"
+  "homepage": "https://github.com/NancyBolstad/game#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
 }
