@@ -1,10 +1,17 @@
 {
   "name": "noroff-game",
   "version": "0.0.1",
-  "private": true,
+  "description": "Front-end board game",
   "repository": "git@github.com/NancyBolstad/game.git",
   "author": "Nancy Bolstad <litchacha@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "typescript",
+    "npm",
+    "sass",
+    "parcel",
+    "devops"
+  ],
   "scripts": {
     "serve": "parcel serve src/index.html --open",
     "dev": "parcel watch src/index.html src/game.html src/winner.html",
@@ -21,6 +28,9 @@
     "typescript": "^3.7.2",
     "watchify": "^3.11.1"
   },
+  "peerDependencies": {},
+  "dependencies": {},
+  "resolutions": {},
   "browserslist": [
     "last 2 versions"
   ],
