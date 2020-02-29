@@ -31,6 +31,7 @@ jobs:
       - checkout
       - <<: *restore_cache
       - <<: *install_node_modules
+      - <<: *save_cache
       - run:
           name: Build
           command: yarn build
