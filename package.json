@@ -36,8 +36,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "pre-push": "tsc --noEmit"
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "bugs": {
