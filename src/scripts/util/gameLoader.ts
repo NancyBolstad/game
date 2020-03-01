@@ -1,4 +1,4 @@
-function gameLoader(): void {
+function gameLoader(): boolean {
   document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
   setTimeout(function() {
     const element = <HTMLDivElement>document.getElementsByClassName('loading')[0];
