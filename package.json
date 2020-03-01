@@ -36,8 +36,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "pre-add": "yarn type-check"
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "bugs": {
