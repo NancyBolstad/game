@@ -17,3 +17,6 @@ export const winnerContainer: HTMLElement = document.getElementById('winner');
 export const congratulationMessage: HTMLElement = document.getElementById('congratulation');
 export const resetBtn: HTMLElement = document.getElementById('reset');
 export const canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('canvas');
+
+//page:about-us
+export const nextSectionBtn: HTMLElement = document.getElementById('nextSection');

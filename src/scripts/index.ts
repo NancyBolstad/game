@@ -12,6 +12,7 @@ import {
   validateSelectionBtn,
   winnerContainer,
   canvas,
+  nextSectionBtn,
 } from './util/containers';
 import { createBoard, rollDice, showDiceResult } from './util/gameHelpers';
 import Storage from './util/storage';
@@ -53,6 +54,12 @@ if (resetBtn != null) {
     },
     false,
   );
+}
+
+if (nextSectionBtn != null) {
+  nextSectionBtn.addEventListener('click', function() {
+    window.location.href = '#specialties';
+  });
 }
 
 if (canvas != null) {

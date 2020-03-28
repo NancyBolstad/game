@@ -38,6 +38,18 @@
     }
   }
 
+  &--secondary {
+    border: 2px solid $secondary;
+    background-color: $black;
+    color: $secondary;
+
+    &:hover,
+    &:active,
+    &:disabled {
+      opacity: 0.8;
+    }
+  }
+
   &--validation {
     margin-bottom: 5rem;
   }

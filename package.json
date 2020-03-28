@@ -13,14 +13,14 @@
     "devops"
   ],
   "scripts": {
-    "start": "parcel serve src/index.html --open",
-    "dev": "parcel watch src/index.html src/game.html src/winner.html",
+    "dev": "node run-parcel.js",
     "build": "parcel build src/*.html --public-url ./ --out-dir docs/",
     "type-check": "tsc --noEmit",
     "production-clean": "rm -rf docs",
     "yml": "circleci config validate"
   },
   "devDependencies": {
+    "express": "^4.17.1",
     "husky": "^4.2.3",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.0",
@@ -36,7 +36,8 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "tsc --noEmit"
     }
   },
   "bugs": {
