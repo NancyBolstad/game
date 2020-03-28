@@ -1,4 +1,4 @@
-# Cartoon Game of Thrones - Board Game v2.0
+# Cartoon Game of Thrones - Board Game
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/NancyBolstad/game.svg)](https://greenkeeper.io/)
 
