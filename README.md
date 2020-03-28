@@ -2,13 +2,10 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/NancyBolstad/game.svg)](https://greenkeeper.io/)
 
-A simple online board game based on A Song of Ice and Fire / Game of Thrones.  
-
-### Live Page:
-
-https://nancybolstad.github.io/game/
+A simple online board game based on A Song of Ice and Fire / Game of Thrones.
 
 ### Deploy:
+
 https://cartoon-game-of-thrones.netlify.com/
 
 ### Technology Stack
@@ -17,7 +14,6 @@ https://cartoon-game-of-thrones.netlify.com/
 - Modular JavaScript
 - Sass
 - Yarn
-
 
 ### Running locally in development mode
 
