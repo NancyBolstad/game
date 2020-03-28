@@ -6,6 +6,7 @@
 @import 'header';
 @import 'game';
 @import 'canvas';
+@import 'form';
 
 body {
   overflow-x: hidden;
@@ -40,7 +41,8 @@ h1 {
   @include heading1();
 }
 
-h2 {
+h2,
+label {
   @include heading2();
 }
 
@@ -317,6 +319,30 @@ p {
     align-items: center;
     justify-content: center;
     padding: 1.76rem 0;
+  }
+
+  &--contactList {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+
+    @media screen and (min-width: 1080px) {
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 880px;
+    }
+
+    div {
+      height: auto;
+    }
+  }
+
+  &--feedback {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 

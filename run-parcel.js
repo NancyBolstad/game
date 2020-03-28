@@ -1,7 +1,12 @@
 const Bundler = require('parcel-bundler');
 const express = require('express');
 
-const bundler = new Bundler(['src/index.html', 'src/game.html', 'src/winner.html']);
+const bundler = new Bundler([
+  'src/index.html',
+  'src/game.html',
+  'src/winner.html',
+  'src/submitted.html',
+]);
 const app = express();
 
 app.get('/', (req, res, next) => {
