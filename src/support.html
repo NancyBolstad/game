@@ -69,40 +69,74 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
             </p>
-            <button
-              title="Go to the character selection page"
-              aria-label="Go to the character selection page"
-              class="item--link cta cta--big"
-              id="reset"
-            >
-              Go to game
-            </button>
           </div>
-          <div class="row__item row__item--list">
+          <div class="row__item row__item--contactList">
             <div class="item__card">
-              <i class="fas fa-users fa-7x"></i>
-              <h3>Professionals</h3>
-              <span
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor.</span
-              >
+              <i class="fas fas fa-map-marker-alt fa-3x"></i>
+              <h3>Headquarters 300 E, Oslo</h3>
             </div>
             <div class="item__card">
-              <i class="fas fa-globe fa-7x"></i>
-              <h3>International Strategy</h3>
-              <span
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor.</span
-              >
+              <i class="fas fa-phone-volume fa-3x"></i>
+              <h3>Tel: +00 9999999</h3>
             </div>
             <div class="item__card">
-              <i class="fas fa-poll fa-7x"></i>
-              <h3>Development</h3>
-              <span
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor.</span
-              >
+              <i class="fas fa-clock fa-3x"></i>
+              <h3>24/7 user support</h3>
             </div>
+          </div>
+          <div class="row__item row__item--form">
+            <form
+              name="form"
+              action="submitted.html"
+              method=""
+              onSubmit="return validateForm()"
+              id="js-contact-form"
+            >
+              <div class="form__row">
+                <div class="form__labels">
+                  <label for="name">Name</label>
+                </div>
+                <div class="form__right-tab">
+                  <input
+                    class="input-field"
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your name"
+                  />
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__labels">
+                  <label for="email">Email</label>
+                </div>
+                <div class="form__right-tab">
+                  <input
+                    class="input-field"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="labels">
+                  <label for="message">Message</label>
+                </div>
+                <div class="form__right-tab">
+                  <textarea
+                    class="form__input-field input-message"
+                    id="message"
+                    name="message"
+                    placeholder="Enter your message"
+                  ></textarea>
+                </div>
+              </div>
+              <div id="form__submit">
+                <input class="cta cta--big" type="submit" value="Submit" />
+              </div>
+            </form>
           </div>
         </div>
       </div>
