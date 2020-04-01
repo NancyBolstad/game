@@ -8,6 +8,10 @@ A simple online board game based on A Song of Ice and Fire / Game of Thrones.
 
 https://cartoon-game-of-thrones.netlify.com/
 
+### Github page:
+
+https://nancybolstad.github.io/game/index.html
+
 ### Technology Stack
 
 - TypeScript
