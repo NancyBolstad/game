@@ -20,7 +20,7 @@
     "yml": "circleci config validate"
   },
   "devDependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "husky": "^4.2.3",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.0",
